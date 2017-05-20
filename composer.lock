@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2df6478fb06eba26379804c0c4f09b9b",
+    "content-hash": "6c170d2037b35fff17a819d0254640ff",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -324,6 +324,42 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "jkniest/force-https",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jkniest/ForceHttps.git",
+                "reference": "c2bc414ebbe346ca0bd4632a8736c9762f709305"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jkniest/ForceHttps/zipball/c2bc414ebbe346ca0bd4632a8736c9762f709305",
+                "reference": "c2bc414ebbe346ca0bd4632a8736c9762f709305",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "jkniest\\ForceHttps\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordan Kniest",
+                    "email": "jkniest@gena-clusters.net"
+                }
+            ],
+            "description": "Laravel Middleware to force a secure connection",
+            "time": "2017-01-28T15:08:56+00:00"
         },
         {
             "name": "laravel/framework",

@@ -170,6 +170,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Lubusin\Decomposer\DecomposerServiceProvider::class,
         PrettyRoutes\ServiceProvider::class,
+        jkniest\ForceHttps\ForceHttpsServiceProvider::class,
 
         /*
          * Application Service Providers...
