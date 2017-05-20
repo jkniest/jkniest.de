@@ -4,6 +4,15 @@ namespace App\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 
+/**
+ * Encrypt all cookies
+ *
+ * @category Core
+ * @package  JKniest.de
+ * @author   Jordan Kniest <contact@jkniest.de>
+ * @license  MIT <https://opensource.org/licenses/MIT>
+ * @link     https://jkniest.de
+ */
 class EncryptCookies extends BaseEncrypter
 {
     /**
