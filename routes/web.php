@@ -11,6 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+if (config('app.debug') == true) {
+    Route::get('decompose','\Lubusin\Decomposer\Controllers\DecomposerController@index');
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5c7714d33195cce3d4b47c66a21a3a9",
+    "content-hash": "03d4c6490e1a5905f32fbb85f06acf88",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -558,6 +558,47 @@
                 "storage"
             ],
             "time": "2017-04-28T10:15:08+00:00"
+        },
+        {
+            "name": "lubusin/laravel-decomposer",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lubusIN/laravel-decomposer.git",
+                "reference": "c8fb3188610bf9568019ebc5516f08f4073ae3d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lubusIN/laravel-decomposer/zipball/c8fb3188610bf9568019ebc5516f08f4073ae3d9",
+                "reference": "c8fb3188610bf9568019ebc5516f08f4073ae3d9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "illuminate/http": "^5.0",
+                "illuminate/routing": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lubusin\\Decomposer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Harish Toshniwal",
+                    "email": "harish@lubus.in"
+                }
+            ],
+            "description": "A Laravel package to decompose your installed packages, their dependencies, your app & server environment",
+            "time": "2017-04-06T12:13:04+00:00"
         },
         {
             "name": "maximebf/debugbar",
