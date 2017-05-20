@@ -11,7 +11,8 @@
         "jkniest/force-https": "^1.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "lubusin/laravel-decomposer": "^1.2"
+        "lubusin/laravel-decomposer": "^1.2",
+        "squareboat/sneaker": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

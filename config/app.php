@@ -171,6 +171,7 @@ return [
         Lubusin\Decomposer\DecomposerServiceProvider::class,
         PrettyRoutes\ServiceProvider::class,
         jkniest\ForceHttps\ForceHttpsServiceProvider::class,
+        SquareBoat\Sneaker\SneakerServiceProvider::class,
 
         /*
          * Application Service Providers...
