@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/lang/{code}', 'LanguageController@update');
+
+
+
 if (config('app.debug') == true) {
     Route::get('decompose','\Lubusin\Decomposer\Controllers\DecomposerController@index');
 }
