@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Projects;
+
+class {{class}} extends Project
+{
+    /**
+     * The name
+     *
+     * @var string
+     */
+    protected $name = "{{name}}";
+
+    /**
+     * The slug
+     *
+     * @var string
+     */
+    protected $slug = "{{slug}}";
+}
