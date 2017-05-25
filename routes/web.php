@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lang/{code}', 'LanguageController@update');
+Route::get('/lang/{code}', 'LanguageController@update')->name('lang');
 
 
 
