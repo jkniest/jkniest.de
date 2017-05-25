@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\MediaCommand;
 use App\Console\Commands\ProjectMakeCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -23,7 +24,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        ProjectMakeCommand::class
+        ProjectMakeCommand::class,
+        MediaCommand::class
     ];
 
     /**
