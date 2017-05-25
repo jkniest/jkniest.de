@@ -37,6 +37,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('media')->cron('0 */2 * * *');
     }
 
     /**
