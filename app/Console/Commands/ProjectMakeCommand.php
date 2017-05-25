@@ -117,6 +117,26 @@ class ProjectMakeCommand extends GeneratorCommand
     }
 
     /**
+     * Build the directory for the class if necessary.
+     *
+     * @param  string $path The path
+     *
+     * @return string
+     */
+    protected function makeDirectory($path)
+    {
+        if (!$this->files->isDirectory(dirname($path))) {
+            $this->files->makeDirectory(dirname($path), 0777, true, true);
+        }
+
+        $this->createMediaPath();
+
+        $this->createViewFile();
+
+        return $path;
+    }
+
+    /**
      * Get the slugifyed version of the name
      *
      * @param string $name The name
@@ -148,5 +168,37 @@ class ProjectMakeCommand extends GeneratorCommand
         }
 
         return $name;
+    }
+
+    /**
+     * Create the media folder for this project
+     *
+     * @return void
+     */
+    protected function createMediaPath()
+    {
+        $path = base_path('media/' . $this->getClassName($this->getNameInput()));
+
+        if (!$this->files->exists($path)) {
+            $this->files->makeDirectory($path, 0777, true, true);
+        }
+    }
+
+    /**
+     * Create the default view file for this project
+     *
+     * @return void
+     */
+    protected function createViewFile()
+    {
+        $path = resource_path('views/projects/partials/en/');
+        if (!$this->files->isDirectory($path)) {
+            $this->files->makeDirectory($path, 0777, true, true);
+        }
+
+        $path .= $this->getClassName($this->getNameInput()) . '.blade.php';
+        if (!$this->files->exists($path)) {
+            $this->files->put($path, 'This is a new project');
+        }
     }
 }
