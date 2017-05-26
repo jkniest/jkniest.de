@@ -1,7 +1,11 @@
 .projects {
 
   @include mobile() {
-    margin-top: 0;
+
+    // .projects .columns
+    .columns {
+      margin-top: 0;
+    }
 
     // .projects .card
     .card {
@@ -57,4 +61,8 @@
     margin-right: auto;
   }
 
+  // .projects h2
+  h2 {
+    word-wrap: break-word;
+  }
 }
