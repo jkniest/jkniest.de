@@ -96,7 +96,7 @@ class MediaCommand extends Command
     protected function createStorageFolder(string $path)
     {
         if (!$this->files->isDirectory($path)) {
-            $this->files->makeDirectory($path, '0755', true, true);
+            mkdir($path, 0777, true);
         }
     }
 
