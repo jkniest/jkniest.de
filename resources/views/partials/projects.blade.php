@@ -1,4 +1,4 @@
-<section class="hero m3t" id="projects">
+<section class="hero m3t is-unselectable" id="projects">
 
     <div class="hero-body">
 

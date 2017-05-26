@@ -1,4 +1,4 @@
-<div class="card {{isset($pull) ? 'pull-'.$pull : ''}}">
+<div class="card fade">
 
     <div class="card-image">
 

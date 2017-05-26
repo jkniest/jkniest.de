@@ -38,3 +38,7 @@
   -o-transition:      $params;
   transition:         $params;
 }
+
+.fade {
+  opacity: 0;
+}
