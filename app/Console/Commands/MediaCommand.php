@@ -65,7 +65,7 @@ class MediaCommand extends Command
         $dirs->each(function ($dir) {
             $this->info('Converting ' . $dir);
 
-            $path = $this->getStoragePath($dir);
+            $path = $this->getPublicPath($dir);
 
             $this->createStorageFolder($path);
             $this->handleFiles($dir, $path);
@@ -79,11 +79,11 @@ class MediaCommand extends Command
      *
      * @return string
      */
-    protected function getStoragePath(string $source)
+    protected function getPublicPath(string $source)
     {
         $dir = str_replace(base_path('media/'), '', $source);
 
-        return storage_path('media/' . $dir);
+        return public_path('media/' . $dir);
     }
 
     /**
@@ -117,6 +117,7 @@ class MediaCommand extends Command
             $this->comment(' -> ' . $fileName);
 
             $this->copyFile($file, $destination, $fileName);
+            $this->generateBigFile($file, $destination, $fileName);
             $this->generateFeaturedFile($file, $destination, $fileName);
             $this->generateMediumFile($file, $destination, $fileName);
             $this->generateSmallFile($file, $destination, $fileName);
@@ -135,6 +136,23 @@ class MediaCommand extends Command
     protected function copyFile(string $path, string $destination, string $fileName)
     {
         $this->files->copy($path, $destination . '/source_' . $fileName);
+    }
+
+    /**
+     * Copy a source file and resize it to the big size (1024x1024)
+     *
+     * @param string $path        The file path
+     * @param string $destination The destination folder
+     * @param string $fileName    The isolated filename
+     *
+     * @return void
+     */
+    protected function generateBigFile(string $path, string $destination, string $fileName)
+    {
+        $size = 1204;
+        $target = $destination . '/big_' . $fileName;
+
+        $this->saveThumb($path, $size, $target);
     }
 
     /**

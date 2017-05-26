@@ -6,4 +6,6 @@
 
     @include('partials.header')
 
+    @include('partials.projects')
+
 @endsection

@@ -13,14 +13,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/lang/{code}', 'LanguageController@update')->name('lang');
 
-
+Route::get('/project/{slug}', function () {
+    return 'temp';
+})->name('project');
 
 if (config('app.debug') == true) {
-    Route::get('decompose','\Lubusin\Decomposer\Controllers\DecomposerController@index');
+    Route::get('decompose', '\Lubusin\Decomposer\Controllers\DecomposerController@index');
 }

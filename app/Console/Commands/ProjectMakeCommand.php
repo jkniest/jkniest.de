@@ -105,12 +105,12 @@ class ProjectMakeCommand extends GeneratorCommand
     }
 
     /**
-     * Get a converted class name that only allows digits and letters.
-     *
-     * @param string $name The original name
-     *
-     * @return string
-     */
+ * Get a converted class name that only allows digits and letters.
+ *
+ * @param string $name The original name
+ *
+ * @return string
+ */
     protected function getClassName(string $name)
     {
         return preg_replace('~[^\pL\d]+~u', '', $name);
@@ -131,7 +131,7 @@ class ProjectMakeCommand extends GeneratorCommand
 
         $this->createMediaPath();
 
-        $this->createViewFile();
+        $this->createViewFiles();
 
         return $path;
     }
@@ -189,16 +189,23 @@ class ProjectMakeCommand extends GeneratorCommand
      *
      * @return void
      */
-    protected function createViewFile()
+    protected function createViewFiles()
     {
         $path = resource_path('views/projects/partials/en/');
         if (!$this->files->isDirectory($path)) {
             $this->files->makeDirectory($path, 0777, true, true);
         }
 
-        $path .= $this->getClassName($this->getNameInput()) . '.blade.php';
-        if (!$this->files->exists($path)) {
-            $this->files->put($path, 'This is a new project');
+        // Main file
+        $file = $path . $this->getClassName($this->getNameInput()) . '.blade.php';
+        if (!$this->files->exists($file)) {
+            $this->files->put($file, 'This is a new project');
+        }
+
+        // Short description file
+        $file = $path . $this->getClassName($this->getNameInput()) . '_short.blade.php';
+        if (!$this->files->exists($file)) {
+            $this->files->put($file, 'Lorem ipsum dolor sit amet');
         }
     }
 }

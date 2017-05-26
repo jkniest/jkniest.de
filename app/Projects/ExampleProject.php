@@ -18,12 +18,19 @@ class ExampleProject extends Project
      *
      * @var string
      */
-    protected $name = "ExampleProject";
+    protected $name = 'ExampleProject';
 
     /**
      * The slug
      *
      * @var string
      */
-    protected $slug = "exampleproject";
+    protected $slug = 'exampleproject';
+
+    /**
+     * The cover image
+     *
+     * @var string
+     */
+    protected $cover = 'header.png';
 }

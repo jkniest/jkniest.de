@@ -26,4 +26,11 @@ class ExampleProject2 extends Project
      * @var string
      */
     protected $slug = "exampleproject2";
+
+    /**
+     * The cover image
+     *
+     * @var string
+     */
+    protected $cover = "Car-icon.png";
 }

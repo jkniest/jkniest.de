@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Projects;
 
 /**
@@ -41,13 +42,6 @@ class Project
     protected $media;
 
     /**
-     * The short description
-     *
-     * @var string
-     */
-    protected $description;
-
-    /**
      * The cover media file (should be an image)
      *
      * @var string
@@ -67,4 +61,93 @@ class Project
      * @var array
      */
     protected $meta;
+
+    /**
+     * Return the name of the project
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Return the slug of the project
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Return the public path to the cover image
+     *
+     * @param int $size The image size
+     *
+     * @return string
+     */
+    public function getCoverPath(int $size)
+    {
+        $prefix = $this->getPrefixBySize($size);
+
+        return asset(
+            'media/' . $this->getClassName() . '/' . $prefix . '_' . $this->cover
+        );
+    }
+
+    /**
+     * Return the view name of the short description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        $view = 'projects.partials.' . app()->getLocale() . '.' . $this->getClassName() . '_short';
+
+        if (view()->exists($view)) {
+            return $view;
+        }
+
+        return 'projects.partials.en.' . $this->getClassName() . '_short';
+    }
+
+    /**
+     * Return the prefix based on the given size
+     *
+     * @param int $size The image size
+     *
+     * @return string
+     */
+    protected function getPrefixBySize(int $size)
+    {
+        switch ($size) {
+            case 1024:
+                return 'big';
+
+            case 512:
+                return 'featured';
+
+            case 256:
+                return 'medium';
+
+            case 128:
+                return 'small';
+
+            default:
+                return 'source';
+        }
+    }
+
+    /**
+     * Get a converted class name that only allows digits and letters.
+     *
+     * @return string
+     */
+    protected function getClassName()
+    {
+        return preg_replace('~[^\pL\d]+~u', '', $this->name);
+    }
 }
