@@ -1,0 +1,68 @@
+.projects {
+
+  @include mobile() {
+
+    // .projects .columns
+    .columns {
+      margin-top: 0;
+    }
+
+    // .projects .card
+    .card {
+      max-width: 512px;
+    }
+  }
+
+  // .projects figure
+  figure {
+
+    // .project figure:hover > .hover
+    &:hover > .hover {
+      visibility: visible;
+      opacity:    1;
+    }
+
+    // .projects figure .hover
+    .hover {
+      position:         absolute;
+      left:             0;
+      top:              0;
+      right:            0;
+      bottom:           0;
+
+      visibility:       hidden;
+      opacity:          0;
+
+      @include transition(visibility 0.2s);
+      @include transition(opacity 0.2s linear);
+
+      background-color: rgba(0, 0, 0, 0.8);
+      color:            white;
+
+      // .projects figure .hover .title
+      .title {
+        color: white !important;
+      }
+
+      // .projects figure .hover .button
+      .button {
+        position: absolute;
+        bottom:   20px;
+        left:     20px;
+        right:    20px;
+      }
+    }
+
+  }
+
+  // .projects .card
+  .card {
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  // .projects h2
+  h2 {
+    word-wrap: break-word;
+  }
+}

@@ -1,3 +1,44 @@
-.m1r {
-  margin-right: 1em;
+@for $i from 1 through $unit-count {
+
+  .p#{$i} {
+    padding: $one-unit * $i;
+  }
+
+  .m#{$i}t {
+    margin-top: $one-unit * $i;
+  }
+
+  .m#{$i}l {
+    margin-left: $one-unit * $i;
+  }
+
+  .m#{$i}r {
+    margin-right: $one-unit * $i;
+  }
+
+  .m#{$i}b {
+    margin-bottom: $one-unit * $i;
+  }
+}
+
+.is-256x256 {
+  width: 256px;
+  height: 256px;
+}
+
+.is-512x512 {
+  width: 512px;
+  height: 512px;
+}
+
+@mixin transition($params) {
+  -webkit-transition: $params;
+  -moz-transition:    $params;
+  -ms-transition:     $params;
+  -o-transition:      $params;
+  transition:         $params;
+}
+
+.fade {
+  opacity: 0;
 }
