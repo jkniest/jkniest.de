@@ -63,23 +63,156 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-window.$ = __webpack_require__(3);
+/**
+ * This is nearly all javascript that is loaded within this site.
+ *
+ * Copyright (C) 2017 Jordan Kniest
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @category Core
+ * @package  JKniest.de
+ * @author   Jordan Kniest <contact@jkniest.de>
+ * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ * @link     https://jkniest.de
+ */
 
-__webpack_require__(14);
+window.$ = __webpack_require__(5);
 
-__webpack_require__(15);
+__webpack_require__(4);
+
+__webpack_require__(3);
 
 /***/ }),
 /* 1 */,
 /* 2 */,
 /* 3 */
+/***/ (function(module, exports) {
+
+/**
+ * Every html element with the class 'fade' should fade in when scrolling down
+ *
+ * Copyright (C) 2017 Jordan Kniest
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @category Core
+ * @package  JKniest.de
+ * @author   Jordan Kniest <contact@jkniest.de>
+ * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ * @link     https://jkniest.de
+ */
+
+$(window).on('load', function () {
+    $(window).scroll(function () {
+        var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+
+        $('.fade').each(function () {
+            var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+            if (objectBottom < windowBottom + 400) {
+
+                if ($(this).css('opacity') == 0) {
+                    $(this).fadeTo(500, 1);
+                }
+            }
+        });
+    }).scroll();
+});
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+/**
+ * Smooth scrolling when the user clicks on a local link (#somewhere)
+ *
+ * Copyright (C) 2017 Jordan Kniest
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @category Core
+ * @package  JKniest.de
+ * @author   Jordan Kniest <contact@jkniest.de>
+ * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ * @link     https://jkniest.de
+ */
+
+// Select all links with hashes
+$('a[href*="#"]')
+// Remove links that don't actually link to anything
+.not('[href="#"]').not('[href="#0"]').click(function (event) {
+    // On-page links
+    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+        // Figure out element to scroll to
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        // Does a scroll target exist?
+        if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000, function () {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(':focus')) {
+                    // Checking if the target was focused
+                    return false;
+                } else {
+                    $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                }
+                ;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10339,77 +10472,12 @@ return jQuery;
 
 
 /***/ }),
-/* 4 */,
-/* 5 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(0);
 
-
-/***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
-/***/ (function(module, exports) {
-
-// Select all links with hashes
-$('a[href*="#"]')
-// Remove links that don't actually link to anything
-.not('[href="#"]').not('[href="#0"]').click(function (event) {
-    // On-page links
-    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-        // Figure out element to scroll to
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        // Does a scroll target exist?
-        if (target.length) {
-            // Only prevent default if animation is actually gonna happen
-            event.preventDefault();
-            $('html, body').animate({
-                scrollTop: target.offset().top
-            }, 1000, function () {
-                // Callback after animation
-                // Must change focus!
-                var $target = $(target);
-                $target.focus();
-                if ($target.is(":focus")) {
-                    // Checking if the target was focused
-                    return false;
-                } else {
-                    $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                    $target.focus(); // Set focus again
-                };
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-$(window).on('load', function () {
-    $(window).scroll(function () {
-        var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-
-        $('.fade').each(function () {
-            var objectBottom = $(this).offset().top + $(this).outerHeight();
-
-            if (objectBottom < windowBottom + 400) {
-
-                if ($(this).css('opacity') == 0) {
-                    $(this).fadeTo(500, 1);
-                }
-            }
-        });
-    }).scroll();
-});
 
 /***/ })
 /******/ ]);
