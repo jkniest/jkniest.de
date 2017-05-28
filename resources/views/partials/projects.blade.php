@@ -1,31 +1,17 @@
-<section class="hero m3t is-unselectable" id="projects">
+<div class="container projects p1" id="projects">
 
-    <div class="hero-body">
+    <div class="columns is-multiline medium m6t">
 
-        <div class="container">
+        @foreach($projects as $project)
 
-            <h1 class="title">
-                @lang('jkniest.projects')
-            </h1> {{-- h1.title --}}
+            <div class="column is-one-third">
 
-            <h2 class="subtitle">
-                @lang('jkniest.some-projects')
-            </h2> {{-- h2.subtitle --}}
+                @include('partials.projects.card', ['project' => $project])
 
-            <hr>
+            </div> {{-- div.column --}}
 
-        </div> {{-- div.container --}}
+        @endforeach
 
-    </div> {{-- div.hero-body --}}
-
-</section> {{-- section.hero --}}
-
-<div class="container projects p1">
-
-    @include('partials.projects.featured')
-
-    @include('partials.projects.medium')
-
-    @include('partials.projects.small')
+    </div> {{-- div.colums.featured --}}
 
 </div> {{-- div.container.projects --}}

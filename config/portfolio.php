@@ -4,48 +4,34 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Featured projects
+    | Projects
     |--------------------------------------------------------------------------
     |
-    | Here are all projects that are featured. There should never be more than
-    | two featured project at a time.
+    | Here are all of your projects.
     */
 
-    'featured' => [
+    'projects' => [
         \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject2::class
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Medium projects
-    |--------------------------------------------------------------------------
-    |
-    | Here are all projects that are categorized as medium. There should never
-    | be more than three medium project at a time.
-    */
-
-    'medium' => [
+        \App\Projects\ExampleProject2::class,
         \App\Projects\ExampleProject::class,
+        \App\Projects\ExampleProject2::class,
+        \App\Projects\ExampleProject::class,
+        \App\Projects\ExampleProject::class,
+        \App\Projects\ExampleProject2::class,
+        \App\Projects\ExampleProject::class,
+        \App\Projects\ExampleProject2::class,
         \App\Projects\ExampleProject2::class,
         \App\Projects\ExampleProject::class
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Other projects
+    | Author Name
     |--------------------------------------------------------------------------
     |
-    | Here are all other projects
+    | This value is the name of the author.
     */
 
-    'other' => [
-        \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject::class
-    ]
+    'author' => env('AUTHOR', 'Jordan'),
 
 ];

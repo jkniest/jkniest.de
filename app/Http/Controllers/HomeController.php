@@ -20,18 +20,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $featuredProjects = collect(config('portfolio.featured'))->map(function ($name) {
+        $projects = collect(config('portfolio.projects'))->map(function ($name) {
             return new $name();
         });
 
-        $mediumProjects = collect(config('portfolio.medium'))->map(function ($name) {
-            return new $name();
-        });
-
-        $smallProjects = collect(config('portfolio.other'))->map(function ($name) {
-            return new $name();
-        });
-
-        return view('welcome', compact('featuredProjects', 'mediumProjects', 'smallProjects'));
+        return view('welcome', compact('projects'));
     }
 }
