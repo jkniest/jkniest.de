@@ -14,6 +14,8 @@ return [
     'some-projects' => 'Here are some of my projects',
     'get-more'      => 'View project details',
 
+    'overview' => 'Back to overview',
+
     'introduction' => [
         'welcome' => '
             I am pleased to welcome you on my side. My name is Jordan Kniest and I am currently

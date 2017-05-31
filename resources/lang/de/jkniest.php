@@ -14,6 +14,8 @@ return [
     'some-projects' => 'Hier finden Sie einige meiner Projekte',
     'get-more'      => 'Projekt-Details ansehen',
 
+    'overview' => 'Zurück zur Übersicht',
+
     'introduction' => [
         'welcome' => '
             Ich freue mich, Sie auf meiner Seite begrüßen zu dürfen. 

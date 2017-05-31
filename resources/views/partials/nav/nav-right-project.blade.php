@@ -22,3 +22,5 @@
     @lang('jkniest.overview')
 
 </a> {{-- a[href="projects"] --}}
+
+@include('partials.nav.language-select')
