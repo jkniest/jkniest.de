@@ -24,6 +24,7 @@
     {{-- Fixed header with navbar --}}
     @include('partials.header', ['right' => 'partials.nav.nav-right-project'])
 
-    hey
+    {{-- Slider --}}
+    @include('partials.projects.slider')
 
 @endsection

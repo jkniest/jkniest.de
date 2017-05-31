@@ -67,3 +67,69 @@
 .fade {
   opacity: 0;
 }
+
+/**
+Media Query: Below small
+Min: 0px
+Max: 768px
+ */
+@mixin below-sm() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+/**
+Media Query: Below medium
+Min: 0px
+Max: 992px
+ */
+@mixin below-md() {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+/**
+Media Query: Below large
+Min: 0px
+Max: 1200px
+ */
+@mixin below-lg() {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+/**
+Media Query: Above extra small
+Min: 768px
+Max: ~px
+ */
+@mixin above-xs() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+/**
+Media Query: Above small
+Min: 992px
+Max: ~px
+ */
+@mixin above-sm() {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+/**
+Media Query: Above medium
+Min: 1200px
+Max: ~px
+ */
+@mixin above-md() {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

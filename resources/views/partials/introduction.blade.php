@@ -19,7 +19,7 @@
 
 <div id="introduction">
 
-    <section class="hero is-medium is-light">
+    <section class="hero is-medium is-light m1t">
 
         <div class="hero-body">
 

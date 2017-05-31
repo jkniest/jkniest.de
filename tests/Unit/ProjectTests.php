@@ -20,8 +20,6 @@ namespace Tests\Unit;
 
 use App\Projects\Project;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ProjectTests extends TestCase
 {
@@ -64,6 +62,15 @@ class ProjectTests extends TestCase
 
         $this->assertEquals($actual, $this->project->getDescription());
     }
+
+    /** @test */
+    public function it_can_return_all_media_files()
+    {
+        $this->assertCount(3, $this->project->getMedia());
+        $this->assertEquals('my-file.png', $this->project->getMedia()[0]);
+        $this->assertEquals('someother.jpg', $this->project->getMedia()[1]);
+        $this->assertEquals('http://youtube.com', $this->project->getMedia()[2]);
+    }
 }
 
 class ExampleProject extends Project
@@ -73,4 +80,10 @@ class ExampleProject extends Project
     protected $slug = 'my-slug';
 
     protected $cover = 'example.png';
+
+    protected $media = [
+        'my-file.png',
+        'someother.jpg',
+        'http://youtube.com'
+    ];
 }

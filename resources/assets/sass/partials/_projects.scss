@@ -91,3 +91,20 @@
     word-wrap: break-word;
   }
 }
+
+.swiper-container {
+  width:  100%;
+  max-height: 480px;
+  background: #d3d3d3;
+
+  // .swiper-container .swiper-wrapper
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  // .swiper-container .swiper-slide
+  .swiper-slide {
+    text-align: center;
+  }
+}

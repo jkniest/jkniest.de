@@ -22,15 +22,12 @@
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-// Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome";
-// Bulma
 @import "node_modules/bulma/bulma";
-// Variables
+@import "node_modules/swiper/dist/css/swiper";
 @import "variables";
-// Utils
 @import "partials/utils";
-// Projects
+@import "partials/introduction";
 @import "partials/projects";
 
 header {

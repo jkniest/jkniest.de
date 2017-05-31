@@ -1,0 +1,15 @@
+@include below-sm() {
+
+  #introduction {
+
+    text-align: center;
+
+    // #introduction img
+    img {
+      float:        none;
+      margin-right: 0;
+    }
+
+  }
+
+}

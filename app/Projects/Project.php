@@ -132,6 +132,19 @@ class Project
     }
 
     /**
+     * Return all media files
+     *
+     * @return array
+     */
+    public function getMedia()
+    {
+        return collect($this->media)
+            ->map(function ($file) {
+                return asset('media/' . $this->getClassName() . '/source_' . $file);
+            })->toArray();
+    }
+
+    /**
      * Create a new project based on the slug. The class will be loaded from the
      * "storage/projects.json" file.
      *
@@ -159,17 +172,8 @@ class Project
     protected function getPrefixBySize(int $size)
     {
         switch ($size) {
-            case 1024:
-                return 'big';
-
             case 512:
                 return 'featured';
-
-            case 256:
-                return 'medium';
-
-            case 128:
-                return 'small';
 
             default:
                 return 'source';

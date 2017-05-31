@@ -48,4 +48,14 @@ class ExampleProject extends Project
      * @var string
      */
     protected $cover = 'header.png';
+
+    /**
+     * All related media files
+     *
+     * @var array
+     */
+    protected $media = [
+        'header.png',
+        'myself.png'
+    ];
 }

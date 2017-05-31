@@ -132,10 +132,8 @@ class MediaCommand extends Command
             $this->comment(' -> ' . $fileName);
 
             $this->copyFile($file, $destination, $fileName);
-            $this->generateBigFile($file, $destination, $fileName);
             $this->generateFeaturedFile($file, $destination, $fileName);
-            $this->generateMediumFile($file, $destination, $fileName);
-            $this->generateSmallFile($file, $destination, $fileName);
+            $this->generateHeaderFile($file, $destination, $fileName);
         });
     }
 
@@ -151,23 +149,6 @@ class MediaCommand extends Command
     protected function copyFile(string $path, string $destination, string $fileName)
     {
         $this->files->copy($path, $destination . '/source_' . $fileName);
-    }
-
-    /**
-     * Copy a source file and resize it to the big size (1024x1024)
-     *
-     * @param string $path        The file path
-     * @param string $destination The destination folder
-     * @param string $fileName    The isolated filename
-     *
-     * @return void
-     */
-    protected function generateBigFile(string $path, string $destination, string $fileName)
-    {
-        $size = 1204;
-        $target = $destination . '/big_' . $fileName;
-
-        $this->saveThumb($path, $size, $target);
     }
 
     /**
@@ -188,7 +169,7 @@ class MediaCommand extends Command
     }
 
     /**
-     * Copy a source file and resize it to the medium size (256x256)
+     * Copy a source file and resize it to the header size (1920x480)
      *
      * @param string $path        The file path
      * @param string $destination The destination folder
@@ -196,29 +177,13 @@ class MediaCommand extends Command
      *
      * @return void
      */
-    protected function generateMediumFile(string $path, string $destination, string $fileName)
+    protected function generateHeaderFile(string $path, string $destination, string $fileName)
     {
-        $size = 256;
-        $target = $destination . '/medium_' . $fileName;
+        $width = 1518;
+        $height = 480;
+        $target = $destination . '/header_' . $fileName;
 
-        $this->saveThumb($path, $size, $target);
-    }
-
-    /**
-     * Copy a source file and resize it to the small size (128x128)
-     *
-     * @param string $path        The file path
-     * @param string $destination The destination folder
-     * @param string $fileName    The isolated filename
-     *
-     * @return void
-     */
-    protected function generateSmallFile(string $path, string $destination, string $fileName)
-    {
-        $size = 128;
-        $target = $destination . '/small_' . $fileName;
-
-        $this->saveThumb($path, $size, $target);
+        $this->saveImage($path, $width, $height, $target);
     }
 
     /**
@@ -261,6 +226,19 @@ class MediaCommand extends Command
      */
     protected function saveThumb(string $path, int $size, string $target)
     {
+        $this->saveImage($path, $size, $size, $target);
+    }
+
+    /**
+     * @param string $path
+     * @param int    $w
+     * @param int    $h
+     * @param string $target
+     *
+     * @internal param int $size
+     */
+    protected function saveImage(string $path, int $w, int $h, string $target): void
+    {
         list($width, $height) = getimagesize($path);
 
         $myImage = $this->createImageFromFile($path);
@@ -275,9 +253,8 @@ class MediaCommand extends Command
             $smallestSide = $width;
         }
 
-        $thumb = imagecreatetruecolor($size, $size);
-        imagecopyresampled($thumb, $myImage, 0, 0, $x, $y, $size, $size, $smallestSide,
-            $smallestSide);
+        $thumb = imagecreatetruecolor($w, $h);
+        imagecopyresampled($thumb, $myImage, 0, 0, $x, $y, $w, $h, $smallestSide, $smallestSide);
 
         touch($path);
         imagejpeg($thumb, $target);
