@@ -1,8 +1,11 @@
 <?php
+
+namespace App\Http\Controllers;
+
+use App\Projects\Project;
+
 /**
- * Here is where you can register web routes for your application. These
- * routes are loaded by the RouteServiceProvider within a group which
- * contains the "web" middleware group. Now create something great!
+ * This controller handles all requests related to the project detail pages
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -25,15 +28,19 @@
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
+class ProjectController extends Controller
+{
+    /**
+     * Show a specific project based on the slug
+     *
+     * @param string $slug The project slug
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(string $slug)
+    {
+        $project = Project::createFromSlug($slug);
 
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', 'HomeController@index')->name('welcome');
-
-Route::get('/lang/{code}', 'LanguageController@update')->name('lang');
-
-Route::get('/project/{slug}', 'ProjectController@show')->name('project');
-
-if (config('app.debug') == true) {
-    Route::get('decompose', '\Lubusin\Decomposer\Controllers\DecomposerController@index');
+        return view('project', compact('project'));
+    }
 }

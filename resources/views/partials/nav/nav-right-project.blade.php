@@ -17,26 +17,8 @@
      */
 @endphp
 
-<header>
+<a href="{{route('welcome')}}" class="nav-item is-tab">
 
-    <nav class="nav has-shadow">
+    @lang('jkniest.overview')
 
-        <div class="nav-left">
-
-            @include('partials.nav.nav-left')
-
-        </div> {{-- div.nav-left --}}
-
-        <div class="nav-right nav-menu">
-
-            @if(isset($right))
-                @include($right)
-            @else
-                @include('partials.nav.nav-right')
-            @endif
-
-        </div> {{-- div.nav-right --}}
-
-    </nav>
-
-</header>
+</a> {{-- a[href="projects"] --}}

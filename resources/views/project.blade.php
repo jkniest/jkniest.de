@@ -17,26 +17,13 @@
      */
 @endphp
 
-<header>
+@extends('layouts.app')
 
-    <nav class="nav has-shadow">
+@section('main')
 
-        <div class="nav-left">
+    {{-- Fixed header with navbar --}}
+    @include('partials.header', ['right' => 'partials.nav.nav-right-project'])
 
-            @include('partials.nav.nav-left')
+    hey
 
-        </div> {{-- div.nav-left --}}
-
-        <div class="nav-right nav-menu">
-
-            @if(isset($right))
-                @include($right)
-            @else
-                @include('partials.nav.nav-right')
-            @endif
-
-        </div> {{-- div.nav-right --}}
-
-    </nav>
-
-</header>
+@endsection

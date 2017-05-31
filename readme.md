@@ -25,6 +25,8 @@ Install this project by cloning this repository and install like every other lar
 - Copy `.env.example` to `.env` and modify the relevant data
 - Run `php artisan key:generate` to generate a new encryption key
 - Add a cron entry: `* * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1`
+- Compile all media files: `php artisan media`
+- Create project classloader: `php artisan projects:load`
 - Run `./vendor/bin/phpunit` to test if everything is working
 
 

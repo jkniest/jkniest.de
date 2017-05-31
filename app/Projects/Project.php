@@ -2,6 +2,8 @@
 
 namespace App\Projects;
 
+use Illuminate\Support\Facades\File;
+
 /**
  * Base class for all projects
  *
@@ -127,6 +129,24 @@ class Project
         }
 
         return 'projects.partials.en.' . $this->getClassName() . '_short';
+    }
+
+    /**
+     * Create a new project based on the slug. The class will be loaded from the
+     * "storage/projects.json" file.
+     *
+     * @param string $slug The slug of the project
+     *
+     * @return Project
+     */
+    public static function createFromSlug(string $slug)
+    {
+        $project = collect(json_decode(File::get(storage_path('projects.json'))))
+            ->first(function ($project, $key) use ($slug) {
+                return $key == $slug;
+            });
+
+        return new $project();
     }
 
     /**
