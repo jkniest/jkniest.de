@@ -5,7 +5,7 @@
         @foreach($project->getMedia() as $media)
 
             <div class="swiper-slide">
-                <img src="{{$media}}" alt="">
+                @include('partials.projects.media.'.$media->getType())
             </div> {{-- div.swiper-slide --}}
 
         @endforeach

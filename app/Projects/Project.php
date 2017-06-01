@@ -2,6 +2,7 @@
 
 namespace App\Projects;
 
+use App\Media;
 use Illuminate\Support\Facades\File;
 
 /**
@@ -102,16 +103,12 @@ class Project
     /**
      * Return the public path to the cover image
      *
-     * @param int $size The image size
-     *
      * @return string
      */
-    public function getCoverPath(int $size)
+    public function getCoverPath()
     {
-        $prefix = $this->getPrefixBySize($size);
-
         return asset(
-            'media/' . $this->getClassName() . '/' . $prefix . '_' . $this->cover
+            'media/' . $this->getClassName() . '/cover_' . $this->cover
         );
     }
 
@@ -140,7 +137,7 @@ class Project
     {
         return collect($this->media)
             ->map(function ($file) {
-                return asset('media/' . $this->getClassName() . '/source_' . $file);
+                return new Media($file, $this->getClassName());
             })->toArray();
     }
 
@@ -160,24 +157,6 @@ class Project
             });
 
         return new $project();
-    }
-
-    /**
-     * Return the prefix based on the given size
-     *
-     * @param int $size The image size
-     *
-     * @return string
-     */
-    protected function getPrefixBySize(int $size)
-    {
-        switch ($size) {
-            case 512:
-                return 'featured';
-
-            default:
-                return 'source';
-        }
     }
 
     /**

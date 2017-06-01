@@ -18,6 +18,7 @@
 
 namespace Tests\Unit;
 
+use App\Media;
 use App\Projects\Project;
 use Tests\TestCase;
 
@@ -50,9 +51,9 @@ class ProjectTests extends TestCase
     /** @test */
     public function it_can_return_the_cover_path()
     {
-        $path = asset('media/Testproject/medium_example.png');
+        $path = asset('media/Testproject/cover_example.png');
 
-        $this->assertEquals($path, $this->project->getCoverPath(256));
+        $this->assertEquals($path, $this->project->getCoverPath());
     }
 
     /** @test */
@@ -67,9 +68,7 @@ class ProjectTests extends TestCase
     public function it_can_return_all_media_files()
     {
         $this->assertCount(3, $this->project->getMedia());
-        $this->assertEquals('my-file.png', $this->project->getMedia()[0]);
-        $this->assertEquals('someother.jpg', $this->project->getMedia()[1]);
-        $this->assertEquals('http://youtube.com', $this->project->getMedia()[2]);
+        $this->assertInstanceOf(Media::class, $this->project->getMedia()[0]);
     }
 }
 

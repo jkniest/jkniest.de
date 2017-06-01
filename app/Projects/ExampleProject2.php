@@ -48,4 +48,15 @@ class ExampleProject2 extends Project
      * @var string
      */
     protected $cover = "Car-icon.png";
+
+    /**
+     * All related media files and videos
+     *
+     * @var array
+     */
+    protected $media = [
+        'https://www.youtube.com/embed/n0W33QNpPE0',
+        'Wallpaper.jpg',
+        'Car-icon.png'
+    ];
 }
