@@ -48,4 +48,40 @@ class ExampleProject extends Project
      * @var string
      */
     protected $cover = 'header.png';
+
+    /**
+     * All related media files
+     *
+     * @var array
+     */
+    protected $media = [
+        'header.png',
+        'myself.png'
+    ];
+
+    /**
+     * The meta tags
+     *
+     * @var array
+     */
+    protected $tags = [
+        'unity3d', 'processing', 'example', 'yeah'
+    ];
+
+    /**
+     * The year when this project was created
+     *
+     * @var int
+     */
+    protected $year = 2015;
+
+    /**
+     * All related meta information
+     *
+     * @var array
+     */
+    protected $meta = [
+        'framework' => 'Laravel',
+        'languages' => 'PHP, Javascript, CSS, HTML'
+    ];
 }

@@ -1,5 +1,11 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Projects\Project;
+
 /**
- * Custom variables
+ * This controller handles all requests related to the project detail pages
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -22,9 +28,19 @@
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
+class ProjectController extends Controller
+{
+    /**
+     * Show a specific project based on the slug
+     *
+     * @param string $slug The project slug
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(string $slug)
+    {
+        $project = Project::createFromSlug($slug);
 
-$one-unit: 1em;
-$unit-count: 10;
-
-// Projects
-$project-slider-height: 480px;
+        return view('project', compact('project'));
+    }
+}

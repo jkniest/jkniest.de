@@ -17,24 +17,10 @@
      */
 @endphp
 
-<a href="#projects" class="nav-item is-tab">
+<a href="{{route('welcome')}}" class="nav-item is-tab">
 
-    @lang('jkniest.projects')
+    @lang('jkniest.overview')
 
 </a> {{-- a[href="projects"] --}}
-
-<a class="nav-item is-tab">
-
-    @lang('jkniest.about-me')
-
-</a> {{-- a[href="about"] --}}
-
-
-<a class="nav-item is-tab">
-
-    @lang('jkniest.contact')
-
-</a> {{-- a[href="contact"] --}}
-
 
 @include('partials.nav.language-select')

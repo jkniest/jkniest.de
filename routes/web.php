@@ -28,13 +28,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('welcome');
 
 Route::get('/lang/{code}', 'LanguageController@update')->name('lang');
 
-Route::get('/project/{slug}', function () {
-    return 'temp';
-})->name('project');
+Route::get('/project/{slug}', 'ProjectController@show')->name('project');
 
 if (config('app.debug') == true) {
     Route::get('decompose', '\Lubusin\Decomposer\Controllers\DecomposerController@index');

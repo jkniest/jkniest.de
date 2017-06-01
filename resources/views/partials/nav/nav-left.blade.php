@@ -17,7 +17,7 @@
      */
 @endphp
 
-<a href="#" class="nav-item">
+<a href="{{route('welcome')}}" class="nav-item">
     <img src="{{asset('img/logo.png')}}" alt="This is me" class="m1r">
 
     <h1 class="title is-4">@lang('jkniest.iam') {{config('portfolio.author')}}!</h1>

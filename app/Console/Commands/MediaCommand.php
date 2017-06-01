@@ -132,10 +132,8 @@ class MediaCommand extends Command
             $this->comment(' -> ' . $fileName);
 
             $this->copyFile($file, $destination, $fileName);
-            $this->generateBigFile($file, $destination, $fileName);
-            $this->generateFeaturedFile($file, $destination, $fileName);
-            $this->generateMediumFile($file, $destination, $fileName);
-            $this->generateSmallFile($file, $destination, $fileName);
+            $this->generateCoverFile($file, $destination, $fileName);
+            $this->generateThumbFile($file, $destination, $fileName);
         });
     }
 
@@ -154,7 +152,7 @@ class MediaCommand extends Command
     }
 
     /**
-     * Copy a source file and resize it to the big size (1024x1024)
+     * Copy a source file and resize it to the cover size (512x512)
      *
      * @param string $path        The file path
      * @param string $destination The destination folder
@@ -162,33 +160,16 @@ class MediaCommand extends Command
      *
      * @return void
      */
-    protected function generateBigFile(string $path, string $destination, string $fileName)
-    {
-        $size = 1204;
-        $target = $destination . '/big_' . $fileName;
-
-        $this->saveThumb($path, $size, $target);
-    }
-
-    /**
-     * Copy a source file and resize it to the featured size (512x512)
-     *
-     * @param string $path        The file path
-     * @param string $destination The destination folder
-     * @param string $fileName    The isolated filename
-     *
-     * @return void
-     */
-    protected function generateFeaturedFile(string $path, string $destination, string $fileName)
+    protected function generateCoverFile(string $path, string $destination, string $fileName)
     {
         $size = 512;
-        $target = $destination . '/featured_' . $fileName;
+        $target = $destination . '/cover_' . $fileName;
 
         $this->saveThumb($path, $size, $target);
     }
 
     /**
-     * Copy a source file and resize it to the medium size (256x256)
+     * Copy a source file and resize it to the cover size (480x480)
      *
      * @param string $path        The file path
      * @param string $destination The destination folder
@@ -196,30 +177,14 @@ class MediaCommand extends Command
      *
      * @return void
      */
-    protected function generateMediumFile(string $path, string $destination, string $fileName)
+    protected function generateThumbFile(string $path, string $destination, string $fileName)
     {
-        $size = 256;
-        $target = $destination . '/medium_' . $fileName;
+        $size = 480;
+        $target = $destination . '/thumb_' . $fileName;
 
         $this->saveThumb($path, $size, $target);
     }
 
-    /**
-     * Copy a source file and resize it to the small size (128x128)
-     *
-     * @param string $path        The file path
-     * @param string $destination The destination folder
-     * @param string $fileName    The isolated filename
-     *
-     * @return void
-     */
-    protected function generateSmallFile(string $path, string $destination, string $fileName)
-    {
-        $size = 128;
-        $target = $destination . '/small_' . $fileName;
-
-        $this->saveThumb($path, $size, $target);
-    }
 
     /**
      * Create a image object from any filetype
@@ -276,8 +241,7 @@ class MediaCommand extends Command
         }
 
         $thumb = imagecreatetruecolor($size, $size);
-        imagecopyresampled($thumb, $myImage, 0, 0, $x, $y, $size, $size, $smallestSide,
-            $smallestSide);
+        imagecopyresampled($thumb, $myImage, 0, 0, $x, $y, $size, $size, $smallestSide, $smallestSide);
 
         touch($path);
         imagejpeg($thumb, $target);

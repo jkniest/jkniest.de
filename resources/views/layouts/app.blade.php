@@ -21,7 +21,7 @@
 <head>
     <title>{{config('app.name')}}</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
 </head>
@@ -29,4 +29,6 @@
 @yield('main')
 
 <script src="{{mix('js/app.js')}}"></script>
+@stack('scripts')
+
 </body>

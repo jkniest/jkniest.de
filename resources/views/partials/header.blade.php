@@ -29,7 +29,11 @@
 
         <div class="nav-right nav-menu">
 
-            @include('partials.nav.nav-right')
+            @if(isset($right))
+                @include($right)
+            @else
+                @include('partials.nav.nav-right')
+            @endif
 
         </div> {{-- div.nav-right --}}
 

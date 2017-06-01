@@ -91,3 +91,62 @@
     word-wrap: break-word;
   }
 }
+
+#gallery-top {
+  width:      100%;
+  max-height: $project-slider-height;
+
+  background: #d3d3d3;
+
+  // #gallery-top .swiper-wrapper
+  .swiper-wrapper {
+    display:     flex;
+    align-items: center;
+    max-height:  $project-slider-height;
+  }
+
+  // #gallery-top .swiper-slide
+  .swiper-slide {
+    text-align: center;
+  }
+}
+
+#gallery-thumbs {
+  height:     120px;
+  box-sizing: border-box;
+  padding:    10px 0;
+  background: #d3d3d3;
+
+  // #gallery-thumbs .swiper-slide
+  .swiper-slide {
+    width:           170px;
+    height:          100%;
+
+    opacity:         0.4;
+    background-size: cover;
+  }
+
+  // #gallery-thumbs .swiper-slide-active
+  .swiper-slide-active {
+    opacity: 1;
+  }
+}
+
+#project-main {
+
+  @include below-md() {
+    padding-left:  10px;
+    padding-right: 10px;
+  }
+
+  // #project-main .project-info-left
+  .project-info-left {
+    flex: 1;
+  }
+
+  // #project-main .project-info-right
+  .project-info-right {
+    margin-left: 10px;
+  }
+
+}

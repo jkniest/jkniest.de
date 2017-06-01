@@ -2,6 +2,9 @@
 
 namespace App\Projects;
 
+use App\Media;
+use Illuminate\Support\Facades\File;
+
 /**
  * Base class for all projects
  *
@@ -100,16 +103,12 @@ class Project
     /**
      * Return the public path to the cover image
      *
-     * @param int $size The image size
-     *
      * @return string
      */
-    public function getCoverPath(int $size)
+    public function getCoverPath()
     {
-        $prefix = $this->getPrefixBySize($size);
-
         return asset(
-            'media/' . $this->getClassName() . '/' . $prefix . '_' . $this->cover
+            'media/' . $this->getClassName() . '/cover_' . $this->cover
         );
     }
 
@@ -130,30 +129,80 @@ class Project
     }
 
     /**
-     * Return the prefix based on the given size
+     * Return all media files
      *
-     * @param int $size The image size
+     * @return array
+     */
+    public function getMedia()
+    {
+        return collect($this->media)
+            ->map(function ($file) {
+                return new Media($file, $this->getClassName());
+            })->toArray();
+    }
+
+    /**
+     * Return all meta tags
+     *
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Return the name of the details view
      *
      * @return string
      */
-    protected function getPrefixBySize(int $size)
+    public function getView()
     {
-        switch ($size) {
-            case 1024:
-                return 'big';
+        $view = 'projects.partials.' . app()->getLocale() . '.' . $this->getClassName();
 
-            case 512:
-                return 'featured';
-
-            case 256:
-                return 'medium';
-
-            case 128:
-                return 'small';
-
-            default:
-                return 'source';
+        if (view()->exists($view)) {
+            return $view;
         }
+
+        return 'projects.partials.en.' . $this->getClassName();
+    }
+
+    /**
+     * Return the year when this project was created
+     *
+     * @return int
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Return all meta information
+     *
+     * @return array
+     */
+    public function getMeta()
+    {
+        return $this->meta ?: [];
+    }
+
+    /**
+     * Create a new project based on the slug. The class will be loaded from the
+     * "storage/projects.json" file.
+     *
+     * @param string $slug The slug of the project
+     *
+     * @return Project
+     */
+    public static function createFromSlug(string $slug)
+    {
+        $project = collect(json_decode(File::get(storage_path('projects.json'))))
+            ->first(function ($project, $key) use ($slug) {
+                return $key == $slug;
+            });
+
+        return new $project();
     }
 
     /**

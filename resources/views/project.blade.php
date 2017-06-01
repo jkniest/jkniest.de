@@ -17,24 +17,17 @@
      */
 @endphp
 
-<a href="#projects" class="nav-item is-tab">
+@extends('layouts.app')
 
-    @lang('jkniest.projects')
+@section('main')
 
-</a> {{-- a[href="projects"] --}}
+    {{-- Fixed header with navbar --}}
+    @include('partials.header', ['right' => 'partials.nav.nav-right-project'])
 
-<a class="nav-item is-tab">
+    {{-- Slider --}}
+    @include('partials.projects.slider')
 
-    @lang('jkniest.about-me')
+    {{-- Main --}}
+    @include('partials.projects.main')
 
-</a> {{-- a[href="about"] --}}
-
-
-<a class="nav-item is-tab">
-
-    @lang('jkniest.contact')
-
-</a> {{-- a[href="contact"] --}}
-
-
-@include('partials.nav.language-select')
+@endsection
