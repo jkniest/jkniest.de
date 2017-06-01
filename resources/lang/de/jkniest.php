@@ -16,6 +16,9 @@ return [
 
     'overview' => 'Zurück zur Übersicht',
 
+    'project-info' => 'Projekt Informationen',
+    'year'         => 'Erscheinungsjahr',
+
     'introduction' => [
         'welcome' => '
             Ich freue mich, Sie auf meiner Seite begrüßen zu dürfen. 
@@ -31,5 +34,10 @@ return [
             In meinem Beruf arbeite ich meistens mit der GameEngine Unity3D und 
             dem CMS WordPress. In meiner Freizeit allerdings entwickle ich meistens 
             mit dem Open-Source Framework Laravel.'
+    ],
+
+    'meta' => [
+        'framework' => 'Framework',
+        'languages' => 'Sprachen'
     ]
 ];

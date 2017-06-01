@@ -16,6 +16,9 @@ return [
 
     'overview' => 'Back to overview',
 
+    'project-info' => 'Project information',
+    'year'         => 'Created',
+
     'introduction' => [
         'welcome' => '
             I am pleased to welcome you on my side. My name is Jordan Kniest and I am currently
@@ -28,5 +31,10 @@ return [
         'tools' => '
             In my job, I work mostly with the Unity3D game engine and the CMS WordPress.
             In my free time, however, I mostly develop with the open-source framework Laravel.'
+    ],
+
+    'meta' => [
+        'framework' => 'Framework',
+        'languages' => 'Languages'
     ]
 ];

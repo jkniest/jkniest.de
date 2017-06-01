@@ -168,6 +168,26 @@ class Project
     }
 
     /**
+     * Return the year when this project was created
+     *
+     * @return int
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Return all meta information
+     *
+     * @return array
+     */
+    public function getMeta()
+    {
+        return $this->meta ?: [];
+    }
+
+    /**
      * Create a new project based on the slug. The class will be loaded from the
      * "storage/projects.json" file.
      *

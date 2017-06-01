@@ -67,4 +67,21 @@ class ExampleProject extends Project
     protected $tags = [
         'unity3d', 'processing', 'example', 'yeah'
     ];
+
+    /**
+     * The year when this project was created
+     *
+     * @var int
+     */
+    protected $year = 2015;
+
+    /**
+     * All related meta information
+     *
+     * @var array
+     */
+    protected $meta = [
+        'framework' => 'Laravel',
+        'languages' => 'PHP, Javascript, CSS, HTML'
+    ];
 }

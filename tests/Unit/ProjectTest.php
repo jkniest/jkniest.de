@@ -87,6 +87,21 @@ class ProjectTests extends TestCase
 
         $this->assertEquals($actual, $this->project->getView());
     }
+
+    /** @test */
+    public function it_can_return_the_year()
+    {
+        $this->assertEquals(1999, $this->project->getYear());
+    }
+
+    /** @test */
+    public function it_can_return_meta_information()
+    {
+        $this->assertEquals([
+            'Sample'  => 'This is nice',
+            'Another' => 'Oh, ok'
+        ], $this->project->getMeta());
+    }
 }
 
 class ExampleProject extends Project
@@ -105,5 +120,12 @@ class ExampleProject extends Project
 
     protected $tags = [
         'unity', 'example', 'software'
+    ];
+
+    protected $year = 1999;
+
+    protected $meta = [
+        'Sample'  => 'This is nice',
+        'Another' => 'Oh, ok'
     ];
 }

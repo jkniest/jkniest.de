@@ -1,4 +1,4 @@
-<div class="container m4t">
+<div class="container m4t" id="project-main">
 
     <div class="columns">
 
@@ -15,7 +15,9 @@
         </div> {{-- div.column.is-three-quarters --}}
 
         <div class="column">
-            right
+
+            @include('partials.projects.details')
+
         </div> {{-- div.column --}}
 
     </div> {{-- div.columns --}}
