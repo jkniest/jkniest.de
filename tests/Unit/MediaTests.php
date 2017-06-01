@@ -48,4 +48,21 @@ class MediaTests extends TestCase
 
         $this->assertEquals($actual, $this->media->getImagePath());
     }
+
+    /** @test */
+    public function it_can_return_the_thumbnail_of_an_image()
+    {
+        $actual = asset('media/TestProject/thumb_example.png');
+
+        $this->assertEquals($actual, $this->media->getThumb());
+    }
+
+    /** @test */
+    public function it_can_return_the_thumbnail_of_a_youtube_video()
+    {
+        $media = new Media('https://www.youtube.com/embed/n0W33QNpPE0', 'TestProject');
+        $actual = 'http://img.youtube.com/vi/n0W33QNpPE0/0.jpg';
+
+        $this->assertEquals($actual, $media->getThumb());
+    }
 }

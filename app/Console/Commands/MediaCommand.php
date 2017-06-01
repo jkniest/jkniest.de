@@ -133,6 +133,7 @@ class MediaCommand extends Command
 
             $this->copyFile($file, $destination, $fileName);
             $this->generateCoverFile($file, $destination, $fileName);
+            $this->generateThumbFile($file, $destination, $fileName);
         });
     }
 
@@ -151,7 +152,7 @@ class MediaCommand extends Command
     }
 
     /**
-     * Copy a source file and resize it to the featured size (512x512)
+     * Copy a source file and resize it to the cover size (512x512)
      *
      * @param string $path        The file path
      * @param string $destination The destination folder
@@ -166,6 +167,24 @@ class MediaCommand extends Command
 
         $this->saveThumb($path, $size, $target);
     }
+
+    /**
+     * Copy a source file and resize it to the cover size (480x480)
+     *
+     * @param string $path        The file path
+     * @param string $destination The destination folder
+     * @param string $fileName    The isolated filename
+     *
+     * @return void
+     */
+    protected function generateThumbFile(string $path, string $destination, string $fileName)
+    {
+        $size = 480;
+        $target = $destination . '/thumb_' . $fileName;
+
+        $this->saveThumb($path, $size, $target);
+    }
+
 
     /**
      * Create a image object from any filetype

@@ -50,6 +50,13 @@ class Media
     private $folder;
 
     /**
+     * The internal video code (example youtube)
+     *
+     * @var string
+     */
+    private $code;
+
+    /**
      * Media constructor.
      *
      * @param string $source The source path (youtube, image name, etc..)
@@ -93,6 +100,20 @@ class Media
     }
 
     /**
+     * Get the image path to the thumbnail
+     *
+     * @return string
+     */
+    public function getThumb()
+    {
+        if ($this->type == 'image') {
+            return asset('media/' . $this->folder . '/thumb_' . $this->source);
+        } else if ($this->type == 'youtube') {
+            return 'http://img.youtube.com/vi/'. $this->code .'/0.jpg';
+        }
+    }
+
+    /**
      * Set the type based on the source string.
      */
     private function setType()
@@ -102,6 +123,7 @@ class Media
 
         if (count($matches) > 0) {
             $this->type = 'youtube';
+            $this->code = $matches[0][2];
         } else {
             $this->type = 'image';
         }
