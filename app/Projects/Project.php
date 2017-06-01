@@ -142,6 +142,16 @@ class Project
     }
 
     /**
+     * Return all meta tags
+     *
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
      * Create a new project based on the slug. The class will be loaded from the
      * "storage/projects.json" file.
      *

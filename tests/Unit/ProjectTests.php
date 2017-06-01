@@ -70,6 +70,15 @@ class ProjectTests extends TestCase
         $this->assertCount(3, $this->project->getMedia());
         $this->assertInstanceOf(Media::class, $this->project->getMedia()[0]);
     }
+
+    /** @test */
+    public function it_can_return_all_tags()
+    {
+        $this->assertCount(3, $this->project->getTags());
+        $this->assertEquals('unity', $this->project->getTags()[0]);
+        $this->assertEquals('example', $this->project->getTags()[1]);
+        $this->assertEquals('software', $this->project->getTags()[2]);
+    }
 }
 
 class ExampleProject extends Project
@@ -84,5 +93,9 @@ class ExampleProject extends Project
         'my-file.png',
         'someother.jpg',
         'http://youtube.com'
+    ];
+
+    protected $tags = [
+        'unity', 'example', 'software'
     ];
 }

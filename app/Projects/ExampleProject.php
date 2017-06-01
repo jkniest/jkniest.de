@@ -58,4 +58,13 @@ class ExampleProject extends Project
         'header.png',
         'myself.png'
     ];
+
+    /**
+     * The meta tags
+     *
+     * @var array
+     */
+    protected $tags = [
+        'unity3d', 'processing', 'example', 'yeah'
+    ];
 }

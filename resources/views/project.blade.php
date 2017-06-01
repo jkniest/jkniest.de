@@ -27,4 +27,7 @@
     {{-- Slider --}}
     @include('partials.projects.slider')
 
+    {{-- Main --}}
+    @include('partials.projects.main')
+
 @endsection
