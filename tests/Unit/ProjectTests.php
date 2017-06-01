@@ -79,6 +79,14 @@ class ProjectTests extends TestCase
         $this->assertEquals('example', $this->project->getTags()[1]);
         $this->assertEquals('software', $this->project->getTags()[2]);
     }
+
+    /** @test */
+    public function it_can_return_the_view()
+    {
+        $actual = 'projects.partials.en.Testproject';
+
+        $this->assertEquals($actual, $this->project->getView());
+    }
 }
 
 class ExampleProject extends Project

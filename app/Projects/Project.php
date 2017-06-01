@@ -152,6 +152,22 @@ class Project
     }
 
     /**
+     * Return the name of the details view
+     *
+     * @return string
+     */
+    public function getView()
+    {
+        $view = 'projects.partials.' . app()->getLocale() . '.' . $this->getClassName();
+
+        if (view()->exists($view)) {
+            return $view;
+        }
+
+        return 'projects.partials.en.' . $this->getClassName();
+    }
+
+    /**
      * Create a new project based on the slug. The class will be loaded from the
      * "storage/projects.json" file.
      *

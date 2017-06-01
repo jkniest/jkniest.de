@@ -8,6 +8,10 @@
 
             @include('partials.projects.tags')
 
+            <div class="m2t">
+                @include($project->getView())
+            </div>
+
         </div> {{-- div.column.is-three-quarters --}}
 
         <div class="column">
