@@ -19,6 +19,8 @@ return [
     'project-info' => 'Project information',
     'year'         => 'Created',
 
+    'get-in-touch' => 'Get in touch',
+
     'introduction' => [
         'welcome' => '
             I am pleased to welcome you on my side. My name is Jordan Kniest and I am currently
@@ -31,6 +33,13 @@ return [
         'tools' => '
             In my job, I work mostly with the Unity3D game engine and the CMS WordPress.
             In my free time, however, I mostly develop with the open-source framework Laravel.'
+    ],
+
+    'about' => [
+        'interest'   => 'Did you get interested in my work, or do you want to talk with me?',
+        'contact-me' => 'Then just contact me:',
+        'active'     => 'Here are some platforms where I am active.',
+        'happy'      => 'I am looking forward to hearing from you!'
     ],
 
     'meta' => [

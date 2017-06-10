@@ -17,6 +17,8 @@
      */
 @endphp
 
+<a name="about-me"></a>
+
 <div id="introduction">
 
     <section class="hero is-medium is-light m1t">
@@ -26,43 +28,38 @@
             <div class="container">
 
                 <div class="columns">
+
                     <div class="column">
 
                         <img src="{{asset('img/logo.png')}}" alt="" width="180px" class="is-pulled-left m3r">
 
                         <div class="m3t">
+
                             <h1 class="title">
                                 @lang('jkniest.welcome')!
-                            </h1>
+                            </h1> {{-- h1.title --}}
 
                             <h2 class="subtitle">
                                 @lang('jkniest.short-introduction')
-                            </h2>
-                        </div>
-                    </div>
+                            </h2> {{-- h2.subtitle --}}
+
+                        </div> {{-- div.m3t --}}
+
+                    </div> {{-- div.column --}}
 
                     <div class="column">
 
                         <div class="m3t">
-                            <p>
-                                @lang('jkniest.introduction.welcome')
-                            </p>
 
-                            <br>
+                            <p>@lang('jkniest.introduction.welcome')</p><br>
+                            <p>@lang('jkniest.introduction.beginning')</p><br>
+                            <p>@lang('jkniest.introduction.tools')</p>
 
-                            <p>
-                                @lang('jkniest.introduction.beginning')
-                            </p>
+                        </div> {{-- div.m3t --}}
 
-                            <br>
+                    </div> {{-- div.column --}}
 
-                            <p>
-                                @lang('jkniest.introduction.tools')
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
+                </div> {{-- div.columns --}}
 
             </div> {{-- div.container --}}
 

@@ -19,6 +19,8 @@ return [
     'project-info' => 'Projekt Informationen',
     'year'         => 'Erscheinungsjahr',
 
+    'get-in-touch' => 'Kontakt aufnehmen',
+
     'introduction' => [
         'welcome' => '
             Ich freue mich, Sie auf meiner Seite begrüßen zu dürfen. 
@@ -34,6 +36,18 @@ return [
             In meinem Beruf arbeite ich meistens mit der GameEngine Unity3D und 
             dem CMS WordPress. In meiner Freizeit allerdings entwickle ich meistens 
             mit dem Open-Source Framework Laravel.'
+    ],
+
+    'about' => [
+        'interest' => '
+            Haben Sie Interesse an meiner Arbeit bekommen, oder möchsten Sie sich mit mir
+            austauschen?',
+
+        'contact-me' => 'Dann kontaktieren Sie mich doch einfach:',
+
+        'active' => 'Folgend finden Sie einige Platformenen auf denen ich aktiv bin.',
+
+        'happy' => 'Ich freue mich auf Ihre Nachricht!'
     ],
 
     'meta' => [
