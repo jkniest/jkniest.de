@@ -30,4 +30,7 @@
     {{-- Project cards --}}
     @include('partials.projects')
 
+    {{-- About me / Contact me --}}
+    @include('partials.about')
+
 @endsection

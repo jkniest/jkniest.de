@@ -58,4 +58,19 @@ return [
 
     'author' => env('AUTHOR', 'Jordan'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Contact links
+    |--------------------------------------------------------------------------
+    |
+    | This array contains the links for the social media platforms
+    */
+
+    'links' => [
+        'mail'     => env('LINK_MAIL'),
+        'twitter'  => env('LINK_TWITTER'),
+        'xing'     => env('LINK_XING'),
+        'linkedin' => env('LINK_LINKEDIN'),
+    ]
+
 ];

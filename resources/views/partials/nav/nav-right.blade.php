@@ -17,20 +17,19 @@
      */
 @endphp
 
+<a href="#about-me" class="nav-item is-tab">
+
+    @lang('jkniest.about-me')
+
+</a> {{-- a[href="about"] --}}
+
 <a href="#projects" class="nav-item is-tab">
 
     @lang('jkniest.projects')
 
 </a> {{-- a[href="projects"] --}}
 
-<a class="nav-item is-tab">
-
-    @lang('jkniest.about-me')
-
-</a> {{-- a[href="about"] --}}
-
-
-<a class="nav-item is-tab">
+<a href="#contact" class="nav-item is-tab">
 
     @lang('jkniest.contact')
 
