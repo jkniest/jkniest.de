@@ -66,11 +66,19 @@ return [
     | This array contains the links for the social media platforms
     */
 
-    'links' => [
+    'links'      => [
         'mail'     => env('LINK_MAIL'),
         'twitter'  => env('LINK_TWITTER'),
         'xing'     => env('LINK_XING'),
         'linkedin' => env('LINK_LINKEDIN'),
-    ]
+    ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Cache time
+    |--------------------------------------------------------------------------
+    |
+    | The amount of minutes that the html cache files are existing
+    */
+    'cache-time' => 1440
 ];

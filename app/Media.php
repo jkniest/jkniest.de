@@ -106,11 +106,11 @@ class Media
      */
     public function getThumb()
     {
-        if ($this->type == 'image') {
-            return asset('media/' . $this->folder . '/thumb_' . $this->source);
-        } else if ($this->type == 'youtube') {
-            return 'http://img.youtube.com/vi/'. $this->code .'/0.jpg';
+        if ($this->type == 'youtube') {
+            return 'http://img.youtube.com/vi/' . $this->code . '/0.jpg';
         }
+
+        return asset('media/' . $this->folder . '/thumb_' . $this->source);
     }
 
     /**
