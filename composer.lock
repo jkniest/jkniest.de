@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "46d1945c60580daeccadd0a8e0aef2e9",
+    "content-hash": "387ad9323746ccccd073643881364dbf",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -209,42 +209,6 @@
                 "parser"
             ],
             "time": "2017-03-29T16:04:15+00:00"
-        },
-        {
-            "name": "garygreen/pretty-routes",
-            "version": "0.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/garygreen/pretty-routes.git",
-                "reference": "110e60ca98124f536d0072a84dadae8d59bd39cf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/garygreen/pretty-routes/zipball/110e60ca98124f536d0072a84dadae8d59bd39cf",
-                "reference": "110e60ca98124f536d0072a84dadae8d59bd39cf",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PrettyRoutes\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gary Green",
-                    "email": "holegary@gmail.com"
-                }
-            ],
-            "description": "Pretty routes for Laravel 5.",
-            "time": "2017-01-18T10:03:55+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -643,54 +607,6 @@
                 "storage"
             ],
             "time": "2017-04-28T10:15:08+00:00"
-        },
-        {
-            "name": "lubusin/laravel-decomposer",
-            "version": "v1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lubusIN/laravel-decomposer.git",
-                "reference": "7033c616463c7fae40cdfe46bbbee211cd6cdb0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lubusIN/laravel-decomposer/zipball/7033c616463c7fae40cdfe46bbbee211cd6cdb0d",
-                "reference": "7033c616463c7fae40cdfe46bbbee211cd6cdb0d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^5.0",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "illuminate/http": "^5.0",
-                "illuminate/routing": "^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lubusin\\Decomposer\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lubusin\\Decomposer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Harish Toshniwal",
-                    "email": "harish@lubus.in"
-                }
-            ],
-            "description": "A Laravel package to decompose your installed packages, their dependencies, your app & server environment",
-            "time": "2017-06-05T09:31:23+00:00"
         },
         {
             "name": "maximebf/debugbar",

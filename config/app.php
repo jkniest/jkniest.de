@@ -168,8 +168,6 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        Lubusin\Decomposer\DecomposerServiceProvider::class,
-        PrettyRoutes\ServiceProvider::class,
         jkniest\ForceHttps\ForceHttpsServiceProvider::class,
         SquareBoat\Sneaker\SneakerServiceProvider::class,
 

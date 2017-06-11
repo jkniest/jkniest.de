@@ -7,11 +7,9 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-debugbar": "^2.3",
-        "garygreen/pretty-routes": "^0.0.6",
         "jkniest/force-https": "^1.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "lubusin/laravel-decomposer": "^1.2",
         "squareboat/sneaker": "^2.0"
     },
     "require-dev": {
