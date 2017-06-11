@@ -1,8 +1,12 @@
 <?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Support\Facades\Cache;
+
 /**
- * Here is where you can register web routes for your application. These
- * routes are loaded by the RouteServiceProvider within a group which
- * contains the "web" middleware group. Now create something great!
+ * A simple middleware to cache the html responses and return them
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -25,12 +29,28 @@
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
+class HtmlCache
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
+     *
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        $key = $request->url() . '_' . app()->getLocale();
 
-use Illuminate\Support\Facades\Route;
+        if (Cache::has($key)) {
+            return response(Cache::get($key));
+        }
 
-Route::group(['middleware' => 'htmlcache'], function () {
-    Route::get('/', 'HomeController@index')->name('welcome');
-    Route::get('/project/{slug}', 'ProjectController@show')->name('project');
-});
+        $response = $next($request);
 
-Route::get('/lang/{code}', 'LanguageController@update')->name('lang');
+        Cache::put($key, $response->getContent(), config('portfolio.cache-time'));
+
+        return $response;
+    }
+}

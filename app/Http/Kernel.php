@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\HtmlCache;
 use App\Http\Middleware\SetLanguage;
 use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Auth\Middleware\Authenticate;
@@ -94,5 +95,6 @@ class Kernel extends HttpKernel
         'bindings'   => SubstituteBindings::class,
         'can'        => Authorize::class,
         'throttle'   => ThrottleRequests::class,
+        'htmlcache'  => HtmlCache::class
     ];
 }
