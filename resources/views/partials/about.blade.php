@@ -70,6 +70,15 @@
 
                             @endif {{-- endif - linkedin --}}
 
+                            {{-- Github --}}
+                            @if (config('portfolio.links.github'))
+
+                                @component('partials.about.button', ['icon' => 'github', 'name' => 'Github'])
+                                    {{config('portfolio.links.github')}}
+                                @endcomponent
+
+                            @endif {{-- endif - linkedin --}}
+
                         </div> {{-- div.buttons --}}
 
                     </div> {{-- div.column --}}

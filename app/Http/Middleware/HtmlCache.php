@@ -41,16 +41,20 @@ class HtmlCache
      */
     public function handle($request, Closure $next)
     {
-        $key = $request->url() . '_' . app()->getLocale();
+        if (config('portfolio.cache-enabled')) {
+            $key = $request->url() . '_' . app()->getLocale();
 
-        if (Cache::has($key)) {
-            return response(Cache::get($key));
+            if (Cache::has($key)) {
+                return response(Cache::get($key));
+            }
+
+            $response = $next($request);
+
+            Cache::put($key, $response->getContent(), config('portfolio.cache-time'));
+
+            return $response;
         }
 
-        $response = $next($request);
-
-        Cache::put($key, $response->getContent(), config('portfolio.cache-time'));
-
-        return $response;
+        return $next($request);
     }
 }

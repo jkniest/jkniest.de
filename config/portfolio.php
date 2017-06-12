@@ -66,11 +66,12 @@ return [
     | This array contains the links for the social media platforms
     */
 
-    'links'      => [
-        'mail'     => env('LINK_MAIL'),
-        'twitter'  => env('LINK_TWITTER'),
-        'xing'     => env('LINK_XING'),
-        'linkedin' => env('LINK_LINKEDIN'),
+    'links'         => [
+        'mail'     => env('LINK_MAIL', 'mailto:contact@jkniest.de'),
+        'twitter'  => env('LINK_TWITTER', 'https://twitter.com/j_kniest'),
+        'xing'     => env('LINK_XING', 'https://www.xing.com/profile/Jordan_Kniest'),
+        'linkedin' => env('LINK_LINKEDIN', 'https://www.linkedin.com/in/jordan-kniest-357679144'),
+        'github'   => env('LINK_GITHUB', 'https://github.com/jkniest')
     ],
 
     /*
@@ -80,5 +81,14 @@ return [
     |
     | The amount of minutes that the html cache files are existing
     */
-    'cache-time' => 1440
+    'cache-time'    => 1440,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cache enabled
+    |--------------------------------------------------------------------------
+    |
+    | Is the html cache currently enabled?
+    */
+    'cache-enabled' => env('CACHE_ENABLED', true),
 ];
