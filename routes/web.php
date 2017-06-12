@@ -29,7 +29,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'htmlcache'], function () {
-    Route::get('/', 'HomeController@index')->name('welcome');
+    Route::get('/', 'PageController@index')->name('welcome');
+
+    Route::get('/imprint', 'PageController@imprint')->name('imprint');
+    Route::get('/privacy', 'PageController@privacy')->name('privacy');
+
     Route::get('/project/{slug}', 'ProjectController@show')->name('project');
 });
 

@@ -17,7 +17,7 @@
      */
 @endphp
 
-        <!DOCTYPE html>
+    <!DOCTYPE html>
 <head>
     <title>{{config('app.name')}}</title>
     <meta charset="UTF-8">
@@ -27,6 +27,8 @@
 </head>
 <body>
 @yield('main')
+
+@include('partials.footer')
 
 <script src="{{mix('js/app.js')}}"></script>
 @stack('scripts')
