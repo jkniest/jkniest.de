@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 /**
- * Handle the request for the index page
+ * Handles all non-resource page requests like the front page or the impress
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -26,10 +26,10 @@ namespace App\Http\Controllers;
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class HomeController extends Controller
+class PageController extends Controller
 {
     /**
-     * Render the front page
+     * The front page
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

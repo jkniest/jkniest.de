@@ -21,6 +21,11 @@ return [
 
     'get-in-touch' => 'Kontakt aufnehmen',
 
+    'by'       => 'von',
+    'licensed' => 'Quellcode und Inhalte lizensiert unter der',
+    'imprint'  => 'Impressum',
+    'privacy'  => 'Datenschutz Informationen',
+
     'introduction' => [
         'welcome' => '
             Ich freue mich, Sie auf meiner Seite begrüßen zu dürfen. 

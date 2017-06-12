@@ -21,6 +21,11 @@ return [
 
     'get-in-touch' => 'Get in touch',
 
+    'by'       => 'by',
+    'licensed' => 'Source code and content is licensed',
+    'imprint'  => 'Imprint',
+    'privacy'  => 'Privacy information',
+
     'introduction' => [
         'welcome' => '
             I am pleased to welcome you on my side. My name is Jordan Kniest and I am currently
