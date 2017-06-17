@@ -27,7 +27,13 @@
 
         </div> {{-- div.nav-left --}}
 
-        <div class="nav-right nav-menu">
+        <span class="nav-toggle" onclick="$('#nav-right').toggleClass('is-active')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+
+        <div class="nav-right nav-menu" id="nav-right">
 
             @if(isset($right))
                 @include($right)
