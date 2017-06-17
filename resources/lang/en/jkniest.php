@@ -57,6 +57,7 @@ return [
 
     'meta' => [
         'framework' => 'Framework',
-        'languages' => 'Languages'
+        'languages' => 'Languages',
+        'license'   => 'License'
     ]
 ];

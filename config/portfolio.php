@@ -35,17 +35,7 @@ return [
     */
 
     'projects' => [
-        \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject2::class,
-        \App\Projects\ExampleProject::class
+        \App\Projects\jkniestde::class
     ],
 
     /*

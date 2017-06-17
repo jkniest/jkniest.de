@@ -17,4 +17,4 @@
      */
 @endphp
 
-This is a new project.
+A portfolio to introduce myself and my projects.
