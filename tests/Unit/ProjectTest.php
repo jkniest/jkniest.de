@@ -1,5 +1,14 @@
 <?php
+
+namespace Tests\Unit;
+
+use App\Media;
+use App\Projects\Project;
+use Tests\TestCase;
+
 /**
+ * Test all methods related to the project class
+ *
  * Copyright (C) 2017 Jordan Kniest
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,14 +23,13 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @category Testing
+ * @package  JKniest.de
+ * @author   Jordan Kniest <contact@jkniest.de>
+ * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ * @link     https://jkniest.de
  */
-
-namespace Tests\Unit;
-
-use App\Media;
-use App\Projects\Project;
-use Tests\TestCase;
-
 class ProjectTests extends TestCase
 {
     /**

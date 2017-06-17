@@ -1,5 +1,15 @@
 <?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
 /**
+ * Test all pages (their response status)
+ *
  * Copyright (C) 2017 Jordan Kniest
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,25 +24,27 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @category Testing
+ * @package  JKniest.de
+ * @author   Jordan Kniest <contact@jkniest.de>
+ * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ * @link     https://jkniest.de
  */
-
-namespace Tests\Feature;
-
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-
-class ExampleTest extends TestCase
+class PagesTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
+    /** @test */
+    public function index()
     {
         $response = $this->get('/');
+
+        $response->assertStatus(200);
+    }
+
+    /** @test */
+    public function imprint()
+    {
+        $response = $this->get('/imprint');
 
         $response->assertStatus(200);
     }

@@ -41,4 +41,14 @@ class PageController extends Controller
 
         return view('welcome', compact('projects'));
     }
+
+    /**
+     * The imprint page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function imprint()
+    {
+        return view('imprint');
+    }
 }
