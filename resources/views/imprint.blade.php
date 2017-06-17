@@ -14,35 +14,18 @@
      *
      * You should have received a copy of the GNU Affero General Public License
      * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+     *
      */
 @endphp
 
-<header>
+@extends('layouts.app')
 
-    <nav class="nav has-shadow">
+@section('main')
 
-        <div class="nav-left">
+    {{-- Fixed header with navbar --}}
+    @include('partials.header', ['right' => 'partials.nav.nav-right-project'])
 
-            @include('partials.nav.nav-left')
+    {{-- Content --}}
+    @include('partials.imprint')
 
-        </div> {{-- div.nav-left --}}
-
-        <span class="nav-toggle" onclick="$('#nav-right').toggleClass('is-active')">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-
-        <div class="nav-right nav-menu" id="nav-right">
-
-            @if(isset($right))
-                @include($right)
-            @else
-                @include('partials.nav.nav-right')
-            @endif
-
-        </div> {{-- div.nav-right --}}
-
-    </nav>
-
-</header>
+@endsection

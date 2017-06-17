@@ -1,9 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 /**
- * Handles all non-resource page requests like the front page or the impress
+ * Test all pages (their response status)
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -20,45 +25,35 @@ namespace App\Http\Controllers;
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @category Core
+ * @category Testing
  * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class PageController extends Controller
+class PagesTest extends TestCase
 {
-    /**
-     * The front page
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    /** @test */
     public function index()
     {
-        $projects = collect(config('portfolio.projects'))->map(function ($name) {
-            return new $name();
-        });
+        $response = $this->get('/');
 
-        return view('welcome', compact('projects'));
+        $response->assertStatus(200);
     }
 
-    /**
-     * The imprint page
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    /** @test */
     public function imprint()
     {
-        return view('imprint');
+        $response = $this->get('/imprint');
+
+        $response->assertStatus(200);
     }
 
-    /**
-     * The privacy information page
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    /** @test */
     public function privacy()
     {
-        return view('privacy');
+        $response = $this->get('/privacy');
+
+        $response->assertStatus(200);
     }
 }
