@@ -41,6 +41,10 @@ class ProjectController extends Controller
     {
         $project = Project::createFromSlug($slug);
 
+        if ($project == null) {
+            return abort(404);
+        }
+
         return view('project', compact('project'));
     }
 }

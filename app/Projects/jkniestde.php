@@ -3,7 +3,7 @@
 namespace App\Projects;
 
 /**
- * This is another example project
+ * Project: jkniest.de  - The portfolio itself
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -20,43 +20,68 @@ namespace App\Projects;
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @category Core
+ * @category Projects
  * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class ExampleProject2 extends Project
+class jkniestde extends Project
 {
     /**
      * The name
      *
      * @var string
      */
-    protected $name = "ExampleProject2";
+    protected $name = 'jkniest.de';
 
     /**
      * The slug
      *
      * @var string
      */
-    protected $slug = "exampleproject2";
+    protected $slug = 'jkniest-de';
 
     /**
-     * The cover image
+     * The meta tags
      *
-     * @var string
+     * @var array
      */
-    protected $cover = "Car-icon.png";
+    protected $tags = ['laravel', 'php', 'sass', 'javascript'];
 
     /**
-     * All related media files and videos
+     * All related media files
      *
      * @var array
      */
     protected $media = [
-        'https://www.youtube.com/embed/n0W33QNpPE0',
-        'Wallpaper.jpg',
-        'Car-icon.png'
+        'header.png',
+        'projects.png',
+        'full.png'
+    ];
+
+    /**
+     * The cover media file (should be an image)
+     *
+     * @var string
+     */
+    protected $cover = 'cover.png';
+
+    /**
+     * The year when this project was created
+     *
+     * @var int
+     */
+    protected $year = 2017;
+
+    /**
+     * Additional meta information that is shown inside the project page
+     *
+     * @var array
+     */
+    protected $meta = [
+        'framework' => 'Laravel',
+        'languages' => 'PHP, Javascript, Sass',
+        'license'   => 'AGPL-3.0'
     ];
 }

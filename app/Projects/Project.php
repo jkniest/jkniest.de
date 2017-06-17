@@ -202,7 +202,11 @@ class Project
                 return $key == $slug;
             });
 
-        return new $project();
+        if ($project) {
+            return new $project;
+        } else {
+            return null;
+        }
     }
 
     /**
