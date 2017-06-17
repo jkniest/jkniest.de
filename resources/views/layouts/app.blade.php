@@ -25,6 +25,8 @@
 
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('favicon.ico')}}">
+
     {!! Analytics::render() !!}
 
 </head>
