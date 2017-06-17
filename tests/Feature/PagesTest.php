@@ -48,4 +48,12 @@ class PagesTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /** @test */
+    public function privacy()
+    {
+        $response = $this->get('/privacy');
+
+        $response->assertStatus(200);
+    }
 }

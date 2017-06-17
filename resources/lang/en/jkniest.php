@@ -30,6 +30,10 @@ return [
         Please note that the imprint is in German. This is because the page is hosted on servers 
         whose location in Germany - accordingly, the page is under German law.',
 
+    'privacy-english' => '
+        Please note that the privacy information is in German. This is because the page is hosted 
+        on servers whose location in Germany - accordingly, the page is under German law.',
+
     'introduction' => [
         'welcome' => '
             I am pleased to welcome you on my side. My name is Jordan Kniest and I am currently

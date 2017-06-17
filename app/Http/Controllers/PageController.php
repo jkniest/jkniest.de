@@ -51,4 +51,14 @@ class PageController extends Controller
     {
         return view('imprint');
     }
+
+    /**
+     * The privacy information page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function privacy()
+    {
+        return view('privacy');
+    }
 }
