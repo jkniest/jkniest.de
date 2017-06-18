@@ -3,7 +3,7 @@
 namespace App\Projects;
 
 /**
- * Project: jkniest.de  - The portfolio itself
+ * A little laravel package that I wrote in an hour or so.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -26,28 +26,28 @@ namespace App\Projects;
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class jkniestde extends Project
+class ForceHttps extends Project
 {
     /**
      * The name
      *
      * @var string
      */
-    protected $name = 'jkniest.de';
+    protected $name = 'ForceHttps';
 
     /**
      * The slug
      *
      * @var string
      */
-    protected $slug = 'jkniest-de';
+    protected $slug = 'forcehttps';
 
     /**
      * The meta tags
      *
      * @var array
      */
-    protected $tags = ['laravel', 'php', 'sass', 'javascript', 'open-source'];
+    protected $tags = ['laravel', 'php', 'package', 'open-source'];
 
     /**
      * All related media files
@@ -55,9 +55,8 @@ class jkniestde extends Project
      * @var array
      */
     protected $media = [
-        'header.png',
-        'projects.png',
-        'full.png'
+        'codeblock.png',
+        'address.png'
     ];
 
     /**
@@ -65,7 +64,7 @@ class jkniestde extends Project
      *
      * @var string
      */
-    protected $cover = 'cover.png';
+    protected $cover = 'codeblock.png';
 
     /**
      * The year when this project was created
@@ -81,7 +80,7 @@ class jkniestde extends Project
      */
     protected $meta = [
         'framework' => 'Laravel',
-        'languages' => 'PHP, Javascript, Sass',
-        'license'   => 'AGPL-3.0'
+        'languages' => 'PHP',
+        'license'   => 'MIT'
     ];
 }
