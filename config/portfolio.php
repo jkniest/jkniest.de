@@ -37,7 +37,8 @@ return [
     'projects' => [
         \App\Projects\jkniestde::class,
         \App\Projects\PlanetoftheElements::class,
-        \App\Projects\ForceHttps::class
+        \App\Projects\ForceHttps::class,
+        \App\Projects\DefendtheBase::class
     ],
 
     /*
