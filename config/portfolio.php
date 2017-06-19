@@ -38,7 +38,8 @@ return [
         \App\Projects\jkniestde::class,
         \App\Projects\PlanetoftheElements::class,
         \App\Projects\ForceHttps::class,
-        \App\Projects\DefendtheBase::class
+        \App\Projects\DefendtheBase::class,
+        \App\Projects\TwoWayDungeon::class
     ],
 
     /*
