@@ -36,6 +36,7 @@ return [
 
     'projects' => [
         \App\Projects\jkniestde::class,
+        \App\Projects\GENARender::class,
         \App\Projects\MissionDelta8x34::class,
         \App\Projects\PlanetoftheElements::class,
         \App\Projects\ForceHttps::class,
