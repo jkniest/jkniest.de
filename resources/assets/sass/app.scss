@@ -1,6 +1,4 @@
 /**
- * C-S-S
- *
  * Copyright (C) 2017 Jordan Kniest
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,6 +25,8 @@
 @import "node_modules/bulma/bulma";
 @import "node_modules/swiper/dist/css/swiper";
 @import "node_modules/hint.css/hint";
+@import "node_modules/utilsass/src/util.scss";
+
 @import "variables";
 @import "partials/utils";
 @import "partials/introduction";
