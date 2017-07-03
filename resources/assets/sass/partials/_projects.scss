@@ -150,3 +150,16 @@
   }
 
 }
+
+.hover {
+  p, table {
+    color: white !important;
+  }
+
+  table {
+    td:last-of-type {
+      width: 100%;
+      padding-left: 1em;
+    }
+  }
+}

@@ -17,15 +17,17 @@
      */
 @endphp
 
-<div class="hover p1">
+<a href="{{route('project', ['slug' => $project->getSlug()])}}">
+    <div class="hover p1 is-clickable is-unselectable">
 
-    <h3 class="title is-3">{{$project->getName()}}</h3>
-    <hr>
+        <h3 class="title is-3">{{$project->getName()}}</h3>
+        <hr>
 
-    @include($project->getDescription())
+        <p>@include($project->getDescription())</p>
 
-    <a href="{{route('project', ['slug' => $project->getSlug()])}}" class="button is-primary">
-        @lang('jkniest.get-more')
-    </a>
+        <a href="{{route('project', ['slug' => $project->getSlug()])}}" class="button is-primary">
+            @lang('jkniest.get-more')
+        </a>
 
-</div> {{-- div.hover --}}
+    </div> {{-- div.hover --}}
+</a>

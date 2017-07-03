@@ -18,3 +18,17 @@
 @endphp
 
 Ein Projekt, um Blender-Modelle in einem skalierbaren Cluster zu rendern.
+
+<hr>
+
+<table>
+    <tr>
+        <td>Framework:</td>
+        <td>Laravel</td>
+    </tr>
+
+    <tr>
+        <td>Sprachen:</td>
+        <td>PHP, Javascript, Python</td>
+    </tr>
+</table>

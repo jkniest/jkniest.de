@@ -80,8 +80,9 @@ class jkniestde extends Project
      * @var array
      */
     protected $meta = [
-        'framework' => 'Laravel',
-        'languages' => 'PHP, Javascript, Sass',
-        'license'   => 'AGPL-3.0'
+        'framework'           => 'Laravel',
+        'languages'           => 'PHP, Javascript, Sass',
+        'license'             => 'AGPL-3.0',
+        'development-pattern' => 'TDD'
     ];
 }

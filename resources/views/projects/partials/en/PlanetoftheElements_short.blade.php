@@ -18,3 +18,17 @@
 @endphp
 
 Planet of the Elements is a Unity3D mini-game, which was developed within 50 hours for a game competition.
+
+<hr>
+
+<table>
+    <tr>
+        <td>Engine:</td>
+        <td>Unity3D</td>
+    </tr>
+
+    <tr>
+        <td>Languages:</td>
+        <td>C#</td>
+    </tr>
+</table>

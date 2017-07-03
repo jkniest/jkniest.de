@@ -18,3 +18,17 @@
 @endphp
 
 ForceHttps is a laravel package to redirect all unsecure connections (http) to https.
+
+<hr>
+
+<table>
+    <tr>
+        <td>Framework:</td>
+        <td>Laravel</td>
+    </tr>
+
+    <tr>
+        <td>Languages:</td>
+        <td>PHP</td>
+    </tr>
+</table>
