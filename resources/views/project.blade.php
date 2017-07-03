@@ -19,6 +19,10 @@
 
 @extends('layouts.app')
 
+@section('title')
+    {{$project->getName()}}
+@endsection
+
 @section('main')
 
     {{-- Fixed header with navbar --}}

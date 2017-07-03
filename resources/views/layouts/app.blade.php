@@ -19,7 +19,13 @@
 
     <!DOCTYPE html>
 <head>
-    <title>{{config('app.name')}}</title>
+    <title>
+        {{config('app.name')}}
+        @if (array_key_exists('title', View::getSections()))
+            - @yield('title')
+        @endif
+    </title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 

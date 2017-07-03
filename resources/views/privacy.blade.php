@@ -20,6 +20,10 @@
 
 @extends('layouts.app')
 
+@section('title')
+    @lang('jkniest.privacy')
+@endsection
+
 @section('main')
 
     {{-- Fixed header with navbar --}}
