@@ -62,7 +62,7 @@ class Media
      * @param string $source The source path (youtube, image name, etc..)
      * @param string $folder The media folder name
      */
-    function __construct(string $source, string $folder)
+    public function __construct(string $source, string $folder)
     {
         $this->source = $source;
         $this->folder = $folder;
@@ -115,6 +115,8 @@ class Media
 
     /**
      * Set the type based on the source string.
+     *
+     * @return void
      */
     private function setType()
     {

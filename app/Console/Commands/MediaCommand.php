@@ -185,7 +185,6 @@ class MediaCommand extends Command
         $this->saveThumb($path, $size, $target);
     }
 
-
     /**
      * Create a image object from any filetype
      *
@@ -210,8 +209,7 @@ class MediaCommand extends Command
                 return imagecreatefromgif($filename);
 
             default:
-                throw new InvalidArgumentException('File "' . $filename .
-                    '" is not valid jpg, png or gif image.');
+                throw new InvalidArgumentException("File \"{$filename}\" is not a valid image.");
         }
     }
 
@@ -241,7 +239,8 @@ class MediaCommand extends Command
         }
 
         $thumb = imagecreatetruecolor($size, $size);
-        imagecopyresampled($thumb, $myImage, 0, 0, $x, $y, $size, $size, $smallestSide, $smallestSide);
+        imagecopyresampled($thumb, $myImage, 0, 0, $x, $y, $size, $size, $smallestSide,
+                           $smallestSide);
 
         touch($path);
         imagejpeg($thumb, $target);

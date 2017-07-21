@@ -34,8 +34,8 @@ class HtmlCache
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure                 $next
+     * @param  \Illuminate\Http\Request $request The incoming request
+     * @param  \Closure                 $next    The next middleware
      *
      * @return mixed
      */

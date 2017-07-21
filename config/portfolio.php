@@ -35,7 +35,7 @@ return [
     */
 
     'projects' => [
-        \App\Projects\jkniestde::class,
+        \App\Projects\Jkniestde::class,
         \App\Projects\GENARender::class,
         \App\Projects\MissionDelta8x34::class,
         \App\Projects\PlanetoftheElements::class,

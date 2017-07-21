@@ -26,7 +26,7 @@ namespace App\Projects;
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class jkniestde extends Project
+class Jkniestde extends Project
 {
     /**
      * The name

@@ -84,5 +84,4 @@ class PlanetoftheElements extends Project
         'engine'    => 'Unity3D',
         'languages' => 'C#'
     ];
-
 }
