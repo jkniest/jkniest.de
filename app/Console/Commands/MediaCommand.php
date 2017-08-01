@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use InvalidArgumentException;
+use Spatie\LaravelImageOptimizer\ImageOptimizerFacade;
 
 /**
  * This command converts all images inside the media directory to different sizes:
@@ -148,7 +149,10 @@ class MediaCommand extends Command
      */
     protected function copyFile(string $path, string $destination, string $fileName)
     {
-        $this->files->copy($path, $destination . '/source_' . $fileName);
+        $target = $destination . '/source_' . $fileName;
+
+        $this->files->copy($path, $target);
+        ImageOptimizerFacade::optimize($target);
     }
 
     /**
@@ -244,5 +248,7 @@ class MediaCommand extends Command
 
         touch($path);
         imagejpeg($thumb, $target);
+
+        ImageOptimizerFacade::optimize($target);
     }
 }

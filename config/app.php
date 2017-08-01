@@ -171,6 +171,7 @@ return [
         jkniest\ForceHttps\ForceHttpsServiceProvider::class,
         SquareBoat\Sneaker\SneakerServiceProvider::class,
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
+        Spatie\LaravelImageOptimizer\ImageOptimizerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -228,7 +229,8 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
 
-        'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class
+        'Analytics'      => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
+        'ImageOptimizer' => Spatie\LaravelImageOptimizer\ImageOptimizerFacade::class
     ],
 
 ];
