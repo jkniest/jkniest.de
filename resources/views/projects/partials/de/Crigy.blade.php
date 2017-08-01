@@ -93,8 +93,8 @@
     </p>
     <br>
     <p>
-        Das Spiel wurde innerhalb von 72 Stunden entwickelt und modelliert. Die Programmierung habe ich übernommen. Für
-        die Modelle und Soundeffekte wurden von Markus Kapp, einem Freund, erstellt.
+        Das Spiel wurde innerhalb von 72 Stunden entwickelt und modelliert. Die Programmierung habe ich übernommen. Die
+        Modelle und Soundeffekte wurden von Markus Kapp, einem Freund, erstellt.
     </p>
 
 </section>
