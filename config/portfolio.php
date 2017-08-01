@@ -38,6 +38,7 @@ return [
         \App\Projects\Jkniestde::class,
         \App\Projects\GENARender::class,
         \App\Projects\MissionDelta8x34::class,
+        \App\Projects\Crigy::class,
         \App\Projects\PlanetoftheElements::class,
         \App\Projects\ForceHttps::class,
         \App\Projects\DefendtheBase::class,
