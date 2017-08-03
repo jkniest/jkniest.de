@@ -4,9 +4,8 @@
 
 <p align="center">
     <a href="https://travis-ci.com/jkniest/jkniest.de">
-        <img src="https://api.travis-ci.com/jkniest/jkniest.de.svg?token=V2HFFCLc6NVnxsqjqD9v&branch=develop">
-    </a> <img src="https://img.shields.io/badge/Version-1.0%20(DEV)-yellow.svg"> 
-    <a href="https://laravel.com">
+        <img src="https://travis-ci.org/jkniest/jkniest.de.svg?branch=develop">
+    </a> <a href="https://laravel.com">
         <img src="https://img.shields.io/badge/Laravel-5.4.32-blue.svg">
     </a> 
     
