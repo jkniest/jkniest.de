@@ -26,7 +26,7 @@
     </p>
     <br>
     <p>
-        Der Spieler schlüpft in die Rolle eines Weltraum-Ingenieur's. Dieser hat die Aufgabe einen Militär-Satelieten
+        Der Spieler schlüpft in die Rolle eines Weltraum-Ingenieur's. Dieser hat die Aufgabe einen Militär-Satelliten
         auf einer "Mirco-World" zu reparieren, da dieser seit einigen Tagen keine Signale mehr sendet.
     </p>
 </section>
@@ -71,8 +71,8 @@
     </p>
     <br>
     <p>
-        Das Spiel wurde innerhalb von 48 Stunden entwickelt und modelliert. Die Programmierung habe ich übernommen. Für
-        die Modelle wurden von Markus Kapp, einem Freund, erstellt.
+        Das Spiel wurde innerhalb von 48 Stunden entwickelt und modelliert. Die Programmierung habe ich übernommen. Die
+        Modelle wurden von Markus Kapp, einem Freund, erstellt.
     </p>
 
 </section>
