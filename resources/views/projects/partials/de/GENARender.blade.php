@@ -27,7 +27,7 @@
     <h3 class="title is-3">Warum?</h3>
 
     <p>
-        Durch einen glücklichen Zufall, sind ich und zwei Freunde, an 50 ausgemusterte Computer gelangt. Natürlich
+        Durch einen glücklichen Zufall, sind zwei Freunde und ich, an 50 ausgemusterte Computer gelangt. Natürlich
         wollten wir diese nicht einfach in einer Ecke verstauben lassen und haben begonnen uns zu überlegen, was wir
         mit diesen machen könnten.
     </p>
@@ -134,7 +134,7 @@
 
     <p>
         Ein Raum mit mehr als 8 Computern wird sehr schnell, sehr warm. Es ist echt cool zu sehen, wie mehrere Computer
-        zusammen ein Problem lösen. Das Projekt war interesannt und ich leider, auf Grund des verlorenen Standortes
+        zusammen ein Problem lösen. Das Projekt war interessant und wurde leider, auf Grund des verlorenen Standortes
         für die Computer, abgebrochen.
     </p>
 

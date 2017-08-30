@@ -53,9 +53,9 @@
         <h4 class="title is-4">Gegner / Wellen</h4>
 
         <p>
-            Insgesamt drei Gegner mit komplett anderem Verhalten spawnen zufällig in Wellen in der Welt. Ein Gegner
-            wird erst aktiviert, wenn der Spieler sich diesem nähert. Ein anderer widerrum macht Gift-Schaden. Jede
-            Welle ist schwieriger als die vorherige, da zum einen die Gegner stärker werden, aber auch mehr Gegner
+            Insgesamt drei Gegner mit komplett unterschiedlichem Verhalten spawnen zufällig in Wellen in der Welt. Ein
+            Gegner wird erst aktiviert, wenn der Spieler sich diesem nähert. Ein anderer widerrum macht Gift-Schaden.
+            Jede Welle ist schwieriger als die vorherige, da zum einen die Gegner stärker werden, aber auch mehr Gegner
             erscheinen.
         </p>
 
