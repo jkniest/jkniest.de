@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - A few grammatical errors in the german version
+- Hover effect is now clickable on every position
 
 ## [1.0.1] - 2017-06-20
 ### Fixed
