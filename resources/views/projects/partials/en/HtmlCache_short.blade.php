@@ -17,18 +17,20 @@
      */
 @endphp
 
-Crigy is a Unity3D mini-game, which was developed within 72 hours for a game competition.
+This package speeds up your laravel application by caching the final rendered html. So your database queries and view
+loading algorithms don't need to run every single page load.
+
 
 <hr>
 
 <table>
     <tr>
-        <td>Engine:</td>
-        <td>Unity3D</td>
+        <td>Framework:</td>
+        <td>Laravel</td>
     </tr>
 
     <tr>
         <td>Languages:</td>
-        <td>C#</td>
+        <td>PHP</td>
     </tr>
 </table>

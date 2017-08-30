@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Added project: HTMLCache
+
+### Changed
+- Updated laravel framework to v5.4.36
+
 ### Fixed
 - A few grammatical errors in the german version
 
