@@ -116,7 +116,8 @@
         wird ein Fehlerbericht an mich gesendet.
     </p>
     <br>
-    <p>Während der Entwicklung wurden <b>8</b> Laravel Updates durchgeführt, um immer auf dem neusten Stand zu sein.</p>
+    <p>Während der Entwicklung wurden <b>12</b> Laravel Updates durchgeführt, um immer auf dem neusten Stand zu sein.
+    </p>
 
 </section>
 
