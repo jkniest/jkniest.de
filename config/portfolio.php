@@ -40,6 +40,7 @@ return [
         \App\Projects\MissionDelta8x34::class,
         \App\Projects\Crigy::class,
         \App\Projects\PlanetoftheElements::class,
+        \App\Projects\HtmlCache::class,
         \App\Projects\ForceHttps::class,
         \App\Projects\DefendtheBase::class,
         \App\Projects\TwoWayDungeon::class

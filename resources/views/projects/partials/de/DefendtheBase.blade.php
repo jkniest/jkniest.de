@@ -88,7 +88,7 @@
 
     <p>
         Das Spiel ist weit entfernt, von fertig. Es fehlen hübschere Grafiken, Sounds und Balancing. Aber ich finde,
-        für 30 Stunden ist es lustiges, kurzes Spiel entstanden. Auch einige Kommentare von anderen Spielern haben
+        für 30 Stunden ist ein lustiges, kurzes Spiel entstanden. Auch einige Kommentare von anderen Spielern haben
         dies bestätigt.
     </p>
 

@@ -17,16 +17,20 @@
      */
 @endphp
 
-<a class="hover p1 is-clickable is-unselectable" href="{{route('project', ['slug' => $project->getSlug()])}}">
+Dieses Laravel Package dient zum optimieren der Performance für Laravel-Anwendungen. Es cacht die finale HTML-Version
+der Seite, so dass nicht bei jedem Aufruf alle Datenbank-Abfragen, etc. gemacht werden müssen.
 
-    <h3 class="title is-3">{{$project->getName()}}</h3>
-    <hr>
 
-    <p>@include($project->getDescription())</p>
+<hr>
 
-    <span class="button is-primary">
-            @lang('jkniest.get-more')
-        </span>
+<table>
+    <tr>
+        <td>Framework:</td>
+        <td>Laravel</td>
+    </tr>
 
-    {{--</a>--}} {{-- div.hover --}}
-</a>
+    <tr>
+        <td>Sprachen:</td>
+        <td>PHP</td>
+    </tr>
+</table>

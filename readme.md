@@ -6,7 +6,7 @@
     <a href="https://travis-ci.org/jkniest/jkniest.de">
         <img src="https://travis-ci.org/jkniest/jkniest.de.svg?branch=develop">
     </a> <a href="https://laravel.com">
-        <img src="https://img.shields.io/badge/Laravel-5.4.32-blue.svg">
+        <img src="https://img.shields.io/badge/Laravel-5.4.36-blue.svg">
     </a> 
     
 ## About jkniest.de

@@ -28,7 +28,7 @@ Crigy is a Unity3D mini-game, which was developed within 72 hours for a game com
     </tr>
 
     <tr>
-        <td>Sprachen:</td>
+        <td>Languages:</td>
         <td>C#</td>
     </tr>
 </table>

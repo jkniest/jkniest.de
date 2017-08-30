@@ -17,16 +17,20 @@
      */
 @endphp
 
-<a class="hover p1 is-clickable is-unselectable" href="{{route('project', ['slug' => $project->getSlug()])}}">
+This package speeds up your laravel application by caching the final rendered html. So your database queries and view
+loading algorithms don't need to run every single page load.
 
-    <h3 class="title is-3">{{$project->getName()}}</h3>
-    <hr>
 
-    <p>@include($project->getDescription())</p>
+<hr>
 
-    <span class="button is-primary">
-            @lang('jkniest.get-more')
-        </span>
+<table>
+    <tr>
+        <td>Framework:</td>
+        <td>Laravel</td>
+    </tr>
 
-    {{--</a>--}} {{-- div.hover --}}
-</a>
+    <tr>
+        <td>Languages:</td>
+        <td>PHP</td>
+    </tr>
+</table>

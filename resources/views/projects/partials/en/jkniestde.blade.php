@@ -110,7 +110,7 @@
     </p>
     <br>
     <p>
-        During development <b>8</b> Laravel updates were carried out to keep up-to-date.
+        During development <b>12</b> Laravel updates were carried out to keep up-to-date.
     </p>
 
 </section>

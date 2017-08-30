@@ -169,9 +169,9 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         jkniest\ForceHttps\ForceHttpsServiceProvider::class,
-        SquareBoat\Sneaker\SneakerServiceProvider::class,
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
         Spatie\LaravelImageOptimizer\ImageOptimizerServiceProvider::class,
+        JKniest\HtmlCache\HtmlCacheServiceProvider::class,
 
         /*
          * Application Service Providers...
