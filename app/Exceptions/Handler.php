@@ -52,35 +52,6 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Exception $exception The thrown exception
-     *
-     * @return void
-     */
-    public function report(Exception $exception)
-    {
-        app('sneaker')->captureException($exception);
-
-        parent::report($exception);
-    }
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request $request   The incoming request
-     * @param  \Exception               $exception The thrown exception
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function render($request, Exception $exception)
-    {
-        return parent::render($request, $exception);
-    }
-
-    /**
      * Convert an authentication exception into an unauthenticated response.
      *
      * @param  \Illuminate\Http\Request $request The incoming request
