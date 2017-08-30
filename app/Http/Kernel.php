@@ -18,6 +18,7 @@ use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use jkniest\ForceHttps\ForceHttps;
+use JKniest\HtmlCache\Http\Middleware\CacheHtml;
 
 /**
  * The HTTP kernel
@@ -95,6 +96,6 @@ class Kernel extends HttpKernel
         'bindings'   => SubstituteBindings::class,
         'can'        => Authorize::class,
         'throttle'   => ThrottleRequests::class,
-        'htmlcache'  => HtmlCache::class
+        'htmlcache'  => CacheHtml::class
     ];
 }

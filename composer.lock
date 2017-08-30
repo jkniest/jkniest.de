@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e283ae4ecef2837fd9f3e73825325ee8",
+    "content-hash": "51d7bf9bbcba5e5fca0d7d319b022f09",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -372,6 +372,46 @@
             ],
             "description": "Laravel Middleware to force a secure connection",
             "time": "2017-01-28T15:08:56+00:00"
+        },
+        {
+            "name": "jkniest/htmlcache",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jkniest/HTMLCache.git",
+                "reference": "d3778699609c58c36198d3670dd00b62bae37873"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jkniest/HTMLCache/zipball/d3778699609c58c36198d3670dd00b62bae37873",
+                "reference": "d3778699609c58c36198d3670dd00b62bae37873",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.4"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.4",
+                "phpunit/phpunit": "^6.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JKniest\\HtmlCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordan Kniest",
+                    "email": "mail@jkniest.de"
+                }
+            ],
+            "description": "A simple HTML Cache middleware for laravel",
+            "time": "2017-08-28T11:45:15+00:00"
         },
         {
             "name": "laravel/framework",

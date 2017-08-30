@@ -172,6 +172,7 @@ return [
         SquareBoat\Sneaker\SneakerServiceProvider::class,
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
         Spatie\LaravelImageOptimizer\ImageOptimizerServiceProvider::class,
+        JKniest\HtmlCache\HtmlCacheServiceProvider::class,
 
         /*
          * Application Service Providers...
