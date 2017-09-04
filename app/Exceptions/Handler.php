@@ -2,7 +2,6 @@
 
 namespace App\Exceptions;
 
-use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -38,32 +37,12 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 class Handler extends ExceptionHandler
 {
     /**
-     * A list of the exception types that should not be reported.
+     * A list of the inputs that are never flashed for validation exceptions.
      *
      * @var array
      */
-    protected $dontReport = [
-        AuthenticationException::class,
-        AuthorizationException::class,
-        HttpException::class,
-        ModelNotFoundException::class,
-        TokenMismatchException::class,
-        ValidationException::class,
+    protected $dontFlash = [
+        'password',
+        'password_confirmation',
     ];
-
-    /**
-     * Convert an authentication exception into an unauthenticated response.
-     *
-     * @param  \Illuminate\Http\Request $request The incoming request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    protected function unauthenticated($request)
-    {
-        if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
-        }
-
-        return redirect()->guest(route('login'));
-    }
 }

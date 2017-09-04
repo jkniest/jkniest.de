@@ -58,7 +58,7 @@ class ProjectMakeCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__ . '/stubs/project.stub';
+        return __DIR__ . '/../stubs/project.stub';
     }
 
     /**
