@@ -18,17 +18,3 @@
 @endphp
 
 ForceHttps ist ein Laravel-Package, um alle nicht sicheren Verbindungen (http) zu https weiterzuleiten.
-
-<hr>
-
-<table>
-    <tr>
-        <td>Framework:</td>
-        <td>Laravel</td>
-    </tr>
-
-    <tr>
-        <td>Sprachen:</td>
-        <td>PHP</td>
-    </tr>
-</table>

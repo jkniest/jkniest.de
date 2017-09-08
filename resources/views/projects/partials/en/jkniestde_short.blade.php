@@ -18,17 +18,3 @@
 @endphp
 
 A portfolio to introduce myself and my projects.
-
-<hr>
-
-<table>
-    <tr>
-        <td>Framework:</td>
-        <td>Laravel</td>
-    </tr>
-
-    <tr>
-        <td>Languages:</td>
-        <td>PHP, Javascript, Sass</td>
-    </tr>
-</table>

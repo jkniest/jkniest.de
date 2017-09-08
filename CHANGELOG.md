@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Optimized cache for redis usage
 - Project Meta Box is now fixed on desktops
 
+### Fixed
+- Responsive fixes for tablet
+
 
 ## [1.0.3] - 2017-09-04
 ### Changed
