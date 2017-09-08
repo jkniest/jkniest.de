@@ -2,7 +2,9 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\File;
 use Tests\Feature\Helpers\ProjectA;
 use Tests\Feature\Helpers\ProjectB;
 use Tests\TestCase;
@@ -112,7 +114,39 @@ class JsonFeedTest extends TestCase
         // Then: The response should also contain one item
         $this->assertCount(1, $response->json()['items']);
     }
-    // TODO: it_caches_the_json_feed
 
-    // TODO: it_regenrates_the_cache_when_the_projects_are_reloaded
+    /** @test */
+    public function it_regenerated_the_cache_when_the_project_loader_is_regenerated()
+    {
+        File::shouldReceive('put')->andReturnNull();
+
+        // Given: There is one project
+        Config::set('portfolio.projects', [
+            ProjectA::class
+        ]);
+
+        // When: We visit the feed page
+        $response = $this->get('/feed.json')
+            ->assertStatus(200);
+
+        // Then: The response should contain one item
+        $this->assertCount(1, $response->json()['items']);
+
+        // Given: We add another project
+        Config::set('portfolio.projects', [
+            ProjectA::class,
+            ProjectB::class
+        ]);
+
+        // When: We reload the project loader
+        $this->artisan('project:load');
+
+        // And then: We visit the feed page again
+        $response = $this->get('/feed.json')
+            ->assertStatus(200);
+
+        // Then: The response should contain two items
+        $this->assertCount(2, $response->json()['items']);
+
+    }
 }

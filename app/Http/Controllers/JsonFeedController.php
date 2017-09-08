@@ -45,10 +45,7 @@ class JsonFeedController extends Controller
             return $this->getProjects();
         });
 
-        return response(
-            JsonFeed::setItems($projects)
-                ->toArray()
-        );
+        return response(JsonFeed::setItems($projects)->toArray());
     }
 
     /**
