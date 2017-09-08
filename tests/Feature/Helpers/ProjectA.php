@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Projects;
+namespace Tests\Feature\Helpers;
+
+use App\Projects\Project;
 
 /**
- * Mission: Delta-8x34 is a unity3d mini-game made for the ludum dare competition.
+ * Example Project A
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -20,34 +22,34 @@ namespace App\Projects;
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @category Projects
+ * @category Testing
  * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class MissionDelta8x34 extends Project
+class ProjectA extends Project
 {
     /**
      * The name
      *
      * @var string
      */
-    protected $name = 'Mission: Delta-8x34';
+    protected $name = 'Project A';
 
     /**
      * The slug
      *
      * @var string
      */
-    protected $slug = 'mission-delta-8x34';
+    protected $slug = 'project-a';
 
     /**
      * The meta tags
      *
      * @var array
      */
-    protected $tags = ['unity3d', 'game', 'c#', 'ludum-dare'];
+    protected $tags = ['example', 'waffle', 'iron'];
 
     /**
      * All related media files
@@ -55,9 +57,9 @@ class MissionDelta8x34 extends Project
      * @var array
      */
     protected $media = [
-        'main.png',
-        'planets.png',
-        'ship.png'
+        'media-a.png',
+        'another.jpg',
+        'https://youtube.com/v/abcdefg'
     ];
 
     /**
@@ -65,14 +67,14 @@ class MissionDelta8x34 extends Project
      *
      * @var string
      */
-    protected $cover = 'ship.png';
+    protected $cover = 'cover-a.png';
 
     /**
      * The year when this project was created
      *
      * @var int
      */
-    protected $year = 2017;
+    protected $year = 2015;
 
     /**
      * The date when this project was added to the portfolio (or when this project
@@ -82,7 +84,7 @@ class MissionDelta8x34 extends Project
      *
      * @var string
      */
-    protected $date = '2017-04-25';
+    protected $date = '2015-05-14';
 
     /**
      * Additional meta information that is shown inside the project page
@@ -90,7 +92,7 @@ class MissionDelta8x34 extends Project
      * @var array
      */
     protected $meta = [
-        'engine'    => 'Unity3D',
-        'languages' => 'C#'
+        'framework' => 'Unicorn!',
+        'language'  => 'FlowerPower'
     ];
 }

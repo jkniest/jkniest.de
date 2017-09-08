@@ -75,6 +75,16 @@ class DefendtheBase extends Project
     protected $year = 2015;
 
     /**
+     * The date when this project was added to the portfolio (or when this project
+     * was created).
+     *
+     * Format: yyyy-mm-dd
+     *
+     * @var string
+     */
+    protected $date = '2015-03-11';
+
+    /**
      * Additional meta information that is shown inside the project page
      *
      * @var array

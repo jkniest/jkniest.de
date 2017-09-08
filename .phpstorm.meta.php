@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-09-06.
+    * Generated on 2017-09-08.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -41,6 +41,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'jsonFeed' => \Mateusjatenee\JsonFeed\JsonFeed::class,
         'Ipunkt\LaravelAnalytics\Contracts\AnalyticsProviderInterface' => \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Spatie\ImageOptimizer\OptimizerChain' => \Spatie\ImageOptimizer\OptimizerChain::class,
@@ -175,6 +176,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'jsonFeed' => \Mateusjatenee\JsonFeed\JsonFeed::class,
         'Ipunkt\LaravelAnalytics\Contracts\AnalyticsProviderInterface' => \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Spatie\ImageOptimizer\OptimizerChain' => \Spatie\ImageOptimizer\OptimizerChain::class,
@@ -309,6 +311,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'jsonFeed' => \Mateusjatenee\JsonFeed\JsonFeed::class,
         'Ipunkt\LaravelAnalytics\Contracts\AnalyticsProviderInterface' => \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Spatie\ImageOptimizer\OptimizerChain' => \Spatie\ImageOptimizer\OptimizerChain::class,
@@ -443,6 +446,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'jsonFeed' => \Mateusjatenee\JsonFeed\JsonFeed::class,
         'Ipunkt\LaravelAnalytics\Contracts\AnalyticsProviderInterface' => \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Spatie\ImageOptimizer\OptimizerChain' => \Spatie\ImageOptimizer\OptimizerChain::class,
@@ -577,6 +581,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'jsonFeed' => \Mateusjatenee\JsonFeed\JsonFeed::class,
         'Ipunkt\LaravelAnalytics\Contracts\AnalyticsProviderInterface' => \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Spatie\ImageOptimizer\OptimizerChain' => \Spatie\ImageOptimizer\OptimizerChain::class,
@@ -711,6 +716,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'jsonFeed' => \Mateusjatenee\JsonFeed\JsonFeed::class,
         'Ipunkt\LaravelAnalytics\Contracts\AnalyticsProviderInterface' => \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Spatie\ImageOptimizer\OptimizerChain' => \Spatie\ImageOptimizer\OptimizerChain::class,
@@ -845,6 +851,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'jsonFeed' => \Mateusjatenee\JsonFeed\JsonFeed::class,
         'Ipunkt\LaravelAnalytics\Contracts\AnalyticsProviderInterface' => \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Spatie\ImageOptimizer\OptimizerChain' => \Spatie\ImageOptimizer\OptimizerChain::class,

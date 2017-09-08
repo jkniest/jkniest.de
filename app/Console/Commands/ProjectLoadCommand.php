@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * Generate the dynamic project class loader. It will generate a json file that contains
@@ -74,6 +75,9 @@ class ProjectLoadCommand extends Command
             ->toJson();
 
         $files->put(storage_path('projects.json'), $projects);
+
+        Cache::delete('json_feed');
+
         $this->info('Project-Loader file created!');
     }
 }

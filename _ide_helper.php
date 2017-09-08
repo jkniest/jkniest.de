@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.2 on 2017-09-06.
+ * Generated for Laravel 5.5.2 on 2017-09-08.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13074,6 +13074,247 @@ namespace Barryvdh\Debugbar {
  
 }
 
+namespace Mateusjatenee\JsonFeed\Facades { 
+
+    class JsonFeed {
+        
+        /**
+         * Returns an instance of the class
+         *
+         * @param array $properties
+         * @return static 
+         * @static 
+         */ 
+        public static function start($properties = array(), $items = array())
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::start($properties, $items);
+        }
+        
+        /**
+         * Builds a collection following the JSON Feed spec
+         *
+         * @throws \Mateusjatenee\JsonFeed\Exceptions\IncorrectFeedStructureException
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function build()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::build();
+        }
+        
+        /**
+         * Builds the collection and converts it to an array
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function toArray()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::toArray();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function toJson()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::toJson();
+        }
+        
+        /**
+         * Set the feed's items
+         *
+         * @param $items
+         * @return self 
+         * @static 
+         */ 
+        public static function setItems($items)
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::setItems($items);
+        }
+        
+        /**
+         * 
+         *
+         * @param $config
+         * @return self 
+         * @static 
+         */ 
+        public static function setConfig($config)
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::setConfig($config);
+        }
+        
+        /**
+         * Gets the feed items
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function getItems()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getItems();
+        }
+        
+        /**
+         * Gets the Json Feed config
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getConfig();
+        }
+        
+        /**
+         * Returns an array of accepted properties
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getAcceptedProperties()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getAcceptedProperties();
+        }
+        
+        /**
+         * Gets the JSON Feed version being used.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getVersion()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getVersion();
+        }
+        
+        /**
+         * Gets the home page url
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getHomePageUrl()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getHomePageUrl();
+        }
+        
+        /**
+         * Gets the feed description
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getDescription()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getDescription();
+        }
+        
+        /**
+         * Gets the feed title
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getTitle()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getTitle();
+        }
+        
+        /**
+         * Gets the feed url
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getFeedUrl()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getFeedUrl();
+        }
+        
+        /**
+         * Gets the feed icon
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getIcon()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getIcon();
+        }
+        
+        /**
+         * Gets the feed's next page url
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getNextUrl()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getNextUrl();
+        }
+        
+        /**
+         * Gets wether the feed is expired (i.e no more updates)
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function getExpired()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getExpired();
+        }
+        
+        /**
+         * Gets the feed's favicon
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getFavicon()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getFavicon();
+        }
+        
+        /**
+         * Gets the feed's author
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getAuthor()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getAuthor();
+        }
+        
+        /**
+         * Gets the number of comments
+         *
+         * @return integer 
+         * @static 
+         */ 
+        public static function getUserComment()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getUserComment();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getHubs()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getHubs();
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -15194,6 +15435,8 @@ namespace  {
     class ImageOptimizer extends \Spatie\LaravelImageOptimizer\Facades\ImageOptimizer {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
+    class Cart extends \Mateusjatenee\JsonFeed\Facades\JsonFeed {}
  
 }
 

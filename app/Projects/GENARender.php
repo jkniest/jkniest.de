@@ -77,6 +77,16 @@ class GENARender extends Project
     protected $year = '2016';
 
     /**
+     * The date when this project was added to the portfolio (or when this project
+     * was created).
+     *
+     * Format: yyyy-mm-dd
+     *
+     * @var string
+     */
+    protected $date = '2016-12-30';
+
+    /**
      * Additional meta information that is shown inside the project page
      *
      * @var array

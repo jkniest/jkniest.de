@@ -72,7 +72,17 @@ class TwoWayDungeon extends Project
      *
      * @var int
      */
-    protected $year = 2015;
+    protected $year = 2016;
+
+    /**
+     * The date when this project was added to the portfolio (or when this project
+     * was created).
+     *
+     * Format: yyyy-mm-dd
+     *
+     * @var string
+     */
+    protected $date = '2016-08-09';
 
     /**
      * Additional meta information that is shown inside the project page
