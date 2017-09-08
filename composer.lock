@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a09ba0ffa1df3d66f21cb06db5d8e13e",
+    "content-hash": "3710dcfbc041fd779f4b5f44404d2f09",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1920,6 +1920,60 @@
                 "spatie"
             ],
             "time": "2017-08-30T17:27:51+00:00"
+        },
+        {
+            "name": "squareboat/sneaker",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squareboat/sneaker.git",
+                "reference": "ce8b14edc3e4cdf441097d70ea505f3803e15064"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squareboat/sneaker/zipball/ce8b14edc3e4cdf441097d70ea505f3803e15064",
+                "reference": "ce8b14edc3e4cdf441097d70ea505f3803e15064",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.3.*|5.4.*|5.5.*",
+                "illuminate/log": "5.3.*|5.4.*|5.5.*",
+                "illuminate/mail": "5.3.*|5.4.*|5.5.*",
+                "illuminate/support": "5.3.*|5.4.*|5.5.*",
+                "illuminate/view": "5.3.*|5.4.*|5.5.*",
+                "php": ">=5.4.0",
+                "symfony/debug": "~3.1|~3.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SquareBoat\\Sneaker\\SneakerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SquareBoat\\Sneaker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amit Gupta",
+                    "email": "akaamitgupta@gmail.com"
+                }
+            ],
+            "description": "An easy way to send emails with stack trace whenever an exception occurs on the server for Laravel Applications.",
+            "keywords": [
+                "email",
+                "exceptions",
+                "laravel"
+            ],
+            "time": "2017-09-05T04:16:07+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

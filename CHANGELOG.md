@@ -5,9 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 # [Unreleased]
-- Optimized cache for redis usage
+### Added
 - Added JSON feed (/feed.json)
 - Added RSS / Atom feed (/feed.xml)
+- Health Check URL that is pinged every two hours
+- Sneaker integration to send e-mails when an exception is thrown
+
+### Changed
+- Optimized cache for redis usage
+- Project Meta Box is now fixed on desktops
+
 
 ## [1.0.3] - 2017-09-04
 ### Changed

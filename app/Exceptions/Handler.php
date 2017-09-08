@@ -2,13 +2,8 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Auth\AuthenticationException;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Session\TokenMismatchException;
-use Illuminate\Validation\ValidationException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * The exception handler decides how to render a given exception
@@ -45,4 +40,18 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
+    /**
+     * Report or log an exception.
+     *
+     * @param  \Exception $e The thrown exception
+     *
+     * @return void
+     */
+    public function report(Exception $e)
+    {
+        app('sneaker')->captureException($e);
+
+        parent::report($e);
+    }
 }
