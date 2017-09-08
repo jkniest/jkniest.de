@@ -1,4 +1,4 @@
-<div class="panel">
+<div class="panel info-box">
 
     <div class="panel-heading">
 
