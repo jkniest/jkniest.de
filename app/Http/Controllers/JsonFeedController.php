@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Collection;
+use App\ProjectItems;
 use Illuminate\Support\Facades\Cache;
 use Mateusjatenee\JsonFeed\Facades\JsonFeed;
 
@@ -41,11 +41,7 @@ class JsonFeedController extends Controller
     {
         JsonFeed::setConfig($this->getConfig());
 
-        $projects = Cache::rememberForever('json_feed', function () {
-            return $this->getProjects();
-        });
-
-        return response(JsonFeed::setItems($projects)->toArray());
+        return response(JsonFeed::setItems(ProjectItems::cached())->toArray());
     }
 
     /**
@@ -67,24 +63,5 @@ class JsonFeedController extends Controller
         ];
 
         return $config;
-    }
-
-    /**
-     * Get all projects (based on the config file) and instantiate them.
-     * Also sort all projects by their creation date.
-     *
-     * @return Collection
-     */
-    protected function getProjects()
-    {
-        $projects = collect(config('portfolio.projects'))
-            ->map(function ($project) {
-                return new $project;
-            })->sortBy(function ($project) {
-                return $project->getDate();
-            }, SORT_REGULAR, true)
-            ->values();
-
-        return $projects;
     }
 }
