@@ -25,8 +25,8 @@
     <p>@include($project->getDescription())</p>
 
     <span class="button is-primary">
-            @lang('jkniest.get-more')
-        </span>
+        @lang('jkniest.get-more')
+    </span>
 
     {{--</a>--}} {{-- div.hover --}}
 </a>

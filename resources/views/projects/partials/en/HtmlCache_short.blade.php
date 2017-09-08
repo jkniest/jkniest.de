@@ -19,18 +19,3 @@
 
 This package speeds up your laravel application by caching the final rendered html. So your database queries and view
 loading algorithms don't need to run every single page load.
-
-
-<hr>
-
-<table>
-    <tr>
-        <td>Framework:</td>
-        <td>Laravel</td>
-    </tr>
-
-    <tr>
-        <td>Languages:</td>
-        <td>PHP</td>
-    </tr>
-</table>

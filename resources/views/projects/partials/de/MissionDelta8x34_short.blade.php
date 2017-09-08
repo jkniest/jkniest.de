@@ -19,17 +19,3 @@
 
 Mission: Delta-8x34 ist ein Minispiel, welches für die Ludum-Dare Competition, innerhalb von 48 Stunden entwickelt
 wurde.
-
-<hr>
-
-<table>
-    <tr>
-        <td>Engine:</td>
-        <td>Unity3D</td>
-    </tr>
-
-    <tr>
-        <td>Sprachen:</td>
-        <td>C#</td>
-    </tr>
-</table>

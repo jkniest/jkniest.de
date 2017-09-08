@@ -29,4 +29,6 @@ require('./smooth.js');
 
 require('./fade.js');
 
+require('./info-box.js');
+
 window.swiper = require('swiper');

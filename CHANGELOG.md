@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2017-09-09
+### Added
+- Added JSON feed (/feed.json)
+- Added RSS / Atom feed (/feed.xml)
+- Health Check URL that is pinged every two hours
+- Sneaker integration to send e-mails when an exception is thrown
+
+### Changed
+- Optimized cache for redis usage
+- Project Meta Box is now fixed on desktops
+
+### Fixed
+- Responsive fixes for tablet
+
+
 ## [1.0.3] - 2017-09-04
 ### Changed
 - Changed colors (new primary, white, light and black color)
@@ -42,3 +57,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [1.0.1]: https://github.com/jkniest/jkniest.de/compare/1.0.0...1.0.1
 [1.0.2]: https://github.com/jkniest/jkniest.de/compare/1.0.1...1.0.2
 [1.0.3]: https://github.com/jkniest/jkniest.de/compare/1.0.2...1.0.3
+[1.1.0]: https://github.com/jkniest/jkniest.de/compare/1.0.0...1.1.0

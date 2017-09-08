@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Http\Controllers;
 
-use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
-use Illuminate\Support\ServiceProvider;
+use App\ProjectItems;
+use Illuminate\Support\Facades\Cache;
+use Mateusjatenee\JsonFeed\Facades\JsonFeed;
 
 /**
- * The base service provider for this application
+ * Generate and show the json feed
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -23,30 +24,44 @@ use Illuminate\Support\ServiceProvider;
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @category Core
+ * @category Feeds
  * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class AppServiceProvider extends ServiceProvider
+class JsonFeedController extends Controller
 {
     /**
-     * Bootstrap any application services.
+     * Show the json feed
      *
-     * @return void
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function boot()
+    public function index()
     {
-        //
+        JsonFeed::setConfig($this->getConfig());
+
+        return response(JsonFeed::setItems(ProjectItems::cached())->toArray());
     }
 
     /**
-     * Register any application services.
+     * Generate the json feed configuration.
      *
-     * @return void
+     * @return array
      */
-    public function register()
+    protected function getConfig()
     {
+        $config = [
+            'title'         => config('app.name'),
+            'home_page_url' => config('app.url'),
+            'feed_url'      => url('feed.json'),
+            'author'        => [
+                'url'  => config('app.url'),
+                'name' => config('portfolio.author')
+            ],
+            'favicon'       => url('favicon.ico')
+        ];
+
+        return $config;
     }
 }

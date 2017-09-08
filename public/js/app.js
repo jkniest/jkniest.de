@@ -1,4 +1,4 @@
-!function(e){function t(a){if(n[a])return n[a].exports;var r=n[a]={i:a,l:!1,exports:{}};return e[a].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var n={};t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,a){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:a})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=8)}([function(e,t,n){/**
+!function(e){function t(a){if(n[a])return n[a].exports;var r=n[a]={i:a,l:!1,exports:{}};return e[a].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var n={};t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,a){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:a})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=9)}([function(e,t,n){/**
  * This is nearly all javascript that is loaded within this site.
  *
  * Copyright (C) 2017 Jordan Kniest
@@ -22,7 +22,7 @@
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-window.$=n(5),n(4),n(3),window.swiper=n(6)},,,function(e,t){/**
+window.$=n(6),n(5),n(3),n(4),window.swiper=n(7)},,,function(e,t){/**
  * Every html element with the class 'fade' should fade in when scrolling down
  *
  * Copyright (C) 2017 Jordan Kniest
@@ -46,7 +46,7 @@ window.$=n(5),n(4),n(3),window.swiper=n(6)},,,function(e,t){/**
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-$(window).on("load",function(){$(window).scroll(function(){var e=$(this).scrollTop()+$(this).innerHeight();$(".fade").each(function(){$(this).offset().top+$(this).outerHeight()<e+400&&0==$(this).css("opacity")&&$(this).fadeTo(500,1)})}).scroll()})},function(e,t){/**
+$(window).on("load",function(){$(window).scroll(function(){var e=$(this).scrollTop()+$(this).innerHeight();$(".fade").each(function(){$(this).offset().top+$(this).outerHeight()<e+400&&0==$(this).css("opacity")&&$(this).fadeTo(500,1)})}).scroll()})},function(e,t){var n=void 0;$(window).scroll(function(){var e=!0,t=!1,a=void 0;try{for(var r,i=$(".info-box")[Symbol.iterator]();!(e=(r=i.next()).done);e=!0){var s=r.value;void 0===n&&(n=$(s).offset().top);$(window).scrollTop()- -80>=n&&$(window).width()>=1024?$(s).addClass("is-fixed"):$(s).removeClass("is-fixed")}}catch(e){t=!0,a=e}finally{try{!e&&i.return&&i.return()}finally{if(t)throw a}}})},function(e,t){/**
  * Smooth scrolling when the user clicks on a local link (#somewhere)
  *
  * Copyright (C) 2017 Jordan Kniest

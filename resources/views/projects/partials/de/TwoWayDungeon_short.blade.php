@@ -19,17 +19,3 @@
 
 Two Way Dungeon ist ein Unity3D-Minispiel, das innerhalb von 30 Stunden für die Ludum-Dare Competition entwickelt
 wurde.
-
-<hr>
-
-<table>
-    <tr>
-        <td>Engine:</td>
-        <td>Unity3D</td>
-    </tr>
-
-    <tr>
-        <td>Sprachen:</td>
-        <td>C#</td>
-    </tr>
-</table>

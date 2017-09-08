@@ -19,18 +19,3 @@
 
 Dieses Laravel Package dient zum optimieren der Performance für Laravel-Anwendungen. Es cacht die finale HTML-Version
 der Seite, so dass nicht bei jedem Aufruf alle Datenbank-Abfragen, etc. gemacht werden müssen.
-
-
-<hr>
-
-<table>
-    <tr>
-        <td>Framework:</td>
-        <td>Laravel</td>
-    </tr>
-
-    <tr>
-        <td>Sprachen:</td>
-        <td>PHP</td>
-    </tr>
-</table>

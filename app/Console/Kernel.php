@@ -2,9 +2,6 @@
 
 namespace App\Console;
 
-use App\Console\Commands\MediaCommand;
-use App\Console\Commands\ProjectLoadCommand;
-use App\Console\Commands\ProjectMakeCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -35,17 +32,6 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
-    protected $commands = [
-        ProjectMakeCommand::class,
-        MediaCommand::class,
-        ProjectLoadCommand::class
-    ];
-
-    /**
      * Define the application's command schedule.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule $schedule The scheduler
@@ -54,7 +40,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('media')->cron('0 */2 * * *');
+        $cmd = $schedule->command('media')->cron('0 */2 * * *');
+
+        $healthUrl = config('portfolio.health-url');
+        if ($healthUrl !== null && $healthUrl !== '') {
+            $cmd->thenPing($healthUrl);
+        }
     }
 
     /**
@@ -64,6 +55,8 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
+        $this->load(__DIR__.'/Commands');
+
         require base_path('routes/console.php');
     }
 }

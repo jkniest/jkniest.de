@@ -37,4 +37,14 @@ Route::group(['middleware' => 'htmlcache'], function () {
     Route::get('/project/{slug}', 'ProjectController@show')->name('project');
 });
 
+// Language
 Route::get('/lang/{code}', 'LanguageController@update')->name('lang');
+
+// JSON feeds
+Route::get('/feed.json', 'JsonFeedController@index')->name('feed.json');
+
+// RSS feeds
+Route::feeds();
+
+// Sitemap
+Route::get('sitemap', 'SitemapController@index')->name('sitemap');

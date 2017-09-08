@@ -74,19 +74,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache time
+    | Health URL
     |--------------------------------------------------------------------------
     |
-    | The amount of minutes that the html cache files are existing
+    | If the health check url it set every 10 minute a ping will be done. This
+    | can be used in combinations (for example envoyer) as a simple health check.
     */
-    'cache-time'    => 1440,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Cache enabled
-    |--------------------------------------------------------------------------
-    |
-    | Is the html cache currently enabled?
-    */
-    'cache-enabled' => env('CACHE_ENABLED', true),
+    'health-url'    => env('HEALTH_PING', null),
 ];

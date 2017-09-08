@@ -27,9 +27,9 @@
 
             <div class="container">
 
-                <div class="columns">
+                <div class="columns is-multiline">
 
-                    <div class="column">
+                    <div class="column is-full-tablet is-half-desktop">
 
                         <img src="{{asset('img/2017.jpg')}}" alt="" width="180px"
                              class="is-pulled-left m3r introduction-blur">
@@ -50,7 +50,7 @@
 
                     </div> {{-- div.column --}}
 
-                    <div class="column">
+                    <div class="column is-full-tablet is-half-desktop">
 
                         <div class="m3t">
 

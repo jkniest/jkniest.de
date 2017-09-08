@@ -23,7 +23,7 @@
 
         @foreach($projects as $project)
 
-            <div class="column is-one-third">
+            <div class="column is-half-tablet is-half-desktop is-one-third-widescreen">
 
                 @include('partials.projects.card', ['project' => $project])
 

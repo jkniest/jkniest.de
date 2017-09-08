@@ -3,7 +3,11 @@
 namespace App\Projects;
 
 use App\Media;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
+use Mateusjatenee\JsonFeed\Contracts\FeedItemContract;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
 /**
  * Base class for all projects
@@ -29,7 +33,7 @@ use Illuminate\Support\Facades\File;
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class Project
+class Project implements FeedItemContract, Feedable
 {
     /**
      * The name
@@ -72,6 +76,16 @@ class Project
      * @var int
      */
     protected $year;
+
+    /**
+     * The date when this project was added to the portfolio (or when this project
+     * was created).
+     *
+     * Format: yyyy-mm-dd
+     *
+     * @var string
+     */
+    protected $date;
 
     /**
      * Additional meta information that is shown inside the project page
@@ -188,6 +202,16 @@ class Project
     }
 
     /**
+     * Return the creation date
+     *
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
      * Create a new project based on the slug. The class will be loaded from the
      * "storage/projects.json" file.
      *
@@ -217,5 +241,82 @@ class Project
     protected function getClassName()
     {
         return preg_replace('~[^\pL\d]+~u', '', $this->name);
+    }
+
+    /**
+     * JSON feed - Get the id
+     *
+     * @return string
+     */
+    public function getFeedId()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * JSON feed - Get the publishing date
+     *
+     * @return Carbon
+     */
+    public function getFeedDatePublished()
+    {
+        return Carbon::parse($this->date);
+    }
+
+    /**
+     * JSON feed - Get the title
+     *
+     * @return string
+     */
+    public function getFeedTitle()
+    {
+        return $this->name;
+    }
+
+    /**
+     * JSON feed - Get the url
+     *
+     * @return string
+     */
+    public function getFeedUrl()
+    {
+        return route('project', ['slug' => $this->slug]);
+    }
+
+    /**
+     * JSON feed - Get the cover image / feed image
+     *
+     * @return string
+     */
+    public function getFeedImage()
+    {
+        return $this->getCoverPath();
+    }
+
+    /**
+     * JSON feed - Get all tags
+     *
+     * @return array
+     */
+    public function getFeedTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Convert the project to a valid rss item.
+     *
+     * @return FeedItem
+     */
+    public function toFeedItem()
+    {
+        return new FeedItem([
+            'id'      => $this->slug,
+            'title'   => $this->name,
+            'updated' => Carbon::parse($this->date),
+            'summary' => $this->name,
+            'link'    => route('project', ['slug' => $this->slug]),
+            'author'  => config('app.name')
+        ]);
     }
 }
