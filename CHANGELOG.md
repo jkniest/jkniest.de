@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-# [Unreleased]
+## [1.1.0] - 2017-09-09
 ### Added
 - Added JSON feed (/feed.json)
 - Added RSS / Atom feed (/feed.xml)
@@ -57,3 +57,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [1.0.1]: https://github.com/jkniest/jkniest.de/compare/1.0.0...1.0.1
 [1.0.2]: https://github.com/jkniest/jkniest.de/compare/1.0.1...1.0.2
 [1.0.3]: https://github.com/jkniest/jkniest.de/compare/1.0.2...1.0.3
+[1.1.0]: https://github.com/jkniest/jkniest.de/compare/1.0.0...1.1.0
