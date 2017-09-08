@@ -75,6 +75,16 @@ class MissionDelta8x34 extends Project
     protected $year = 2017;
 
     /**
+     * The date when this project was added to the portfolio (or when this project
+     * was created).
+     *
+     * Format: yyyy-mm-dd
+     *
+     * @var string
+     */
+    protected $date = '2017-04-25';
+
+    /**
      * Additional meta information that is shown inside the project page
      *
      * @var array

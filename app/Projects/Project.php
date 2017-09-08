@@ -74,6 +74,16 @@ class Project
     protected $year;
 
     /**
+     * The date when this project was added to the portfolio (or when this project
+     * was created).
+     *
+     * Format: yyyy-mm-dd
+     *
+     * @var string
+     */
+    protected $date;
+
+    /**
      * Additional meta information that is shown inside the project page
      *
      * @var array
