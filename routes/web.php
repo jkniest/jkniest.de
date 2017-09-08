@@ -38,3 +38,5 @@ Route::group(['middleware' => 'htmlcache'], function () {
 });
 
 Route::get('/lang/{code}', 'LanguageController@update')->name('lang');
+
+Route::get('/feed.json', 'JsonFeedController@index')->name('feed.json');

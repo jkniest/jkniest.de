@@ -80,13 +80,4 @@ return [
     | The amount of minutes that the html cache files are existing
     */
     'cache-time'    => 1440,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Cache enabled
-    |--------------------------------------------------------------------------
-    |
-    | Is the html cache currently enabled?
-    */
-    'cache-enabled' => env('CACHE_ENABLED', true),
 ];
