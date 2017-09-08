@@ -45,3 +45,6 @@ Route::get('/feed.json', 'JsonFeedController@index')->name('feed.json');
 
 // RSS feeds
 Route::feeds();
+
+// Sitemap
+Route::get('sitemap', 'SitemapController@index')->name('sitemap');
