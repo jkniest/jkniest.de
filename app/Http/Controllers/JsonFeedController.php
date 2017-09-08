@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Mateusjatenee\JsonFeed\Facades\JsonFeed;
 
 /**
@@ -40,8 +41,12 @@ class JsonFeedController extends Controller
     {
         JsonFeed::setConfig($this->getConfig());
 
+        $projects = Cache::rememberForever('json_feed', function () {
+            return $this->getProjects();
+        });
+
         return response(
-            JsonFeed::setItems($this->getProjects())
+            JsonFeed::setItems($projects)
                 ->toArray()
         );
     }

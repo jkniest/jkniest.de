@@ -84,6 +84,34 @@ class JsonFeedTest extends TestCase
         ]);
     }
 
+    /** @test */
+    public function it_caches_the_json_feed()
+    {
+        // Given: There is one project
+        Config::set('portfolio.projects', [
+            ProjectA::class
+        ]);
+
+        // When: We visit the feed page
+        $response = $this->get('/feed.json')
+            ->assertStatus(200);
+
+        // Then: The response should contain one item
+        $this->assertCount(1, $response->json()['items']);
+
+        // Given: We add another project
+        Config::set('portfolio.projects', [
+            ProjectA::class,
+            ProjectB::class
+        ]);
+
+        // When: We visit the feed page again
+        $response = $this->get('/feed.json')
+            ->assertStatus(200);
+
+        // Then: The response should also contain one item
+        $this->assertCount(1, $response->json()['items']);
+    }
     // TODO: it_caches_the_json_feed
 
     // TODO: it_regenrates_the_cache_when_the_projects_are_reloaded
