@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\ProjectItems;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Cache;
@@ -64,19 +65,13 @@ class ProjectLoadCommand extends Command
      */
     public function handle(Filesystem $files)
     {
-        $projects = collect(config('portfolio.projects'))
-            ->map(function ($project) {
-                return new $project();
-            })->unique(function ($project) {
-                return $project->getSlug();
-            })->map(function ($project) {
-                return [$project->getSlug() => get_class($project)];
-            })->collapse()
-            ->toJson();
+        $projects = ProjectItems::all()->map(function ($project) {
+            return [$project->getSlug() => get_class($project)];
+        })->collapse()->toJson();
 
         $files->put(storage_path('projects.json'), $projects);
 
-        Cache::delete('json_feed');
+        Cache::delete('projects');
 
         $this->info('Project-Loader file created!');
     }

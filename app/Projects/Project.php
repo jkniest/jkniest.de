@@ -6,6 +6,8 @@ use App\Media;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Mateusjatenee\JsonFeed\Contracts\FeedItemContract;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
 /**
  * Base class for all projects
@@ -31,7 +33,7 @@ use Mateusjatenee\JsonFeed\Contracts\FeedItemContract;
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
  */
-class Project implements FeedItemContract
+class Project implements FeedItemContract, Feedable
 {
     /**
      * The name
@@ -299,5 +301,22 @@ class Project implements FeedItemContract
     public function getFeedTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * Convert the project to a valid rss item.
+     *
+     * @return FeedItem
+     */
+    public function toFeedItem()
+    {
+        return new FeedItem([
+            'id'      => $this->slug,
+            'title'   => $this->name,
+            'updated' => Carbon::parse($this->date),
+            'summary' => $this->name,
+            'link'    => route('project', ['slug' => $this->slug]),
+            'author'  => config('app.name')
+        ]);
     }
 }
