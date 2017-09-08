@@ -8,7 +8,7 @@ return [
     'contact'         => 'Kontakt aufnehmen',
     'english-version' => 'English version',
 
-    'welcome'            => 'Herzlich willkommen',
+    'welcome'            => 'Herzlich Willkommen',
     'short-introduction' => 'Auf der folgenden Seite können Sie einige meiner Arbeiten und Projekte finden.',
 
     'some-projects' => 'Hier finden Sie einige meiner Projekte',

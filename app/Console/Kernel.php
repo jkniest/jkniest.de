@@ -40,7 +40,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('media')->cron('0 */2 * * *');
+        $cmd = $schedule->command('media')->cron('0 */2 * * *');
+
+        $healthUrl = config('portfolio.health-url');
+        if ($healthUrl !== null && $healthUrl !== '') {
+            $cmd->thenPing($healthUrl);
+        }
     }
 
     /**

@@ -13,7 +13,6 @@ $( window ).scroll(function() {
         if (winScroll - offset >= scrolling && $(window).width() >= 1024) {
             $(box).addClass('is-fixed');
         } else {
-            console.dir("bye bye");
             $(box).removeClass('is-fixed');
         }
     }
