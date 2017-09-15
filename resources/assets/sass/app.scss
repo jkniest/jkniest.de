@@ -23,18 +23,8 @@
 
 @import "partials/vendor";
 
-@import "variables";
-@import "partials/utils";
+@import "partials/all";
 @import "partials/introduction";
 @import "partials/projects";
 @import "partials/contact";
 @import "partials/imprint";
-
-header {
-  position: fixed;
-  top:      0;
-  left:     0;
-  right:    0;
-
-  z-index:  99;
-}

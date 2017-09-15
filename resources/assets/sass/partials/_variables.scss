@@ -21,40 +21,13 @@
  * @link     https://jkniest.de
  */
 
-#contact {
+// Bulma Modifications
+$primary: #D36135;
+$black: #02020B;
+$white: #FBFBFB;
+$light: #EBEBEB;
+$dark: $black;
+$warning: $primary;
 
-  @include below-sm() {
-    text-align: center;
-
-    // #contact img
-    img {
-      float: none;
-
-      width: 220px;
-      height: 220px;
-
-      margin: auto;
-    }
-  }
-
-  // #contact .image
-  .image {
-    width: 390px;
-    height: 390px;
-
-    padding: $one-unit * 2;
-
-    @include below-lg() {
-      width: 100%;
-      height: auto;
-    }
-
-    @include below-sm() {
-      width: 100%;
-      height: 220px;
-
-      margin-right: 0;
-    }
-  }
-
-}
+// Swiper
+$project-slider-height: 480px;
