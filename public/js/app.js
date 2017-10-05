@@ -178,6 +178,7 @@ $(window).scroll(function () {
             var offset = -80;
             if (winScroll - offset >= scrolling && $(window).width() >= 1024) {
                 $(box).addClass('is-fixed');
+                $(box).width($(box).parent().width());
             } else {
                 $(box).removeClass('is-fixed');
             }
