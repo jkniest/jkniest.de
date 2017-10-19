@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.2 on 2017-09-08.
+ * Generated for Laravel 5.5.17 on 2017-10-19.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -2921,6 +2921,19 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Get a lock instance.
+         *
+         * @param string $name
+         * @param int $seconds
+         * @return \Illuminate\Contracts\Cache\Lock 
+         * @static 
+         */ 
+        public static function lock($name, $seconds = 0)
+        {
+            return \Illuminate\Cache\RedisStore::lock($name, $seconds);
+        }
+        
+        /**
          * Remove all items from the cache.
          *
          * @return bool 
@@ -2928,29 +2941,41 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flush()
         {
-            return \Illuminate\Cache\FileStore::flush();
+            return \Illuminate\Cache\RedisStore::flush();
         }
         
         /**
-         * Get the Filesystem instance.
+         * Get the Redis connection instance.
          *
-         * @return \Illuminate\Filesystem\Filesystem 
+         * @return \Predis\ClientInterface 
          * @static 
          */ 
-        public static function getFilesystem()
+        public static function connection()
         {
-            return \Illuminate\Cache\FileStore::getFilesystem();
+            return \Illuminate\Cache\RedisStore::connection();
         }
         
         /**
-         * Get the working directory of the cache.
+         * Set the connection name to be used.
          *
-         * @return string 
+         * @param string $connection
+         * @return void 
          * @static 
          */ 
-        public static function getDirectory()
+        public static function setConnection($connection)
         {
-            return \Illuminate\Cache\FileStore::getDirectory();
+            \Illuminate\Cache\RedisStore::setConnection($connection);
+        }
+        
+        /**
+         * Get the Redis database instance.
+         *
+         * @return \Illuminate\Contracts\Redis\Factory 
+         * @static 
+         */ 
+        public static function getRedis()
+        {
+            return \Illuminate\Cache\RedisStore::getRedis();
         }
         
         /**
@@ -2961,7 +2986,19 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getPrefix()
         {
-            return \Illuminate\Cache\FileStore::getPrefix();
+            return \Illuminate\Cache\RedisStore::getPrefix();
+        }
+        
+        /**
+         * Set the cache key prefix.
+         *
+         * @param string $prefix
+         * @return void 
+         * @static 
+         */ 
+        public static function setPrefix($prefix)
+        {
+            \Illuminate\Cache\RedisStore::setPrefix($prefix);
         }
          
     }
@@ -5091,6 +5128,17 @@ namespace Illuminate\Support\Facades {
         {
             return \Illuminate\Auth\Access\Gate::abilities();
         }
+        
+        /**
+         * Get all of the defined policies.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function policies()
+        {
+            return \Illuminate\Auth\Access\Gate::policies();
+        }
          
     }
 
@@ -5215,7 +5263,7 @@ namespace Illuminate\Support\Facades {
          * @param string $key
          * @param array $replace
          * @param string $locale
-         * @return string 
+         * @return string|array|null 
          * @static 
          */ 
         public static function getFromJson($key, $replace = array(), $locale = null)
@@ -6670,6 +6718,17 @@ namespace Illuminate\Support\Facades {
         {
             return \Illuminate\Redis\RedisManager::resolve($name);
         }
+        
+        /**
+         * Return all of the created connections.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function connections()
+        {
+            return \Illuminate\Redis\RedisManager::connections();
+        }
          
     }
 
@@ -6765,7 +6824,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Get the current encoded path info for the request.
+         * Get the current decoded path info for the request.
          *
          * @return string 
          * @static 
@@ -8925,6 +8984,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Register a new Fallback route with the router.
+         *
+         * @param \Closure|array|string|null $action
+         * @return \Illuminate\Routing\Route 
+         * @static 
+         */ 
+        public static function fallback($action)
+        {
+            return \Illuminate\Routing\Router::fallback($action);
+        }
+        
+        /**
          * Create a redirect from one URI to another.
          *
          * @param string $uri
@@ -9043,6 +9114,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Return the response returned by the given route.
+         *
+         * @param string $name
+         * @return mixed 
+         * @static 
+         */ 
+        public static function respondWithRoute($name)
+        {
+            return \Illuminate\Routing\Router::respondWithRoute($name);
+        }
+        
+        /**
          * Dispatch the request to the application.
          *
          * @param \Illuminate\Http\Request $request
@@ -9089,6 +9172,19 @@ namespace Illuminate\Support\Facades {
         public static function prepareResponse($request, $response)
         {
             return \Illuminate\Routing\Router::prepareResponse($request, $response);
+        }
+        
+        /**
+         * Static version of prepareResponse.
+         *
+         * @param \Symfony\Component\HttpFoundation\Request $request
+         * @param mixed $response
+         * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse 
+         * @static 
+         */ 
+        public static function toResponse($request, $response)
+        {
+            return \Illuminate\Routing\Router::toResponse($request, $response);
         }
         
         /**
@@ -10752,6 +10848,36 @@ namespace Illuminate\Support\Facades {
         public static function temporaryUrl($path, $expiration, $options = array())
         {
             return \Illuminate\Filesystem\FilesystemAdapter::temporaryUrl($path, $expiration, $options);
+        }
+        
+        /**
+         * Get a temporary URL for the file at the given path.
+         *
+         * @param \League\Flysystem\AwsS3v3\AwsS3Adapter $adapter
+         * @param string $path
+         * @param \DateTimeInterface $expiration
+         * @param array $options
+         * @return string 
+         * @static 
+         */ 
+        public static function getAwsTemporaryUrl($adapter, $path, $expiration, $options)
+        {
+            return \Illuminate\Filesystem\FilesystemAdapter::getAwsTemporaryUrl($adapter, $path, $expiration, $options);
+        }
+        
+        /**
+         * Get a temporary URL for the file at the given path.
+         *
+         * @param \League\Flysystem\Rackspace\RackspaceAdapter $adapter
+         * @param string $path
+         * @param \DateTimeInterface $expiration
+         * @param $options
+         * @return string 
+         * @static 
+         */ 
+        public static function getRackspaceTemporaryUrl($adapter, $path, $expiration, $options)
+        {
+            return \Illuminate\Filesystem\FilesystemAdapter::getRackspaceTemporaryUrl($adapter, $path, $expiration, $options);
         }
         
         /**
@@ -12499,6 +12625,247 @@ namespace Spatie\LaravelImageOptimizer\Facades {
  
 }
 
+namespace Mateusjatenee\JsonFeed\Facades { 
+
+    class JsonFeed {
+        
+        /**
+         * Returns an instance of the class
+         *
+         * @param array $properties
+         * @return static 
+         * @static 
+         */ 
+        public static function start($properties = array(), $items = array())
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::start($properties, $items);
+        }
+        
+        /**
+         * Builds a collection following the JSON Feed spec
+         *
+         * @throws \Mateusjatenee\JsonFeed\Exceptions\IncorrectFeedStructureException
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function build()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::build();
+        }
+        
+        /**
+         * Builds the collection and converts it to an array
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function toArray()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::toArray();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function toJson()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::toJson();
+        }
+        
+        /**
+         * Set the feed's items
+         *
+         * @param $items
+         * @return self 
+         * @static 
+         */ 
+        public static function setItems($items)
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::setItems($items);
+        }
+        
+        /**
+         * 
+         *
+         * @param $config
+         * @return self 
+         * @static 
+         */ 
+        public static function setConfig($config)
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::setConfig($config);
+        }
+        
+        /**
+         * Gets the feed items
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function getItems()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getItems();
+        }
+        
+        /**
+         * Gets the Json Feed config
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getConfig();
+        }
+        
+        /**
+         * Returns an array of accepted properties
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getAcceptedProperties()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getAcceptedProperties();
+        }
+        
+        /**
+         * Gets the JSON Feed version being used.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getVersion()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getVersion();
+        }
+        
+        /**
+         * Gets the home page url
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getHomePageUrl()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getHomePageUrl();
+        }
+        
+        /**
+         * Gets the feed description
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getDescription()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getDescription();
+        }
+        
+        /**
+         * Gets the feed title
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getTitle()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getTitle();
+        }
+        
+        /**
+         * Gets the feed url
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getFeedUrl()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getFeedUrl();
+        }
+        
+        /**
+         * Gets the feed icon
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getIcon()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getIcon();
+        }
+        
+        /**
+         * Gets the feed's next page url
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getNextUrl()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getNextUrl();
+        }
+        
+        /**
+         * Gets wether the feed is expired (i.e no more updates)
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function getExpired()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getExpired();
+        }
+        
+        /**
+         * Gets the feed's favicon
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getFavicon()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getFavicon();
+        }
+        
+        /**
+         * Gets the feed's author
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getAuthor()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getAuthor();
+        }
+        
+        /**
+         * Gets the number of comments
+         *
+         * @return integer 
+         * @static 
+         */ 
+        public static function getUserComment()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getUserComment();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getHubs()
+        {
+            return \Mateusjatenee\JsonFeed\JsonFeed::getHubs();
+        }
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     class Facade {
@@ -13041,247 +13408,6 @@ namespace Barryvdh\Debugbar {
         {
             //Method inherited from \DebugBar\DebugBar            
             return \Barryvdh\Debugbar\LaravelDebugbar::offsetUnset($key);
-        }
-         
-    }
- 
-}
-
-namespace Mateusjatenee\JsonFeed\Facades { 
-
-    class JsonFeed {
-        
-        /**
-         * Returns an instance of the class
-         *
-         * @param array $properties
-         * @return static 
-         * @static 
-         */ 
-        public static function start($properties = array(), $items = array())
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::start($properties, $items);
-        }
-        
-        /**
-         * Builds a collection following the JSON Feed spec
-         *
-         * @throws \Mateusjatenee\JsonFeed\Exceptions\IncorrectFeedStructureException
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function build()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::build();
-        }
-        
-        /**
-         * Builds the collection and converts it to an array
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function toArray()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::toArray();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function toJson()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::toJson();
-        }
-        
-        /**
-         * Set the feed's items
-         *
-         * @param $items
-         * @return self 
-         * @static 
-         */ 
-        public static function setItems($items)
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::setItems($items);
-        }
-        
-        /**
-         * 
-         *
-         * @param $config
-         * @return self 
-         * @static 
-         */ 
-        public static function setConfig($config)
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::setConfig($config);
-        }
-        
-        /**
-         * Gets the feed items
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function getItems()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getItems();
-        }
-        
-        /**
-         * Gets the Json Feed config
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function getConfig()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getConfig();
-        }
-        
-        /**
-         * Returns an array of accepted properties
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function getAcceptedProperties()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getAcceptedProperties();
-        }
-        
-        /**
-         * Gets the JSON Feed version being used.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getVersion()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getVersion();
-        }
-        
-        /**
-         * Gets the home page url
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getHomePageUrl()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getHomePageUrl();
-        }
-        
-        /**
-         * Gets the feed description
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getDescription()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getDescription();
-        }
-        
-        /**
-         * Gets the feed title
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getTitle()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getTitle();
-        }
-        
-        /**
-         * Gets the feed url
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getFeedUrl()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getFeedUrl();
-        }
-        
-        /**
-         * Gets the feed icon
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getIcon()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getIcon();
-        }
-        
-        /**
-         * Gets the feed's next page url
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getNextUrl()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getNextUrl();
-        }
-        
-        /**
-         * Gets wether the feed is expired (i.e no more updates)
-         *
-         * @return bool 
-         * @static 
-         */ 
-        public static function getExpired()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getExpired();
-        }
-        
-        /**
-         * Gets the feed's favicon
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getFavicon()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getFavicon();
-        }
-        
-        /**
-         * Gets the feed's author
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function getAuthor()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getAuthor();
-        }
-        
-        /**
-         * Gets the number of comments
-         *
-         * @return integer 
-         * @static 
-         */ 
-        public static function getUserComment()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getUserComment();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function getHubs()
-        {
-            return \Mateusjatenee\JsonFeed\JsonFeed::getHubs();
         }
          
     }
@@ -14156,8 +14282,8 @@ namespace  {
              *
              * @param string $table
              * @param string $first
-             * @param string $operator
-             * @param string $second
+             * @param string|null $operator
+             * @param string|null $second
              * @param string $type
              * @param bool $where
              * @return $this 
@@ -14189,8 +14315,8 @@ namespace  {
              *
              * @param string $table
              * @param string $first
-             * @param string $operator
-             * @param string $second
+             * @param string|null $operator
+             * @param string|null $second
              * @return \Illuminate\Database\Query\Builder|static 
              * @static 
              */ 
@@ -14219,8 +14345,8 @@ namespace  {
              *
              * @param string $table
              * @param string $first
-             * @param string $operator
-             * @param string $second
+             * @param string|null $operator
+             * @param string|null $second
              * @return \Illuminate\Database\Query\Builder|static 
              * @static 
              */ 
@@ -14248,9 +14374,9 @@ namespace  {
              * Add a "cross join" clause to the query.
              *
              * @param string $table
-             * @param string $first
-             * @param string $operator
-             * @param string $second
+             * @param string|null $first
+             * @param string|null $operator
+             * @param string|null $second
              * @return \Illuminate\Database\Query\Builder|static 
              * @static 
              */ 
@@ -14724,8 +14850,8 @@ namespace  {
              * Add a "having" clause to the query.
              *
              * @param string $column
-             * @param string $operator
-             * @param string $value
+             * @param string|null $operator
+             * @param string|null $value
              * @param string $boolean
              * @return $this 
              * @static 
@@ -14739,8 +14865,8 @@ namespace  {
              * Add a "or having" clause to the query.
              *
              * @param string $column
-             * @param string $operator
-             * @param string $value
+             * @param string|null $operator
+             * @param string|null $value
              * @return \Illuminate\Database\Query\Builder|static 
              * @static 
              */ 
@@ -15145,7 +15271,7 @@ namespace  {
              * Insert a new record and get the value of the primary key.
              *
              * @param array $values
-             * @param string $sequence
+             * @param string|null $sequence
              * @return int 
              * @static 
              */ 
@@ -15288,13 +15414,13 @@ namespace  {
             /**
              * Clone the query without the given properties.
              *
-             * @param array $except
+             * @param array $properties
              * @return static 
              * @static 
              */ 
-            public static function cloneWithout($except)
+            public static function cloneWithout($properties)
             {    
-                return \Illuminate\Database\Query\Builder::cloneWithout($except);
+                return \Illuminate\Database\Query\Builder::cloneWithout($properties);
             }
          
             /**
@@ -15407,9 +15533,9 @@ namespace  {
 
     class ImageOptimizer extends \Spatie\LaravelImageOptimizer\Facades\ImageOptimizer {}
 
-    class Debugbar extends \Barryvdh\Debugbar\Facade {}
-
     class Cart extends \Mateusjatenee\JsonFeed\Facades\JsonFeed {}
+
+    class Debugbar extends \Barryvdh\Debugbar\Facade {}
  
 }
 
@@ -15505,7 +15631,7 @@ if (! function_exists('array_dot')) {
 
 if (! function_exists('array_except')) {
     /**
-     * Get all of the given array except for a specified array of items.
+     * Get all of the given array except for a specified array of keys.
      *
      * @param  array  $array
      * @param  array|string  $keys
@@ -15699,10 +15825,10 @@ if (! function_exists('array_sort')) {
      * Sort the array by the given callback or attribute name.
      *
      * @param  array  $array
-     * @param  callable|string  $callback
+     * @param  callable|string|null  $callback
      * @return array
      */
-    function array_sort($array, $callback)
+    function array_sort($array, $callback = null)
     {
         return Arr::sort($array, $callback);
     }
@@ -16571,14 +16697,15 @@ if (! function_exists('windows_os')) {
 
 if (! function_exists('with')) {
     /**
-     * Return the given object. Useful for chaining.
+     * Return the given value, optionally passed through the given callback.
      *
-     * @param  mixed  $object
+     * @param  mixed  $value
+     * @param  callable|null  $callback
      * @return mixed
      */
-    function with($object)
+    function with($value, callable $callback = null)
     {
-        return $object;
+        return is_null($callback) ? $value : $callback($value);
     }
 }
  
