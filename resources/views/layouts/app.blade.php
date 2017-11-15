@@ -28,6 +28,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="clCd7RHMGHgHhu_RHbtorEVCLf-LT7O3EjFsSM-VxPg"/>
 
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
