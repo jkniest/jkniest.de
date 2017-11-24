@@ -1,55 +1,37 @@
-// Font Awesome
-@import "node_modules/font-awesome/scss/font-awesome";
+/**
+ * Copyright (C) 2017 Jordan Kniest
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @category Core
+ * @package  JKniest.de
+ * @author   Jordan Kniest <contact@jkniest.de>
+ * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ * @link     https://jkniest.de
+ */
 
-// Font
-@import url('https://fonts.googleapis.com/css?family=Istok+Web|Lora');
+// Fonts & FontAwesome
+@import "fonts";
 
 // Bulma
-@import "node_modules/bulma/sass/utilities/initial-variables";
+@import "bulma";
 
-$primary: #D36135;
-$black: #02020B;
-$white: #FBFBFB;
-$light: #EBEBEB;
-$dark: $black;
-$warning: $primary;
+// Swiper
+@import "swiper";
 
-@import "node_modules/bulma/sass/utilities/_all";
-@import "node_modules/bulma/sass/base/_all";
-
-@import "node_modules/bulma/sass/elements/button";
-@import "node_modules/bulma/sass/elements/icon";
-@import "node_modules/bulma/sass/elements/tag";
-@import "node_modules/bulma/sass/elements/title";
-@import "node_modules/bulma/sass/elements/other";
-@import "node_modules/bulma/sass/elements/notification";
-@import "node_modules/bulma/sass/elements/content";
-
-@import "node_modules/bulma/sass/components/card";
-@import "node_modules/bulma/sass/components/nav";
-@import "node_modules/bulma/sass/components/panel";
-
-@import "node_modules/bulma/sass/layout/hero";
-@import "node_modules/bulma/sass/layout/footer";
-
-@import "node_modules/bulma/sass/grid/_all";
-
-// Other
-@import "node_modules/swiper/dist/css/swiper";
+// Hint
 @import "node_modules/hint.css/hint";
+
+// UtilSass
 @import "node_modules/utilsass/src/util.scss";
-
-// Swiper modifications
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-  background-color: $primary;
-  background-image: none !important;
-  mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
-  -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
-}
-
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-  background-color: $primary;
-  background-image: none !important;
-  mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
-  -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
-}
