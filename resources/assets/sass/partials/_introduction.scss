@@ -24,7 +24,6 @@
 @include below-sm() {
 
   #introduction {
-
     text-align: center;
 
     // #introduction img
@@ -41,10 +40,17 @@
   // #introduction .introduction-blur
   .introduction-blur {
     position: absolute;
+    left: 0;
     z-index: 0;
 
     width: 182px;
     filter: blur(3px);
+
+    @include below-sm() {
+      & {
+        left: auto;
+      }
+    }
   }
 
   // #introduction .normal-img
