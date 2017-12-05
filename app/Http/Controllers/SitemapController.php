@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\ProjectItems;
 use App\Projects\Project;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\File;
 use Roumen\Sitemap\Sitemap;
+use Illuminate\Support\Facades\File;
 
 /**
- * Sitemap controller
+ * Sitemap controller.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -27,7 +27,6 @@ use Roumen\Sitemap\Sitemap;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -35,7 +34,7 @@ use Roumen\Sitemap\Sitemap;
 class SitemapController extends Controller
 {
     /**
-     * Generate the sitemap with the cached project results
+     * Generate the sitemap with the cached project results.
      *
      * @return \Illuminate\Support\Facades\View
      */
@@ -53,7 +52,7 @@ class SitemapController extends Controller
     }
 
     /**
-     * Add all static pages to the sitemap
+     * Add all static pages to the sitemap.
      *
      * @param Sitemap $sitemap    The sitemap instance
      * @param string  $loaderDate The date when the project loader was created
@@ -63,7 +62,7 @@ class SitemapController extends Controller
     protected function addStaticPages(Sitemap $sitemap, string $loaderDate)
     {
         $images = [
-            ['url' => url('/img/2017.jpg'), 'title' => 'Jordan Kniest']
+            ['url' => url('/img/2017.jpg'), 'title' => 'Jordan Kniest'],
         ];
         $sitemap->add(url('/'), Carbon::createFromTimestamp($loaderDate), 1.0, 'weekly', $images);
 
@@ -72,7 +71,7 @@ class SitemapController extends Controller
     }
 
     /**
-     * Add every project to the sitemap
+     * Add every project to the sitemap.
      *
      * @param Sitemap $sitemap The sitemap instance
      *
@@ -82,7 +81,7 @@ class SitemapController extends Controller
     {
         ProjectItems::cached()->each(function ($project) use ($sitemap) {
             $images = [
-                ['url' => $project->getCoverPath(), 'title' => $project->getName()]
+                ['url' => $project->getCoverPath(), 'title' => $project->getName()],
             ];
 
             $route = route('project', ['slug' => $project->getSlug()]);

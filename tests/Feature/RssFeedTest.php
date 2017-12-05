@@ -2,13 +2,13 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Support\Facades\Config;
+use Tests\TestCase;
 use Tests\Feature\Helpers\ProjectA;
 use Tests\Feature\Helpers\ProjectB;
-use Tests\TestCase;
+use Illuminate\Support\Facades\Config;
 
 /**
- * Test the rss feed
+ * Test the rss feed.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -26,7 +26,6 @@ use Tests\TestCase;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -39,7 +38,7 @@ class RssFeedTest extends TestCase
         // Given: There are two projects (ProjectA & ProjectB)
         Config::set('portfolio.projects', [
             ProjectA::class,
-            ProjectB::class
+            ProjectB::class,
         ]);
 
         // When: We visit the /feed.xml page
@@ -59,7 +58,7 @@ class RssFeedTest extends TestCase
     {
         // Given: There is one project
         Config::set('portfolio.projects', [
-            ProjectA::class
+            ProjectA::class,
         ]);
 
         // When: We visit the feed page
@@ -73,7 +72,7 @@ class RssFeedTest extends TestCase
         // Given: We add another project
         Config::set('portfolio.projects', [
             ProjectA::class,
-            ProjectB::class
+            ProjectB::class,
         ]);
 
         // When: We visit the feed page again

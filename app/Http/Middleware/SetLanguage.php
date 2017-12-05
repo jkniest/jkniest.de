@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Request;
 
 /**
- * Set the language based on the session and the browser language
+ * Set the language based on the session and the browser language.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -24,7 +24,6 @@ use Illuminate\Support\Facades\Request;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de

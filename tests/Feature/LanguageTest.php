@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2017 Jordan Kniest
+ * Copyright (C) 2017 Jordan Kniest.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -21,7 +21,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 
 /**
- * Test the language routes and methods
+ * Test the language routes and methods.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -39,7 +39,6 @@ use Tests\TestCase;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de

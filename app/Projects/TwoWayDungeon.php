@@ -3,7 +3,7 @@
 namespace App\Projects;
 
 /**
- * Two Way Dungeon is a small unity3d game that was made for the ludum dare competition
+ * Two Way Dungeon is a small unity3d game that was made for the ludum dare competition.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -21,7 +21,6 @@ namespace App\Projects;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Projects
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -29,46 +28,46 @@ namespace App\Projects;
 class TwoWayDungeon extends Project
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name = 'Two Way Dungeon';
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug = 'two-way-dungeon';
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags = ['unity3d', 'game', 'c#', 'ludum-dare'];
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
     protected $media = [
         'initial.jpg',
         'enemies.jpg',
-        'boss.jpg'
+        'boss.jpg',
     ];
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover = 'boss.jpg';
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -85,12 +84,12 @@ class TwoWayDungeon extends Project
     protected $date = '2016-08-09';
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
     protected $meta = [
         'engine'    => 'Unity3D',
-        'languages' => 'C#'
+        'languages' => 'C#',
     ];
 }
