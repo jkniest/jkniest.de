@@ -4,13 +4,13 @@ namespace App\Projects;
 
 use App\Media;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\File;
-use Mateusjatenee\JsonFeed\Contracts\FeedItemContract;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
+use Illuminate\Support\Facades\File;
+use Mateusjatenee\JsonFeed\Contracts\FeedItemContract;
 
 /**
- * Base class for all projects
+ * Base class for all projects.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -28,7 +28,6 @@ use Spatie\Feed\FeedItem;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -36,42 +35,42 @@ use Spatie\Feed\FeedItem;
 class Project implements FeedItemContract, Feedable
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name;
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug;
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags;
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
     protected $media;
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover;
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -88,14 +87,14 @@ class Project implements FeedItemContract, Feedable
     protected $date;
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
     protected $meta;
 
     /**
-     * Return the name of the project
+     * Return the name of the project.
      *
      * @return string
      */
@@ -105,7 +104,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * Return the slug of the project
+     * Return the slug of the project.
      *
      * @return string
      */
@@ -115,35 +114,35 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * Return the public path to the cover image
+     * Return the public path to the cover image.
      *
      * @return string
      */
     public function getCoverPath()
     {
         return asset(
-            'media/' . $this->getClassName() . '/cover_' . $this->cover
+            'media/'.$this->getClassName().'/cover_'.$this->cover
         );
     }
 
     /**
-     * Return the view name of the short description
+     * Return the view name of the short description.
      *
      * @return string
      */
     public function getDescription()
     {
-        $view = 'projects.partials.' . app()->getLocale() . '.' . $this->getClassName() . '_short';
+        $view = 'projects.partials.'.app()->getLocale().'.'.$this->getClassName().'_short';
 
         if (view()->exists($view)) {
             return $view;
         }
 
-        return 'projects.partials.en.' . $this->getClassName() . '_short';
+        return 'projects.partials.en.'.$this->getClassName().'_short';
     }
 
     /**
-     * Return all media files
+     * Return all media files.
      *
      * @return array
      */
@@ -156,7 +155,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * Return all meta tags
+     * Return all meta tags.
      *
      * @return array
      */
@@ -166,23 +165,23 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * Return the name of the details view
+     * Return the name of the details view.
      *
      * @return string
      */
     public function getView()
     {
-        $view = 'projects.partials.' . app()->getLocale() . '.' . $this->getClassName();
+        $view = 'projects.partials.'.app()->getLocale().'.'.$this->getClassName();
 
         if (view()->exists($view)) {
             return $view;
         }
 
-        return 'projects.partials.en.' . $this->getClassName();
+        return 'projects.partials.en.'.$this->getClassName();
     }
 
     /**
-     * Return the year when this project was created
+     * Return the year when this project was created.
      *
      * @return int
      */
@@ -192,7 +191,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * Return all meta information
+     * Return all meta information.
      *
      * @return array
      */
@@ -202,7 +201,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * Return the creation date
+     * Return the creation date.
      *
      * @return string
      */
@@ -229,7 +228,7 @@ class Project implements FeedItemContract, Feedable
         if ($project) {
             return new $project;
         } else {
-            return null;
+            return;
         }
     }
 
@@ -244,7 +243,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * JSON feed - Get the id
+     * JSON feed - Get the id.
      *
      * @return string
      */
@@ -254,7 +253,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * JSON feed - Get the publishing date
+     * JSON feed - Get the publishing date.
      *
      * @return Carbon
      */
@@ -264,7 +263,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * JSON feed - Get the title
+     * JSON feed - Get the title.
      *
      * @return string
      */
@@ -274,7 +273,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * JSON feed - Get the url
+     * JSON feed - Get the url.
      *
      * @return string
      */
@@ -284,7 +283,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * JSON feed - Get the cover image / feed image
+     * JSON feed - Get the cover image / feed image.
      *
      * @return string
      */
@@ -294,7 +293,7 @@ class Project implements FeedItemContract, Feedable
     }
 
     /**
-     * JSON feed - Get all tags
+     * JSON feed - Get all tags.
      *
      * @return array
      */
@@ -316,7 +315,7 @@ class Project implements FeedItemContract, Feedable
             'updated' => Carbon::parse($this->date),
             'summary' => $this->name,
             'link'    => route('project', ['slug' => $this->slug]),
-            'author'  => config('app.name')
+            'author'  => config('app.name'),
         ]);
     }
 }

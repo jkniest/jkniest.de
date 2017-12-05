@@ -45,14 +45,14 @@ return [
 
         'tools' => '
             In my job, I work mostly with the Unity3D game engine and the CMS WordPress.
-            In my free time, however, I mostly develop with the open-source framework Laravel.'
+            In my free time, however, I mostly develop with the open-source framework Laravel.',
     ],
 
     'about' => [
         'interest'   => 'Did you get interested in my work, or do you want to talk with me?',
         'contact-me' => 'Then just contact me:',
         'active'     => 'Here are some platforms where I am active.',
-        'happy'      => 'I am looking forward to hearing from you!'
+        'happy'      => 'I am looking forward to hearing from you!',
     ],
 
     'meta' => [
@@ -60,6 +60,6 @@ return [
         'languages'           => 'Languages',
         'license'             => 'License',
         'engine'              => 'Engine',
-        'development-pattern' => 'Development pattern'
-    ]
+        'development-pattern' => 'Development pattern',
+    ],
 ];

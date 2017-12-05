@@ -3,7 +3,7 @@
 namespace App\Projects;
 
 /**
- * Planet of the elements - A small game for the Game++ competition
+ * Planet of the elements - A small game for the Game++ competition.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -21,7 +21,6 @@ namespace App\Projects;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Projects
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -29,28 +28,28 @@ namespace App\Projects;
 class PlanetoftheElements extends Project
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name = 'Planet of the Elements';
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug = 'planet-of-the-elements';
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags = ['unity3d', 'game', 'c#'];
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
@@ -58,18 +57,18 @@ class PlanetoftheElements extends Project
         'snake-killer.jpg',
         'killer-snake.jpg',
         'lonely.jpg',
-        'https://www.youtube.com/embed/n0W33QNpPE0'
+        'https://www.youtube.com/embed/n0W33QNpPE0',
     ];
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover = 'lonely.jpg';
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -86,12 +85,12 @@ class PlanetoftheElements extends Project
     protected $date = '2015-05-28';
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
     protected $meta = [
         'engine'    => 'Unity3D',
-        'languages' => 'C#'
+        'languages' => 'C#',
     ];
 }

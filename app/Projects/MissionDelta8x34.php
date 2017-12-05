@@ -21,7 +21,6 @@ namespace App\Projects;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Projects
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -29,46 +28,46 @@ namespace App\Projects;
 class MissionDelta8x34 extends Project
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name = 'Mission: Delta-8x34';
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug = 'mission-delta-8x34';
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags = ['unity3d', 'game', 'c#', 'ludum-dare'];
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
     protected $media = [
         'main.png',
         'planets.png',
-        'ship.png'
+        'ship.png',
     ];
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover = 'ship.png';
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -85,12 +84,12 @@ class MissionDelta8x34 extends Project
     protected $date = '2017-04-25';
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
     protected $meta = [
         'engine'    => 'Unity3D',
-        'languages' => 'C#'
+        'languages' => 'C#',
     ];
 }

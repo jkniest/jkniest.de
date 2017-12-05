@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\ProjectItems;
-use Illuminate\Support\Facades\Cache;
 use Mateusjatenee\JsonFeed\Facades\JsonFeed;
 
 /**
- * Generate and show the json feed
+ * Generate and show the json feed.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -25,7 +24,6 @@ use Mateusjatenee\JsonFeed\Facades\JsonFeed;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Feeds
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -33,7 +31,7 @@ use Mateusjatenee\JsonFeed\Facades\JsonFeed;
 class JsonFeedController extends Controller
 {
     /**
-     * Show the json feed
+     * Show the json feed.
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -57,9 +55,9 @@ class JsonFeedController extends Controller
             'feed_url'      => url('feed.json'),
             'author'        => [
                 'url'  => config('app.url'),
-                'name' => config('portfolio.author')
+                'name' => config('portfolio.author'),
             ],
-            'favicon'       => url('favicon.ico')
+            'favicon'       => url('favicon.ico'),
         ];
 
         return $config;
