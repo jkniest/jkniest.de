@@ -22,27 +22,27 @@
  */
 
 // Bulma: Initial
-@import "node_modules/bulma/sass/utilities/initial-variables";
+@import 'node_modules/bulma/sass/utilities/initial-variables';
 
 // Custom Variables
-@import "variables";
+@import 'variables';
 
 // Bulma Elements / Components
-@import "node_modules/bulma/sass/utilities/_all";
-@import "node_modules/bulma/sass/base/_all";
-@import "node_modules/bulma/sass/grid/_all";
+@import 'node_modules/bulma/sass/utilities/_all';
+@import 'node_modules/bulma/sass/base/_all';
+@import 'node_modules/bulma/sass/grid/_all';
 
-@import "node_modules/bulma/sass/elements/button";
-@import "node_modules/bulma/sass/elements/icon";
-@import "node_modules/bulma/sass/elements/tag";
-@import "node_modules/bulma/sass/elements/title";
-@import "node_modules/bulma/sass/elements/other";
-@import "node_modules/bulma/sass/elements/notification";
-@import "node_modules/bulma/sass/elements/content";
+@import 'node_modules/bulma/sass/elements/button';
+@import 'node_modules/bulma/sass/elements/icon';
+@import 'node_modules/bulma/sass/elements/tag';
+@import 'node_modules/bulma/sass/elements/title';
+@import 'node_modules/bulma/sass/elements/other';
+@import 'node_modules/bulma/sass/elements/notification';
+@import 'node_modules/bulma/sass/elements/content';
 
-@import "node_modules/bulma/sass/components/card";
-@import "node_modules/bulma/sass/components/nav";
-@import "node_modules/bulma/sass/components/panel";
+@import 'node_modules/bulma/sass/components/card';
+@import 'node_modules/bulma/sass/components/nav';
+@import 'node_modules/bulma/sass/components/panel';
 
-@import "node_modules/bulma/sass/layout/hero";
-@import "node_modules/bulma/sass/layout/footer";
+@import 'node_modules/bulma/sass/layout/hero';
+@import 'node_modules/bulma/sass/layout/footer';

@@ -40,7 +40,7 @@ return [
         'tools' => '
             In meinem Beruf arbeite ich meistens mit der GameEngine Unity3D und 
             dem CMS WordPress. In meiner Freizeit allerdings entwickle ich meistens 
-            mit dem Open-Source Framework Laravel.'
+            mit dem Open-Source Framework Laravel.',
     ],
 
     'about' => [
@@ -52,7 +52,7 @@ return [
 
         'active' => 'Folgend finden Sie einige Platformenen auf denen ich aktiv bin.',
 
-        'happy' => 'Ich freue mich auf Ihre Nachricht!'
+        'happy' => 'Ich freue mich auf Ihre Nachricht!',
     ],
 
     'meta' => [
@@ -60,6 +60,6 @@ return [
         'languages'           => 'Sprachen',
         'license'             => 'Lizenz',
         'engine'              => 'Engine',
-        'development-pattern' => 'Entwicklungs-Pattern'
-    ]
+        'development-pattern' => 'Entwicklungs-Pattern',
+    ],
 ];

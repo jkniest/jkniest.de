@@ -2,13 +2,13 @@
 
 namespace App\Console\Commands;
 
+use InvalidArgumentException;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use InvalidArgumentException;
 use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 /**
- * This command converts all images inside the media directory to different sizes:
+ * This command converts all images inside the media directory to different sizes:.
  *
  * source -> No resizing
  * featured -> 512x512
@@ -31,7 +31,6 @@ use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -79,7 +78,7 @@ class MediaCommand extends Command
         $dirs = collect($this->files->directories(base_path('media')));
 
         $dirs->each(function ($dir) {
-            $this->info('Converting ' . $dir);
+            $this->info('Converting '.$dir);
 
             $path = $this->getPublicPath($dir);
 
@@ -89,7 +88,7 @@ class MediaCommand extends Command
     }
 
     /**
-     * Get the storage path based on the media path
+     * Get the storage path based on the media path.
      *
      * @param string $source The media directory path
      *
@@ -99,11 +98,11 @@ class MediaCommand extends Command
     {
         $dir = str_replace(base_path('media/'), '', $source);
 
-        return public_path('media/' . $dir);
+        return public_path('media/'.$dir);
     }
 
     /**
-     * Create the storage folder
+     * Create the storage folder.
      *
      * @param string $path The full path
      *
@@ -111,13 +110,13 @@ class MediaCommand extends Command
      */
     protected function createStorageFolder(string $path)
     {
-        if (!$this->files->isDirectory($path)) {
+        if (! $this->files->isDirectory($path)) {
             mkdir($path, 0777, true);
         }
     }
 
     /**
-     * Handle all files inside the source directory
+     * Handle all files inside the source directory.
      *
      * @param string $source      The source directory
      * @param string $destination The target directory
@@ -129,8 +128,8 @@ class MediaCommand extends Command
         $files = collect($this->files->files($source));
 
         $files->each(function ($file) use ($source, $destination) {
-            $fileName = str_replace($source . '/', '', $file);
-            $this->comment(' -> ' . $fileName);
+            $fileName = str_replace($source.'/', '', $file);
+            $this->comment(' -> '.$fileName);
 
             $this->copyFile($file, $destination, $fileName);
             $this->generateCoverFile($file, $destination, $fileName);
@@ -139,7 +138,7 @@ class MediaCommand extends Command
     }
 
     /**
-     * Copy a single file to the storage directory
+     * Copy a single file to the storage directory.
      *
      * @param string $path        The file path
      * @param string $destination The destination folder
@@ -149,14 +148,14 @@ class MediaCommand extends Command
      */
     protected function copyFile(string $path, string $destination, string $fileName)
     {
-        $target = $destination . '/source_' . $fileName;
+        $target = $destination.'/source_'.$fileName;
 
         $this->files->copy($path, $target);
         ImageOptimizer::optimize($target);
     }
 
     /**
-     * Copy a source file and resize it to the cover size (512x512)
+     * Copy a source file and resize it to the cover size (512x512).
      *
      * @param string $path        The file path
      * @param string $destination The destination folder
@@ -167,13 +166,13 @@ class MediaCommand extends Command
     protected function generateCoverFile(string $path, string $destination, string $fileName)
     {
         $size = 512;
-        $target = $destination . '/cover_' . $fileName;
+        $target = $destination.'/cover_'.$fileName;
 
         $this->saveThumb($path, $size, $target);
     }
 
     /**
-     * Copy a source file and resize it to the cover size (480x480)
+     * Copy a source file and resize it to the cover size (480x480).
      *
      * @param string $path        The file path
      * @param string $destination The destination folder
@@ -184,13 +183,13 @@ class MediaCommand extends Command
     protected function generateThumbFile(string $path, string $destination, string $fileName)
     {
         $size = 480;
-        $target = $destination . '/thumb_' . $fileName;
+        $target = $destination.'/thumb_'.$fileName;
 
         $this->saveThumb($path, $size, $target);
     }
 
     /**
-     * Create a image object from any filetype
+     * Create a image object from any filetype.
      *
      * @param string $filename The image file path
      *
@@ -198,8 +197,8 @@ class MediaCommand extends Command
      */
     protected function createImageFromFile(string $filename)
     {
-        if (!file_exists($filename)) {
-            throw new InvalidArgumentException('File "' . $filename . '" not found.');
+        if (! file_exists($filename)) {
+            throw new InvalidArgumentException('File "'.$filename.'" not found.');
         }
         switch (strtolower(pathinfo($filename, PATHINFO_EXTENSION))) {
             case 'jpeg':
@@ -218,7 +217,7 @@ class MediaCommand extends Command
     }
 
     /**
-     * Save a given image as a thumbnail
+     * Save a given image as a thumbnail.
      *
      * @param string $path   The source image path
      * @param int    $size   The size of the new image

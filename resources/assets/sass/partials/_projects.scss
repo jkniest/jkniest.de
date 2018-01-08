@@ -24,9 +24,7 @@
  */
 
 .projects {
-
   @include mobile() {
-
     // .projects .columns
     .columns {
       margin-top: 0;
@@ -40,29 +38,28 @@
 
   // .projects figure
   figure {
-
     // .project figure:hover > .hover
     &:hover > .hover {
       visibility: visible;
-      opacity:    1;
+      opacity: 1;
     }
 
     // .projects figure .hover
     .hover {
-      position:         absolute;
-      left:             0;
-      top:              0;
-      right:            0;
-      bottom:           0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
 
-      visibility:       hidden;
-      opacity:          0;
+      visibility: hidden;
+      opacity: 0;
 
       @include transition(visibility 0.2s);
       @include transition(opacity 0.2s linear);
 
       background-color: rgba(0, 0, 0, 0.8);
-      color:            white;
+      color: white;
 
       // .projects figure .hover .title
       .title {
@@ -72,17 +69,16 @@
       // .projects figure .hover .button
       .button {
         position: absolute;
-        bottom:   20px;
-        left:     20px;
-        right:    20px;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
       }
     }
-
   }
 
   // .projects .card
   .card {
-    margin-left:  auto;
+    margin-left: auto;
     margin-right: auto;
   }
 
@@ -93,16 +89,16 @@
 }
 
 #gallery-top {
-  width:      100%;
+  width: 100%;
   max-height: $project-slider-height;
 
   background: #d3d3d3;
 
   // #gallery-top .swiper-wrapper
   .swiper-wrapper {
-    display:     flex;
+    display: flex;
     align-items: center;
-    max-height:  $project-slider-height;
+    max-height: $project-slider-height;
   }
 
   // #gallery-top .swiper-slide
@@ -112,17 +108,17 @@
 }
 
 #gallery-thumbs {
-  height:     120px;
+  height: 120px;
   box-sizing: border-box;
-  padding:    10px 0;
+  padding: 10px 0;
   background: #d3d3d3;
 
   // #gallery-thumbs .swiper-slide
   .swiper-slide {
-    width:           170px;
-    height:          100%;
+    width: 170px;
+    height: 100%;
 
-    opacity:         0.4;
+    opacity: 0.4;
     background-size: cover;
   }
 
@@ -133,9 +129,8 @@
 }
 
 #project-main {
-
   @include below-md() {
-    padding-left:  10px;
+    padding-left: 10px;
     padding-right: 10px;
   }
 
@@ -148,11 +143,11 @@
   .project-info-right {
     margin-left: 10px;
   }
-
 }
 
 .hover {
-  p, table {
+  p,
+  table {
     color: white !important;
   }
 

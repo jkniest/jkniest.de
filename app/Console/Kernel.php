@@ -6,7 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 /**
- * The console kernel wraps up artisan
+ * The console kernel wraps up artisan.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -24,7 +24,6 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
