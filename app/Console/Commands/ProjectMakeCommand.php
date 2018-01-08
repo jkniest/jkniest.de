@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\GeneratorCommand;
 
 /**
- * Create a new project with an artisan command
+ * Create a new project with an artisan command.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -23,7 +23,6 @@ use Illuminate\Console\GeneratorCommand;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -52,13 +51,13 @@ class ProjectMakeCommand extends GeneratorCommand
     protected $type = 'Project';
 
     /**
-     * Get the stub file for this generator
+     * Get the stub file for this generator.
      *
      * @return string
      */
     protected function getStub()
     {
-        return __DIR__ . '/../stubs/project.stub';
+        return __DIR__.'/../stubs/project.stub';
     }
 
     /**
@@ -103,7 +102,7 @@ class ProjectMakeCommand extends GeneratorCommand
     {
         $name = $this->getClassName($name);
 
-        return app_path('Projects/' . str_replace('\\', '/', $name) . '.php');
+        return app_path('Projects/'.str_replace('\\', '/', $name).'.php');
     }
 
     /**
@@ -140,7 +139,7 @@ class ProjectMakeCommand extends GeneratorCommand
      */
     protected function makeDirectory($path)
     {
-        if (!$this->files->isDirectory(dirname($path))) {
+        if (! $this->files->isDirectory(dirname($path))) {
             $this->files->makeDirectory(dirname($path), 0777, true, true);
         }
 
@@ -152,7 +151,7 @@ class ProjectMakeCommand extends GeneratorCommand
     }
 
     /**
-     * Get the slugifyed version of the name
+     * Get the slugifyed version of the name.
      *
      * @param string $name The name
      *
@@ -186,40 +185,40 @@ class ProjectMakeCommand extends GeneratorCommand
     }
 
     /**
-     * Create the media folder for this project
+     * Create the media folder for this project.
      *
      * @return void
      */
     protected function createMediaPath()
     {
-        $path = base_path('media/' . $this->getClassName($this->getNameInput()));
+        $path = base_path('media/'.$this->getClassName($this->getNameInput()));
 
-        if (!$this->files->exists($path)) {
+        if (! $this->files->exists($path)) {
             $this->files->makeDirectory($path, 0777, true, true);
         }
     }
 
     /**
-     * Create the default view file for this project
+     * Create the default view file for this project.
      *
      * @return void
      */
     protected function createViewFiles()
     {
         $path = resource_path('views/projects/partials/en/');
-        if (!$this->files->isDirectory($path)) {
+        if (! $this->files->isDirectory($path)) {
             $this->files->makeDirectory($path, 0777, true, true);
         }
 
         // Main file
-        $file = $path . $this->getClassName($this->getNameInput()) . '.blade.php';
-        if (!$this->files->exists($file)) {
+        $file = $path.$this->getClassName($this->getNameInput()).'.blade.php';
+        if (! $this->files->exists($file)) {
             $this->files->put($file, 'This is a new project');
         }
 
         // Short description file
-        $file = $path . $this->getClassName($this->getNameInput()) . '_short.blade.php';
-        if (!$this->files->exists($file)) {
+        $file = $path.$this->getClassName($this->getNameInput()).'_short.blade.php';
+        if (! $this->files->exists($file)) {
             $this->files->put($file, 'Lorem ipsum dolor sit amet');
         }
     }

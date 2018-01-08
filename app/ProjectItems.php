@@ -23,7 +23,6 @@ use Illuminate\Support\Collection;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -35,7 +34,7 @@ class ProjectItems
      * - Load all projects from the configuration
      * - Remove any double projects
      * - Sort them by their creation date (newest first)
-     * - And regenerate the key values
+     * - And regenerate the key values.
      *
      * @return Collection
      */

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 /**
- * Update the language that the user will see
+ * Update the language that the user will see.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -21,7 +21,6 @@ namespace App\Http\Controllers;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -29,7 +28,7 @@ namespace App\Http\Controllers;
 class LanguageController extends Controller
 {
     /**
-     * The user can change the language based on the given language code
+     * The user can change the language based on the given language code.
      *
      * @param string $code The language code (example: en, de)
      *

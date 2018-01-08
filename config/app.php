@@ -224,7 +224,7 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
 
         'Analytics'      => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
-        'ImageOptimizer' => Spatie\LaravelImageOptimizer\ImageOptimizerFacade::class
+        'ImageOptimizer' => Spatie\LaravelImageOptimizer\ImageOptimizerFacade::class,
     ],
 
 ];

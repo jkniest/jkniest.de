@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 /**
- * Handles all non-resource page requests like the front page or the impress
+ * Handles all non-resource page requests like the front page or the impress.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -21,7 +21,6 @@ namespace App\Http\Controllers;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
@@ -29,7 +28,7 @@ namespace App\Http\Controllers;
 class PageController extends Controller
 {
     /**
-     * The front page
+     * The front page.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -43,7 +42,7 @@ class PageController extends Controller
     }
 
     /**
-     * The imprint page
+     * The imprint page.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -53,7 +52,7 @@ class PageController extends Controller
     }
 
     /**
-     * The privacy information page
+     * The privacy information page.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

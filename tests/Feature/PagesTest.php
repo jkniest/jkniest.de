@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 /**
- * Test all pages (their response status)
+ * Test all pages (their response status).
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -26,7 +23,6 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
  * @link     https://jkniest.de
