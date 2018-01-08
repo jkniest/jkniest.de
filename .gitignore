@@ -1,6 +1,5 @@
 /node_modules
 /public/hot
-/public/media
 /public/storage
 /storage/*.key
 /vendor
@@ -10,3 +9,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
+/public/css
+/public/js
+/public/fonts
+/public/images
+/public/media
+/public/mix-manifest.json

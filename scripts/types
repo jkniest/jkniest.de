@@ -1,0 +1,59 @@
+{
+    "types": [
+        {
+            "short": "feat",
+            "label": "Features",
+            "changelog": true
+        },
+        {
+            "short": "fix",
+            "label": "Bug Fixes",
+            "changelog": true
+        },
+        {
+            "short": "breaking",
+            "label": "Breaking Changes",
+            "changelog": true
+        },
+        {
+            "short": "docs",
+            "label": "Documentation",
+            "changelog": false
+        },
+        {
+            "short": "style",
+            "label": "Styling",
+            "changelog": true
+        },
+        {
+            "short": "refactor",
+            "label": "Refactoring",
+            "changelog": false
+        },
+        {
+            "short": "test",
+            "label": "Tests / Testing",
+            "changelog": false
+        },
+        {
+            "short": "build",
+            "label": "Build Workflow",
+            "changelog": true
+        },
+        {
+            "short": "ci",
+            "label": "Continuous Integration",
+            "changelog": false
+        },
+        {
+            "short": "dev",
+            "label": "Development",
+            "changelog": false
+        },
+        {
+            "short": "content",
+            "label": "Content",
+            "changelog": true
+        }
+    ]
+}

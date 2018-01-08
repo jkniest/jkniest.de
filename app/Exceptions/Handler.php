@@ -40,18 +40,4 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
-
-    /**
-     * Report or log an exception.
-     *
-     * @param  \Exception $e The thrown exception
-     *
-     * @return void
-     */
-    public function report(Exception $e)
-    {
-        app('sneaker')->captureException($e);
-
-        parent::report($e);
-    }
 }

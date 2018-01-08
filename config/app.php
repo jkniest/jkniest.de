@@ -166,7 +166,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
 
         /*
          * Application Service Providers...

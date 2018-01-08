@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.17 on 2017-10-19.
+ * Generated for Laravel 5.5.28 on 2018-01-08.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -375,6 +375,18 @@ namespace Illuminate\Support\Facades {
         public static function getProvider($provider)
         {
             return \Illuminate\Foundation\Application::getProvider($provider);
+        }
+        
+        /**
+         * Get the registered service provider instances if any exist.
+         *
+         * @param \Illuminate\Support\ServiceProvider|string $provider
+         * @return array 
+         * @static 
+         */ 
+        public static function getProviders($provider)
+        {
+            return \Illuminate\Foundation\Application::getProviders($provider);
         }
         
         /**
@@ -1873,7 +1885,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the session store used by the guard.
          *
-         * @return \Illuminate\Contracts\Session\Session. 
+         * @return \Illuminate\Contracts\Session\Session 
          * @static 
          */ 
         public static function getSession()
@@ -3265,7 +3277,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the cookies which have been queued for the next request.
          *
-         * @return array 
+         * @return \Symfony\Component\HttpFoundation\Cookie[] 
          * @static 
          */ 
         public static function getQueuedCookies()
@@ -4795,7 +4807,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $directory
          * @param bool $hidden
-         * @return array 
+         * @return \Symfony\Component\Finder\SplFileInfo[] 
          * @static 
          */ 
         public static function files($directory, $hidden = false)
@@ -4808,7 +4820,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $directory
          * @param bool $hidden
-         * @return array 
+         * @return \Symfony\Component\Finder\SplFileInfo[] 
          * @static 
          */ 
         public static function allFiles($directory, $hidden = false)
@@ -6689,6 +6701,43 @@ namespace Illuminate\Support\Facades {
         {
             \Illuminate\Routing\Redirector::setSession($session);
         }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+            \Illuminate\Routing\Redirector::macro($name, $macro);
+        }
+        
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @return void 
+         * @static 
+         */ 
+        public static function mixin($mixin)
+        {
+            \Illuminate\Routing\Redirector::mixin($mixin);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+            return \Illuminate\Routing\Redirector::hasMacro($name);
+        }
          
     }
 
@@ -6964,24 +7013,24 @@ namespace Illuminate\Support\Facades {
          * Merge new input into the current request's input array.
          *
          * @param array $input
-         * @return void 
+         * @return \Illuminate\Http\Request 
          * @static 
          */ 
         public static function merge($input)
         {
-            \Illuminate\Http\Request::merge($input);
+            return \Illuminate\Http\Request::merge($input);
         }
         
         /**
          * Replace the input for the current request.
          *
          * @param array $input
-         * @return void 
+         * @return \Illuminate\Http\Request 
          * @static 
          */ 
         public static function replace($input)
         {
-            \Illuminate\Http\Request::replace($input);
+            return \Illuminate\Http\Request::replace($input);
         }
         
         /**
@@ -7450,8 +7499,8 @@ namespace Illuminate\Support\Facades {
          * 
          * Order of precedence: PATH (routing placeholders or custom attributes), GET, BODY
          *
-         * @param string $key the key
-         * @param mixed $default the default value if the parameter key does not exist
+         * @param string $key The key
+         * @param mixed $default The default value if the parameter key does not exist
          * @return mixed 
          * @static 
          */ 
@@ -8084,6 +8133,24 @@ namespace Illuminate\Support\Facades {
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::isMethodCacheable();
+        }
+        
+        /**
+         * Returns the protocol version.
+         * 
+         * If the application is behind a proxy, the protocol version used in the
+         * requests between the client and the proxy and between the proxy and the
+         * server might be different. This returns the former (from the "Via" header)
+         * if the proxy is trusted (see "setTrustedProxies()"), otherwise it returns
+         * the latter (from the "SERVER_PROTOCOL" server parameter).
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getProtocolVersion()
+        {
+            //Method inherited from \Symfony\Component\HttpFoundation\Request            
+            return \Illuminate\Http\Request::getProtocolVersion();
         }
         
         /**
@@ -9064,7 +9131,19 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Route an api resource to a controller.
+         * Register an array of API resource controllers.
+         *
+         * @param array $resources
+         * @return void 
+         * @static 
+         */ 
+        public static function apiResources($resources)
+        {
+            \Illuminate\Routing\Router::apiResources($resources);
+        }
+        
+        /**
+         * Route an API resource to a controller.
          *
          * @param string $name
          * @param string $controller
@@ -10655,6 +10734,35 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Create a streamed response for a given file.
+         *
+         * @param string $path
+         * @param string|null $name
+         * @param array|null $headers
+         * @param string|null $disposition
+         * @return \Symfony\Component\HttpFoundation\StreamedResponse 
+         * @static 
+         */ 
+        public static function response($path, $name = null, $headers = array(), $disposition = 'inline')
+        {
+            return \Illuminate\Filesystem\FilesystemAdapter::response($path, $name, $headers, $disposition);
+        }
+        
+        /**
+         * Create a streamed download response for a given file.
+         *
+         * @param string $path
+         * @param string|null $name
+         * @param array|null $headers
+         * @return \Symfony\Component\HttpFoundation\StreamedResponse 
+         * @static 
+         */ 
+        public static function download($path, $name = null, $headers = array())
+        {
+            return \Illuminate\Filesystem\FilesystemAdapter::download($path, $name, $headers);
+        }
+        
+        /**
          * Write the contents of a file.
          *
          * @param string $path
@@ -10871,7 +10979,7 @@ namespace Illuminate\Support\Facades {
          * @param \League\Flysystem\Rackspace\RackspaceAdapter $adapter
          * @param string $path
          * @param \DateTimeInterface $expiration
-         * @param $options
+         * @param array $options
          * @return string 
          * @static 
          */ 
@@ -10952,6 +11060,17 @@ namespace Illuminate\Support\Facades {
         public static function deleteDirectory($directory)
         {
             return \Illuminate\Filesystem\FilesystemAdapter::deleteDirectory($directory);
+        }
+        
+        /**
+         * Flush the Flysystem cache.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushCache()
+        {
+            \Illuminate\Filesystem\FilesystemAdapter::flushCache();
         }
         
         /**
@@ -12219,338 +12338,6 @@ namespace Illuminate\Support\Facades {
         public static function renderTranslation()
         {
             return \Illuminate\View\Factory::renderTranslation();
-        }
-         
-    }
- 
-}
-
-namespace Ipunkt\LaravelAnalytics { 
-
-    class AnalyticsFacade {
-        
-        /**
-         * track an page view
-         *
-         * @param null|string $page
-         * @param null|string $title
-         * @param null|string $hittype
-         * @return void 
-         * @static 
-         */ 
-        public static function trackPage($page = null, $title = null, $hittype = null)
-        {
-            \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::trackPage($page, $title, $hittype);
-        }
-        
-        /**
-         * track an event
-         *
-         * @param string $category
-         * @param string $action
-         * @param null|string $label
-         * @param null|int $value
-         * @static 
-         */ 
-        public static function trackEvent($category, $action, $label = null, $value = null)
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::trackEvent($category, $action, $label, $value);
-        }
-        
-        /**
-         * ecommerce tracking - add transaction
-         *
-         * @param string $id
-         * @param null|string $affiliation
-         * @param null|float $revenue
-         * @param null|float $shipping
-         * @param null|float $tax
-         * @param null|string $currency
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function ecommerceAddTransaction($id, $affiliation = null, $revenue = null, $shipping = null, $tax = null, $currency = null)
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::ecommerceAddTransaction($id, $affiliation, $revenue, $shipping, $tax, $currency);
-        }
-        
-        /**
-         * ecommerce tracking - add item
-         *
-         * @param string $id
-         * @param string $name
-         * @param null|string $sku
-         * @param null|string $category
-         * @param null|float $price
-         * @param null|int $quantity
-         * @param null|string $currency
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function ecommerceAddItem($id, $name, $sku = null, $category = null, $price = null, $quantity = null, $currency = null)
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::ecommerceAddItem($id, $name, $sku, $category, $price, $quantity, $currency);
-        }
-        
-        /**
-         * track any custom code
-         *
-         * @param string $customCode
-         * @return void 
-         * @static 
-         */ 
-        public static function trackCustom($customCode)
-        {
-            \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::trackCustom($customCode);
-        }
-        
-        /**
-         * enable display features
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics 
-         * @static 
-         */ 
-        public static function enableDisplayFeatures()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::enableDisplayFeatures();
-        }
-        
-        /**
-         * disable display features
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics 
-         * @static 
-         */ 
-        public static function disableDisplayFeatures()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::disableDisplayFeatures();
-        }
-        
-        /**
-         * enable ecommerce tracking
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics 
-         * @static 
-         */ 
-        public static function enableEcommerceTracking()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::enableEcommerceTracking();
-        }
-        
-        /**
-         * disable ecommerce tracking
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics 
-         * @static 
-         */ 
-        public static function disableEcommerceTracking()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::disableEcommerceTracking();
-        }
-        
-        /**
-         * enable auto tracking
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics 
-         * @static 
-         */ 
-        public static function enableAutoTracking()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::enableAutoTracking();
-        }
-        
-        /**
-         * disable auto tracking
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics 
-         * @static 
-         */ 
-        public static function disableAutoTracking()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::disableAutoTracking();
-        }
-        
-        /**
-         * render script block
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function enableScriptBlock()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::enableScriptBlock();
-        }
-        
-        /**
-         * do not render script block
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function disableScriptBlock()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::disableScriptBlock();
-        }
-        
-        /**
-         * returns the javascript embedding code
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function render()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::render();
-        }
-        
-        /**
-         * sets or gets nonInteraction
-         * 
-         * setting: $this->nonInteraction(true)->render();
-         * getting: if ($this->nonInteraction()) echo 'non-interaction set';
-         *
-         * @param boolean|null $value
-         * @return bool|$this 
-         * @static 
-         */ 
-        public static function nonInteraction($value = null)
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::nonInteraction($value);
-        }
-        
-        /**
-         * make the tracking measurement url insecure
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function unsecureMeasurementUrl()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::unsecureMeasurementUrl();
-        }
-        
-        /**
-         * use the secured version of the tracking measurement url
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function secureMeasurementUrl()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::secureMeasurementUrl();
-        }
-        
-        /**
-         * assembles an url for tracking measurement without javascript
-         * 
-         * e.g. for tracking email open events within a newsletter
-         *
-         * @param string $metricName
-         * @param mixed $metricValue
-         * @param \Ipunkt\LaravelAnalytics\Data\Event $event
-         * @param \Ipunkt\LaravelAnalytics\Data\Campaign $campaign
-         * @param string|null $clientId
-         * @param array $params
-         * @return string 
-         * @experimental 
-         * @static 
-         */ 
-        public static function trackMeasurementUrl($metricName, $metricValue, $event, $campaign, $clientId = null, $params = array())
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::trackMeasurementUrl($metricName, $metricValue, $event, $campaign, $clientId, $params);
-        }
-        
-        /**
-         * sets an user id for user tracking
-         *
-         * @param string $userId
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id
-         * @static 
-         */ 
-        public static function setUserId($userId)
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::setUserId($userId);
-        }
-        
-        /**
-         * unset a possible given user id
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function unsetUserId()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::unsetUserId();
-        }
-        
-        /**
-         * sets custom dimensions
-         *
-         * @param string|array $dimension
-         * @param null|string $value
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function setCustom($dimension, $value = null)
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::setCustom($dimension, $value);
-        }
-        
-        /**
-         * sets a campaign
-         *
-         * @param \Ipunkt\LaravelAnalytics\Providers\Campaign $campaign
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function setCampaign($campaign)
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::setCampaign($campaign);
-        }
-        
-        /**
-         * unset a possible given campaign
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function unsetCampaign()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::unsetCampaign();
-        }
-        
-        /**
-         * enables Content Security Polity and sets nonce
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function withCSP()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::withCSP();
-        }
-        
-        /**
-         * disables Content Security Polity
-         *
-         * @return \Ipunkt\LaravelAnalytics\Providers\AnalyticsProviderInterface 
-         * @static 
-         */ 
-        public static function withoutCSP()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::withoutCSP();
-        }
-        
-        /**
-         * returns the current Content Security Policy nonce
-         *
-         * @return string|null 
-         * @static 
-         */ 
-        public static function cspNonce()
-        {
-            return \Ipunkt\LaravelAnalytics\Providers\GoogleAnalytics::cspNonce();
         }
          
     }
@@ -15529,8 +15316,6 @@ namespace  {
 
     class View extends \Illuminate\Support\Facades\View {}
 
-    class Analytics extends \Ipunkt\LaravelAnalytics\AnalyticsFacade {}
-
     class ImageOptimizer extends \Spatie\LaravelImageOptimizer\Facades\ImageOptimizer {}
 
     class Cart extends \Mateusjatenee\JsonFeed\Facades\JsonFeed {}
@@ -16091,7 +15876,7 @@ if (! function_exists('dd')) {
     /**
      * Dump the passed variables and end the script.
      *
-     * @param  mixed
+     * @param  mixed  $args
      * @return void
      */
     function dd(...$args)
@@ -16583,35 +16368,41 @@ if (! function_exists('tap')) {
 
 if (! function_exists('throw_if')) {
     /**
-     * Throw the given exception if the given boolean is true.
+     * Throw the given exception if the given condition is true.
      *
-     * @param  bool  $boolean
+     * @param  mixed  $condition
      * @param  \Throwable|string  $exception
      * @param  array  ...$parameters
-     * @return void
+     * @return mixed
+     * @throws \Throwable
      */
-    function throw_if($boolean, $exception, ...$parameters)
+    function throw_if($condition, $exception, ...$parameters)
     {
-        if ($boolean) {
+        if ($condition) {
             throw (is_string($exception) ? new $exception(...$parameters) : $exception);
         }
+
+        return $condition;
     }
 }
 
 if (! function_exists('throw_unless')) {
     /**
-     * Throw the given exception unless the given boolean is true.
+     * Throw the given exception unless the given condition is true.
      *
-     * @param  bool  $boolean
+     * @param  mixed  $condition
      * @param  \Throwable|string  $exception
      * @param  array  ...$parameters
-     * @return void
+     * @return mixed
+     * @throws \Throwable
      */
-    function throw_unless($boolean, $exception, ...$parameters)
+    function throw_unless($condition, $exception, ...$parameters)
     {
-        if (! $boolean) {
+        if (! $condition) {
             throw (is_string($exception) ? new $exception(...$parameters) : $exception);
         }
+
+        return $condition;
     }
 }
 

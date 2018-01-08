@@ -1,0 +1,37 @@
+php:
+  preset: laravel
+  finder:
+    exclude:
+      - "public"
+    not-name:
+      - "server.php"
+      - "_ide_helper.php"
+
+js:
+  tab-width: 4
+  finder:
+    exclude:
+      - modules
+      - node_modules
+      - storage
+      - vendor
+      - public
+
+vue:
+  tab-width: 4
+  finder:
+    exclude:
+      - modules
+      - node_modules
+      - storage
+      - vendor
+      - public
+
+css:
+  finder:
+    exclude:
+      - modules
+      - node_modules
+      - storage
+      - vendor
+      - public
