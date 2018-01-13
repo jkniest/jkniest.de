@@ -17,21 +17,8 @@
      */
 @endphp
 
-@extends('layouts.app')
+<a href="{{route('welcome')}}" class="navbar-item is-tab">
+    @lang('jkniest.overview')
+</a>
 
-@section('title')
-    {{$project->getName()}}
-@endsection
-
-@section('main')
-
-    {{-- Fixed header with navbar --}}
-    @include('partials.header', ['menu' => 'partials.nav.menu-project'])
-
-    {{-- Slider --}}
-    @include('partials.projects.slider')
-
-    {{-- Main --}}
-    @include('partials.projects.main')
-
-@endsection
+@include('partials.nav.menu-language')

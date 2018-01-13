@@ -16,22 +16,15 @@
      * along with this program.  If not, see <http://www.gnu.org/licenses/>.
      */
 @endphp
+<div class="navbar-brand">
+    <a class="navbar-item" href="{{route('welcome')}}">
+        <img src="{{asset('img/logo.png')}}" alt="This is me">
+        <h1 class="title is-4 m05l">@lang('jkniest.iam') {{config('portfolio.author')}}!</h1>
+    </a>
 
-@extends('layouts.app')
-
-@section('title')
-    {{$project->getName()}}
-@endsection
-
-@section('main')
-
-    {{-- Fixed header with navbar --}}
-    @include('partials.header', ['menu' => 'partials.nav.menu-project'])
-
-    {{-- Slider --}}
-    @include('partials.projects.slider')
-
-    {{-- Main --}}
-    @include('partials.projects.main')
-
-@endsection
+    <div class="navbar-burger" onclick="$('#navbar-menu').toggleClass('is-active')">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

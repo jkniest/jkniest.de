@@ -16,22 +16,12 @@
      * along with this program.  If not, see <http://www.gnu.org/licenses/>.
      */
 @endphp
-
-@extends('layouts.app')
-
-@section('title')
-    {{$project->getName()}}
-@endsection
-
-@section('main')
-
-    {{-- Fixed header with navbar --}}
-    @include('partials.header', ['menu' => 'partials.nav.menu-project'])
-
-    {{-- Slider --}}
-    @include('partials.projects.slider')
-
-    {{-- Main --}}
-    @include('partials.projects.main')
-
-@endsection
+<div class="navbar-menu" id="navbar-menu">
+    <div class="navbar-end">
+        @if(isset($menu))
+            @include($menu)
+        @else
+            @include('partials.nav.menu')
+        @endif
+    </div>
+</div>

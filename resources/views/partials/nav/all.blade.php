@@ -1,6 +1,6 @@
 @php
     /**
-     * Copyright (C) 2017 Jordan Kniest
+     * Copyright (C) 2018 Jordan Kniest
      *
      * This program is free software: you can redistribute it and/or modify
      * it under the terms of the GNU Affero General Public License as published by
@@ -16,9 +16,7 @@
      * along with this program.  If not, see <http://www.gnu.org/licenses/>.
      */
 @endphp
-
-<a href="{{route('welcome')}}" class="nav-item">
-    <img src="{{asset('img/logo.png')}}" alt="This is me" class="m1r">
-
-    <h1 class="title is-4">@lang('jkniest.iam') {{config('portfolio.author')}}!</h1>
-</a>
+<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+    @include('partials.nav.left')
+    @include('partials.nav.right')
+</nav>

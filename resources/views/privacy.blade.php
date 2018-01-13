@@ -1,6 +1,6 @@
 @php
     /**
-     * Copyright (C) 2017 Jordan Kniest
+     * Copyright (C) 2018 Jordan Kniest
      *
      * This program is free software: you can redistribute it and/or modify
      * it under the terms of the GNU Affero General Public License as published by
@@ -27,7 +27,7 @@
 @section('main')
 
     {{-- Fixed header with navbar --}}
-    @include('partials.header', ['right' => 'partials.nav.nav-right-project'])
+    @include('partials.header', ['menu' => 'partials.nav.menu-project'])
 
     {{-- Content --}}
     @include('partials.privacy')

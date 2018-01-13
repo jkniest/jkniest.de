@@ -1,6 +1,6 @@
 @php
     /**
-     * Copyright (C) 2017 Jordan Kniest
+     * Copyright (C) 2018 Jordan Kniest
      *
      * This program is free software: you can redistribute it and/or modify
      * it under the terms of the GNU Affero General Public License as published by
@@ -17,23 +17,12 @@
      */
 @endphp
 
-<a href="#about-me" class="nav-item is-tab">
-
-    @lang('jkniest.about-me')
-
-</a> {{-- a[href="about"] --}}
-
-<a href="#projects" class="nav-item is-tab">
-
-    @lang('jkniest.projects')
-
-</a> {{-- a[href="projects"] --}}
-
-<a href="#contact" class="nav-item is-tab">
-
-    @lang('jkniest.contact')
-
-</a> {{-- a[href="contact"] --}}
-
-
-@include('partials.nav.language-select')
+@if (app()->getLocale() == 'de')
+    <a href="{{route('lang', ['code' => 'en'])}}" class="navbar-item is-tab">
+        @lang('jkniest.english-version')
+    </a>
+@else
+    <a href="{{route('lang', ['code' => 'de'])}}" class="navbar-item is-tab">
+        @lang('jkniest.german-version')
+    </a>
+@endif
