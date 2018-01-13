@@ -4,7 +4,7 @@
  * routes are loaded by the RouteServiceProvider within a group which
  * contains the "web" middleware group. Now create something great!
  *
- * Copyright (C) 2017 Jordan Kniest
+ * Copyright (C) 2018 Jordan Kniest
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -29,8 +29,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'htmlcache'], function () {
     Route::get('/', 'PageController@index')->name('welcome');
 
-    Route::get('/imprint', 'PageController@imprint')->name('imprint');
-    Route::get('/privacy', 'PageController@privacy')->name('privacy');
+    Route::view('/imprint', 'imprint')->name('imprint');
+    Route::view('/privacy', 'privacy')->name('privacy');
 
     Route::get('/project/{slug}', 'ProjectController@show')->name('project');
 });

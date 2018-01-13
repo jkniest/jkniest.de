@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 /**
  * Handles all non-resource page requests like the front page or the impress.
  *
- * Copyright (C) 2017 Jordan Kniest
+ * Copyright (C) 2018 Jordan Kniest
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -39,25 +39,5 @@ class PageController extends Controller
         });
 
         return view('welcome', compact('projects'));
-    }
-
-    /**
-     * The imprint page.
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function imprint()
-    {
-        return view('imprint');
-    }
-
-    /**
-     * The privacy information page.
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function privacy()
-    {
-        return view('privacy');
     }
 }
