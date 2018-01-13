@@ -1,6 +1,6 @@
 @php
     /**
-     * Copyright (C) 2017 Jordan Kniest
+     * Copyright (C) 2018 Jordan Kniest
      *
      * This program is free software: you can redistribute it and/or modify
      * it under the terms of the GNU Affero General Public License as published by
@@ -33,6 +33,14 @@
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('favicon.ico')}}">
+
+    <noscript>
+        <style>
+            .fade {
+                opacity: 1;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
 @yield('main')
