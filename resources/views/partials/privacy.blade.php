@@ -1,136 +1,217 @@
-<div class="container m6t p1" id="privacy">
+@php
+    /**
+     * Copyright (C) 2018 Jordan Kniest
+     *
+     * This program is free software: you can redistribute it and/or modify
+     * it under the terms of the GNU Affero General Public License as published by
+     * the Free Software Foundation, either version 3 of the License, or
+     * (at your option) any later version.
+     *
+     * This program is distributed in the hope that it will be useful,
+     * but WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     * GNU Affero General Public License for more details.
+     *
+     * You should have received a copy of the GNU Affero General Public License
+     * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+     *
+     */
+@endphp
+
+<div class="container m3t p1" id="privacy">
 
     <div class="content">
 
-        @if(app()->getLocale() != 'de')
+        @if(app()->getLocale() == 'de')
 
-            <div class="notification is-warning">
+            <h1>Datenschutzerklärung</h1>
 
-                <span class="icon">
-                    <i class="fa fa-exclamation"></i>
-                </span> {{-- span.icon --}}
+            <h2>Datenschutz</h2>
+            <p>
+                Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre
+                personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie
+                dieser Datenschutzerklärung.
+            </p>
+            <p>
+                Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf
+                unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben
+                werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre
+                ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+            </p>
+            <p>
+                Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
+                Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist
+                nicht möglich.
+            </p>
+            <p></p>
 
-                @lang('jkniest.privacy-english')
+            <h2>Cookies</h2>
+            <p>
+                Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen
+                Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver
+                und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die
+                Ihr Browser speichert.
+            </p>
+            <p>
+                Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies“. Sie werden nach Ende
+                Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie
+                diese löschen. Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.
+            </p>
+            <p>
+                Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und
+                Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell
+                ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browser aktivieren. Bei
+                der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
+            </p>
+            <p></p>
 
-            </div> {{-- div.notification.is-warning --}}
+            <h2>Server-Log-Files</h2>
+            <p>
+                Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log
+                Files, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+            </p>
+            <ul>
+                <li>Browsertyp und Browserversion</li>
+                <li>verwendetes Betriebssystem</li>
+                <li>Referrer URL</li>
+                <li>Hostname des zugreifenden Rechners</li>
+                <li>Uhrzeit der Serveranfrage</li>
+            </ul>
+            <p>
+                Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen
+                Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns
+                konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.
+            </p>
+            <p></p>
 
-        @endif {{-- if: locale != de --}}
+            <h2>Google Web Fonts</h2>
+            <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Web Fonts, die von Google
+                bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in ihren
+                Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Wenn Ihr Browser Web Fonts nicht
+                unterstützt, wird eine Standardschrift von Ihrem Computer genutzt.
+            </p>
+            <p>
+                Weitere Informationen zu Google Web Fonts finden Sie unter
+                <a href="https://developers.google.com/fonts/faq">https://developers.google.com/fonts/faq</a> und in
+                der Datenschutzerklärung von Google:
+                <a href="https://www.google.com/policies/privacy/">https://www.google.com/policies/privacy/</a>
+            </p>
+            <p></p>
 
-        <h1>Datenschutzerkl&auml;rung</h1>
-        <h2>Datenschutz</h2>
-        <p>Die Betreiber dieser Seiten nehmen
-           den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten
-           vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser
-           Datenschutzerkl&auml;rung.</p>
-        <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe
-           personenbezogener Daten m&ouml;glich. Soweit auf unseren Seiten personenbezogene Daten
-           (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit
-           m&ouml;glich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdr&uuml;ckliche Zustimmung
-           nicht an Dritte weitergegeben.</p>
-        <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet
-           (z.B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen kann. Ein l&uuml;ckenloser
-           Schutz der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.</p>
-        <p>&nbsp;</p>
-        <h2>
-            Cookies</h2>
-        <p>Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem
-           Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot
-           nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem
-           Rechner abgelegt werden und die Ihr Browser speichert.</p>
-        <p>Die meisten der von uns verwendeten
-           Cookies sind so genannte „Session-Cookies“. Sie werden nach Ende Ihres Besuchs automatisch
-           gel&ouml;scht. Andere Cookies bleiben auf Ihrem Endger&auml;t gespeichert, bis Sie diese l&ouml;schen.
-           Diese Cookies erm&ouml;glichen es uns, Ihren Browser beim n&auml;chsten Besuch
-           wiederzuerkennen.</p>
-        <p>Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber das Setzen
-           von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies f&uuml;r
-           bestimmte F&auml;lle oder generell ausschlie&szlig;en sowie das automatische L&ouml;schen der
-           Cookies beim Schlie&szlig;en des Browser aktivieren. Bei der Deaktivierung von Cookies kann die
-           Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.</p>
-        <p>&nbsp;</p>
-        <h2>Server-Log-
-            Files</h2>
-        <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten
-           Server-Log Files, die Ihr Browser automatisch an uns &uuml;bermittelt. Dies sind:</p>
-        <ul>
-            <li>
-                Browsertyp und Browserversion
-            </li>
-            <li>verwendetes Betriebssystem</li>
-            <li>Referrer URL</li>
-            <li>
-                Hostname des zugreifenden Rechners
-            </li>
-            <li>Uhrzeit der Serveranfrage</li>
-        </ul>
-        <p><br />Diese Daten
-                 sind nicht bestimmten Personen zuordenbar. Eine Zusammenf&uuml;hrung dieser Daten mit anderen
-                 Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachtr&auml;glich zu
-                 pr&uuml;fen, wenn uns konkrete Anhaltspunkte f&uuml;r eine rechtswidrige Nutzung bekannt werden.</p>
-        <p>&nbsp;</p>
-        <h2>Datenschutzerkl&auml;rung f&uuml;r die Nutzung von Google Analytics</h2>
-        <p>
-            Diese Website nutzt Funktionen des Webanalysedienstes Google Analytics. Anbieter ist die Google Inc.,
-            1600 Amphitheatre Parkway Mountain View, CA 94043, USA.</p>
-        <p>Google Analytics verwendet so
-           genannte "Cookies". Das sind Textdateien, die auf Ihrem Computer gespeichert werden und die eine
-           Analyse der Benutzung der Website durch Sie erm&ouml;glichen. Die durch den Cookie erzeugten
-           Informationen &uuml;ber Ihre Benutzung dieser Website werden in der Regel an einen Server von Google
-           in den USA &uuml;bertragen und dort gespeichert.</p>
-        <p>Mehr Informationen zum Umgang mit
-           Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerkl&auml;rung von Google: <a
-                href="https://support.google.com/analytics/answer/6004245?hl=de">
-                https://support.google.com/analytics/answer/6004245?hl=de</a></p>
-        <p><strong>Browser
-                   Plugin</strong></p>
-        <p>Sie k&ouml;nnen die Speicherung der Cookies durch eine entsprechende
-           Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall
-           gegebenenfalls nicht s&auml;mtliche Funktionen dieser Website vollumf&auml;nglich werden nutzen
-           k&ouml;nnen. Sie k&ouml;nnen dar&uuml;ber hinaus die Erfassung der durch den Cookie erzeugten und
-           auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung
-           dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verf&uuml;gbare BrowserPlugin
-           herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de">
-                https://tools.google.com/dlpage/gaoptout?hl=de</a></p>
-        <p><strong>Widerspruch gegen
-                   Datenerfassung</strong></p>
-        <p>Sie k&ouml;nnen die Erfassung Ihrer Daten durch Google Analytics
-           verhindern, indem Sie auf folgenden Link klicken. Es wird ein Opt-Out-Cookie gesetzt, der die Erfassung
-           Ihrer Daten bei zuk&uuml;nftigen Besuchen dieser Website verhindert: <a href="javascript:gaOptout();">
-                Google Analytics deaktivieren</a></p>
-        <p><strong>IP-Anonymisierung</strong></p>
-        <p>Wir nutzen die
-           Funktion &quot;Aktivierung der IP-Anonymisierung&quot; auf dieser Webseite. Dadurch wird Ihre IPAdresse
-           von Google jedoch innerhalb von Mitgliedstaaten der Europ&auml;ischen Union oder in anderen
-           Vertragsstaaten des Abkommens &uuml;ber den Europ&auml;ischen Wirtschaftsraum zuvor
-           gek&uuml;rzt. Nur in Ausnahmef&auml;llen wird die volle IP-Adresse an einen Server von Google in den
-           USA &uuml;bertragen und dort gek&uuml;rzt. Im Auftrag des Betreibers dieser Website wird Google diese
-           Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports &uuml;ber die
-           Websiteaktivit&auml;ten zusammenzustellen und um weitere mit der Websitenutzung und der
-           Internetnutzung verbundene Dienstleistungen gegen&uuml;ber dem Websitebetreiber zu erbringen. Die im
-           Rahmen von Google Analytics von Ihrem Browser &uuml;bermittelte IP-Adresse wird nicht mit anderen
-           Daten von Google zusammengef&uuml;hrt.
-        <p>&nbsp;</p>
-        <h2>SSL-Verschl&uuml;sselung</h2>
-        <p>
-            Diese Seite nutzt aus Gr&uuml;nden der Sicherheit und zum Schutz der &Uuml;bertragung vertraulicher
-            Inhalte, wie zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSLVerschl&uuml;sselung.
-            Eine verschl&uuml;sselte Verbindung erkennen Sie daran, dass die Adresszeile
-            des Browsers von &quot;http://&quot; auf &quot;https://&quot; wechselt und an dem Schloss-Symbol in
-            Ihrer Browserzeile.</p>
-        <p>Wenn die SSL Verschl&uuml;sselung aktiviert ist, k&ouml;nnen die Daten, die
-           Sie an uns &uuml;bermitteln, nicht von Dritten mitgelesen werden.</p>
-        <p>&nbsp;</p>
-        <h2>Auskunft,
-            L&ouml;schung, Sperrung</h2>
-        <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber
-           Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empf&auml;nger und den Zweck der
-           Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder L&ouml;schung dieser Daten. Hierzu
-           sowie zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie sich jederzeit unter der
-           im Impressum angegebenen Adresse an uns wenden.</p>
-        <p>&nbsp;</p>
-        <p>Quelle: <a
-                href="https://www.e-recht24.de">eRecht24</a></p>
+            <h2>SSL-Verschlüsselung</h2>
+            <p>
+                Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie
+                zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-Verschlüsselung. Eine
+                verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von
+                "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+            </p>
+            <p>
+                Wenn die SSL Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von
+                Dritten mitgelesen werden.
+            </p>
+            <p></p>
 
+            <h2>Widerspruch Werbe-Mails</h2>
+            <p>
+                Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von
+                nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die
+                Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung
+                von Werbeinformationen, etwa durch Spam-E-Mails, vor.
+            </p>
+            <p></p>
+        @else
+            <h1>Privacy Policy</h1>
+            <h2>Data Protection</h2>
+            <p>
+                The operators of this website take the protection of your personal data very seriously. We treat your
+                personal data confidentially and according to the legal data protection regulations and this Privacy
+                Policy.
+            </p>
+            <p>
+                The use of our website is generally possible without providing personal data. Personal data, such as
+                names, addresses or email addresses, are always provided on a voluntary basis when possible. Those
+                data will not be passed on to third parties without your explicit permission.
+            </p>
+            <p>
+                However, we would like to point out that data transmissions via internet (e.g email communication)
+                cannot be entirely secure and may have security vulnerabilities. A complete protection of personal
+                details against unauthorised access by third parties is not possible.
+            </p>
+            <p></p>
+
+            <h2>Cookies</h2>
+            <p>
+                This website partially uses so-called cookies. Cookies do not cause damage to your computer and do
+                not contain viruses. Cookies allow us to make our product more user-friendly, more efficient and more
+                secure. Cookies are small text files, stored by your browser on your computer.
+            </p>
+            <p>
+                Most cookies that we use are so-called "session cookies". They will be deleted automatically after
+                the end of your visit. Other cookies remain on your terminal device until you delete them. Those
+                cookies enable us to recognise your browser on your next visit.
+            </p>
+            <p>
+                You can adjust your browser to inform you when cookies are placed, to individually allow cookies, or
+                to generally exclude cookies in certain cases, as well as to activate the automatic deletion of cookies
+                when closing the browser. The deactivation of cookies may impair the functionality of this website.
+            </p>
+            <p></p>
+
+            <h2>Server-log-files</h2>
+            <p>
+                The provider of these websites automatically collects and stores information in so-called server log
+                files which your browser automatically transmits to us, such as:
+            </p>
+            <ul>
+                <li>browser type/version</li>
+                <li>used operating system</li>
+                <li>referrer URL</li>
+                <li>host name of the accessing computer</li>
+                <li>time of query</li>
+            </ul>
+            <p>
+                Those data cannot be associated with individual persons. We do not merge this data with other sources.
+                We reserve the right to retrospectively check the data if there is any indication of illegal use.
+            </p>
+            <p></p>
+
+            <h2>Google Web Fonts </h2>
+            <p>
+                For the homogenous display of fonts, this website uses so-called web fonts that are provided by Google.
+                On retrieving a website your browser downloads the necessary web fonts to your browser cache in order
+                to correctly display texts and fonts. If your browser does not support web fonts, your computer uses a
+                standard font.
+            </p>
+            <p>
+                For further information, please see
+                <a href="https://developers.google.com/fonts/faq">https://developers.google.com/fonts/faq</a> as well
+                as Google's Privacy Policy:
+                <a href="https://www.google.com/policies/privacy/">https://www.google.com/policies/privacy/</a>
+            </p>
+            <p></p>
+
+            <h2>SSL Encryption</h2>
+            <p>
+                For security reasons, and to protect the transmission of confidential data, such as enquiries you send
+                to us as the provider, this website uses an SSL encryption. You can recognise an encrypted connection
+                by the change in the address line of the browser from "http://" to "https://" and by the lock-symbol in
+                your browser address line.
+            </p>
+            <p>
+                When the SSL encryption is activated, the data you have transmitted to us cannot be accessed by third
+                parties.
+            </p>
+            <p></p>
+
+            <h2>Objection to commercial mails</h2>
+            <p>
+                Providers are obligated to publish contact information in the Legal Notice/Impressum. The use of such
+                contact information by third parties for the purpose of distributing unsolicited advertisements or
+                other commercial information is prohibited. The operators of this website reserve the right to take
+                legal measures against senders of unsolicited commercial information, e.g. spam emails etc.
+            </p>
+            <p></p>
+        @endif
     </div> {{-- div.content --}}
 
 </div> {{-- div.container --}}
