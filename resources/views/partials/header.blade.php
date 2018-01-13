@@ -1,6 +1,6 @@
 @php
     /**
-     * Copyright (C) 2017 Jordan Kniest
+     * Copyright (C) 2018 Jordan Kniest
      *
      * This program is free software: you can redistribute it and/or modify
      * it under the terms of the GNU Affero General Public License as published by
@@ -19,30 +19,6 @@
 
 <header>
 
-    <nav class="nav has-shadow">
-
-        <div class="nav-left">
-
-            @include('partials.nav.nav-left')
-
-        </div> {{-- div.nav-left --}}
-
-        <span class="nav-toggle" onclick="$('#nav-right').toggleClass('is-active')">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-
-        <div class="nav-right nav-menu" id="nav-right">
-
-            @if(isset($right))
-                @include($right)
-            @else
-                @include('partials.nav.nav-right')
-            @endif
-
-        </div> {{-- div.nav-right --}}
-
-    </nav>
+    @include('partials.nav.all')
 
 </header>
