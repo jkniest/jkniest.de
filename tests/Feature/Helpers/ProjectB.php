@@ -5,7 +5,7 @@ namespace Tests\Feature\Helpers;
 use App\Projects\Project;
 
 /**
- * Example Project B
+ * Example Project B.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -23,54 +23,55 @@ use App\Projects\Project;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class ProjectB extends Project
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name = 'Project B';
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug = 'project-b';
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags = ['example', 'b', 'water'];
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
     protected $media = [
         'media-b.png',
         'another.jpg',
-        'https://youtube.com/v/123456'
+        'https://youtube.com/v/123456',
     ];
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover = 'cover-b.png';
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -87,12 +88,12 @@ class ProjectB extends Project
     protected $date = '2016-01-17';
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
     protected $meta = [
         'framework' => 'Rainbow',
-        'language'  => 'Colors'
+        'language'  => 'Colors',
     ];
 }

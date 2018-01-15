@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom configuration for the portfolio system
+ * Custom configuration for the portfolio system.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -18,9 +18,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 
@@ -43,7 +44,7 @@ return [
         \App\Projects\HtmlCache::class,
         \App\Projects\ForceHttps::class,
         \App\Projects\DefendtheBase::class,
-        \App\Projects\TwoWayDungeon::class
+        \App\Projects\TwoWayDungeon::class,
     ],
 
     /*
@@ -69,7 +70,7 @@ return [
         'twitter'  => env('LINK_TWITTER', 'https://twitter.com/j_kniest'),
         'xing'     => env('LINK_XING', 'https://www.xing.com/profile/Jordan_Kniest'),
         'linkedin' => env('LINK_LINKEDIN', 'https://www.linkedin.com/in/jordan-kniest-357679144'),
-        'github'   => env('LINK_GITHUB', 'https://github.com/jkniest')
+        'github'   => env('LINK_GITHUB', 'https://github.com/jkniest'),
     ],
 
     /*

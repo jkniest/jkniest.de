@@ -6,7 +6,7 @@ use App\Media;
 use Tests\TestCase;
 
 /**
- * Test all methods related to the media class
+ * Test all methods related to the media class.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -24,9 +24,10 @@ use Tests\TestCase;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class MediaTest extends TestCase

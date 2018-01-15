@@ -3,7 +3,7 @@
 namespace App\Projects;
 
 /**
- * Project: jkniest.de  - The portfolio itself
+ * Project: jkniest.de  - The portfolio itself.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -21,54 +21,55 @@ namespace App\Projects;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Projects
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class Jkniestde extends Project
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name = 'jkniest.de';
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug = 'jkniest-de';
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags = ['laravel', 'php', 'sass', 'javascript', 'open-source'];
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
     protected $media = [
         'header.png',
         'projects.png',
-        'full.png'
+        'full.png',
     ];
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover = 'cover.png';
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -85,7 +86,7 @@ class Jkniestde extends Project
     protected $date = '2017-08-03';
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
@@ -93,6 +94,6 @@ class Jkniestde extends Project
         'framework'           => 'Laravel',
         'languages'           => 'PHP, Javascript, Sass',
         'license'             => 'AGPL-3.0',
-        'development-pattern' => 'TDD'
+        'development-pattern' => 'TDD',
     ];
 }

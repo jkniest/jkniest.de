@@ -7,7 +7,7 @@ use App\Projects\Project;
 use Tests\TestCase;
 
 /**
- * Test all methods related to the project class
+ * Test all methods related to the project class.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -25,9 +25,10 @@ use Tests\TestCase;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class ProjectTests extends TestCase
@@ -107,7 +108,7 @@ class ProjectTests extends TestCase
     {
         $this->assertEquals([
             'Sample'  => 'This is nice',
-            'Another' => 'Oh, ok'
+            'Another' => 'Oh, ok',
         ], $this->project->getMeta());
     }
 }
@@ -123,17 +124,17 @@ class ExampleProject extends Project
     protected $media = [
         'my-file.png',
         'someother.jpg',
-        'http://youtube.com'
+        'http://youtube.com',
     ];
 
     protected $tags = [
-        'unity', 'example', 'software'
+        'unity', 'example', 'software',
     ];
 
     protected $year = 1999;
 
     protected $meta = [
         'Sample'  => 'This is nice',
-        'Another' => 'Oh, ok'
+        'Another' => 'Oh, ok',
     ];
 }

@@ -3,7 +3,7 @@
 namespace App;
 
 /**
- * This class represents a media object (an image or video)
+ * This class represents a media object (an image or video).
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -21,36 +21,37 @@ namespace App;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class Media
 {
     /**
-     * The source path (youtube, image name, etc..)
+     * The source path (youtube, image name, etc..).
      *
      * @var string
      */
     private $source;
 
     /**
-     * The media type (youtube or image)
+     * The media type (youtube or image).
      *
      * @var string
      */
     private $type;
 
     /**
-     * The project folder path (relative to public/media)
+     * The project folder path (relative to public/media).
      *
      * @var string
      */
     private $folder;
 
     /**
-     * The internal video code (example youtube)
+     * The internal video code (example youtube).
      *
      * @var string
      */
@@ -70,7 +71,7 @@ class Media
     }
 
     /**
-     * Get the type of the media (currently youtube, image)
+     * Get the type of the media (currently youtube, image).
      *
      * @return string
      */
@@ -80,7 +81,7 @@ class Media
     }
 
     /**
-     * Get the source of this media
+     * Get the source of this media.
      *
      * @return string
      */
@@ -90,27 +91,27 @@ class Media
     }
 
     /**
-     * Get the media image path (public/media/{folder}/source_{name}
+     * Get the media image path (public/media/{folder}/source_{name}.
      *
      * @return string
      */
     public function getImagePath()
     {
-        return asset('media/' . $this->folder . '/source_' . $this->source);
+        return asset('media/'.$this->folder.'/source_'.$this->source);
     }
 
     /**
-     * Get the image path to the thumbnail
+     * Get the image path to the thumbnail.
      *
      * @return string
      */
     public function getThumb()
     {
         if ($this->type == 'youtube') {
-            return 'http://img.youtube.com/vi/' . $this->code . '/0.jpg';
+            return 'http://img.youtube.com/vi/'.$this->code.'/0.jpg';
         }
 
-        return asset('media/' . $this->folder . '/thumb_' . $this->source);
+        return asset('media/'.$this->folder.'/thumb_'.$this->source);
     }
 
     /**

@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 /**
- * The exception handler decides how to render a given exception
+ * The exception handler decides how to render a given exception.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -24,9 +24,10 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class Handler extends ExceptionHandler
@@ -44,7 +45,7 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Exception $e The thrown exception
+     * @param \Exception $e The thrown exception
      *
      * @return void
      */

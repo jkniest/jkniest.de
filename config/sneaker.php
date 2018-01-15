@@ -37,7 +37,7 @@ return [
     */
 
     'to' => [
-        'bugs@gena-clusters.net'
+        'bugs@gena-clusters.net',
     ],
 
     /*
