@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Projects\Project;
 
 /**
- * This controller handles all requests related to the project detail pages
+ * This controller handles all requests related to the project detail pages.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -23,15 +23,16 @@ use App\Projects\Project;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class ProjectController extends Controller
 {
     /**
-     * Show a specific project based on the slug
+     * Show a specific project based on the slug.
      *
      * @param string $slug The project slug
      *

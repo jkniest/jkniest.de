@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Illuminate\Foundation\Http\Middleware\TrimStrings as BaseTrimmer;
 
 /**
- * Trim all incoming data (POST and GET)
+ * Trim all incoming data (POST and GET).
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -23,9 +23,10 @@ use Illuminate\Foundation\Http\Middleware\TrimStrings as BaseTrimmer;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class TrimStrings extends BaseTrimmer

@@ -17,11 +17,10 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use jkniest\ForceHttps\ForceHttps;
 use JKniest\HtmlCache\Http\Middleware\CacheHtml;
 
 /**
- * The HTTP kernel
+ * The HTTP kernel.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -39,9 +38,10 @@ use JKniest\HtmlCache\Http\Middleware\CacheHtml;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Core
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class Kernel extends HttpKernel
@@ -57,7 +57,7 @@ class Kernel extends HttpKernel
         CheckForMaintenanceMode::class,
         ValidatePostSize::class,
         Middleware\TrimStrings::class,
-        ConvertEmptyStringsToNull::class
+        ConvertEmptyStringsToNull::class,
     ];
 
     /**
@@ -73,7 +73,7 @@ class Kernel extends HttpKernel
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
             SubstituteBindings::class,
-            SetLanguage::class
+            SetLanguage::class,
         ],
 
         'api' => [
@@ -95,6 +95,6 @@ class Kernel extends HttpKernel
         'bindings'   => SubstituteBindings::class,
         'can'        => Authorize::class,
         'throttle'   => ThrottleRequests::class,
-        'htmlcache'  => CacheHtml::class
+        'htmlcache'  => CacheHtml::class,
     ];
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2017 Jordan Kniest
+ * Copyright (C) 2017 Jordan Kniest.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -18,8 +18,6 @@
 
 namespace Tests;
 
-use App\Exceptions\Handler;
-use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase

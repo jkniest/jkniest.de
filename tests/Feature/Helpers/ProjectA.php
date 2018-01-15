@@ -5,7 +5,7 @@ namespace Tests\Feature\Helpers;
 use App\Projects\Project;
 
 /**
- * Example Project A
+ * Example Project A.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -23,54 +23,55 @@ use App\Projects\Project;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class ProjectA extends Project
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name = 'Project A';
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug = 'project-a';
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags = ['example', 'waffle', 'iron'];
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
     protected $media = [
         'media-a.png',
         'another.jpg',
-        'https://youtube.com/v/abcdefg'
+        'https://youtube.com/v/abcdefg',
     ];
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover = 'cover-a.png';
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -87,12 +88,12 @@ class ProjectA extends Project
     protected $date = '2015-05-14';
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
     protected $meta = [
         'framework' => 'Unicorn!',
-        'language'  => 'FlowerPower'
+        'language'  => 'FlowerPower',
     ];
 }

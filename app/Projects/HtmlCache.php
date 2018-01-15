@@ -3,7 +3,7 @@
 namespace App\Projects;
 
 /**
- * Html cache library for the laravel framework
+ * Html cache library for the laravel framework.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -21,53 +21,54 @@ namespace App\Projects;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Projects
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class HtmlCache extends Project
 {
     /**
-     * The name
+     * The name.
      *
      * @var string
      */
     protected $name = 'HtmlCache';
 
     /**
-     * The slug
+     * The slug.
      *
      * @var string
      */
     protected $slug = 'htmlcache';
 
     /**
-     * The meta tags
+     * The meta tags.
      *
      * @var array
      */
     protected $tags = ['laravel', 'php', 'package', 'open-source'];
 
     /**
-     * All related media files
+     * All related media files.
      *
      * @var array
      */
     protected $media = [
         'key.png',
-        'routes.png'
+        'routes.png',
     ];
 
     /**
-     * The cover media file (should be an image)
+     * The cover media file (should be an image).
      *
      * @var string
      */
     protected $cover = 'routes.png';
 
     /**
-     * The year when this project was created
+     * The year when this project was created.
      *
      * @var int
      */
@@ -84,13 +85,13 @@ class HtmlCache extends Project
     protected $date = '2017-08-28';
 
     /**
-     * Additional meta information that is shown inside the project page
+     * Additional meta information that is shown inside the project page.
      *
      * @var array
      */
     protected $meta = [
         'framework' => 'Laravel',
         'languages' => 'PHP',
-        'license'   => 'MIT'
+        'license'   => 'MIT',
     ];
 }

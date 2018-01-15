@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Tests\Feature\Helpers\ProjectA;
@@ -10,7 +9,7 @@ use Tests\Feature\Helpers\ProjectB;
 use Tests\TestCase;
 
 /**
- * Test the json feed
+ * Test the json feed.
  *
  * Copyright (C) 2017 Jordan Kniest
  *
@@ -28,9 +27,10 @@ use Tests\TestCase;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category Testing
- * @package  JKniest.de
+ *
  * @author   Jordan Kniest <contact@jkniest.de>
  * @license  GNU AFFERO GENERAL PUBLIC LICENSE <http://www.gnu.org/licenses/agpl.txt>
+ *
  * @link     https://jkniest.de
  */
 class JsonFeedTest extends TestCase
@@ -43,7 +43,7 @@ class JsonFeedTest extends TestCase
         // Given: There are two projects (ProjectA & ProjectB)
         Config::set('portfolio.projects', [
             ProjectA::class,
-            ProjectB::class
+            ProjectB::class,
         ]);
 
         // When: We visit the /feed.json page
@@ -57,7 +57,7 @@ class JsonFeedTest extends TestCase
             'feed_url'      => url('feed.json'),
             'author'        => [
                 'url'  => config('app.url'),
-                'name' => config('portfolio.author')
+                'name' => config('portfolio.author'),
             ],
             'favicon'       => url('favicon.ico'),
             'version'       => 'https://jsonfeed.org/version/1',
@@ -68,9 +68,9 @@ class JsonFeedTest extends TestCase
                     'id'             => 'project-b',
                     'url'            => url('/project/project-b'),
                     'image'          => url('media/ProjectB/cover_cover-b.png'),
-                    'tags' => [
-                        'example', 'b', 'water'
-                    ]
+                    'tags'           => [
+                        'example', 'b', 'water',
+                    ],
                 ],
                 [
                     'date_published' => '2015-05-14T00:00:00+00:00',
@@ -78,11 +78,11 @@ class JsonFeedTest extends TestCase
                     'id'             => 'project-a',
                     'url'            => url('/project/project-a'),
                     'image'          => url('media/ProjectA/cover_cover-a.png'),
-                    'tags' => [
-                        'example', 'waffle', 'iron'
-                    ]
+                    'tags'           => [
+                        'example', 'waffle', 'iron',
+                    ],
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -91,7 +91,7 @@ class JsonFeedTest extends TestCase
     {
         // Given: There is one project
         Config::set('portfolio.projects', [
-            ProjectA::class
+            ProjectA::class,
         ]);
 
         // When: We visit the feed page
@@ -104,7 +104,7 @@ class JsonFeedTest extends TestCase
         // Given: We add another project
         Config::set('portfolio.projects', [
             ProjectA::class,
-            ProjectB::class
+            ProjectB::class,
         ]);
 
         // When: We visit the feed page again
@@ -122,7 +122,7 @@ class JsonFeedTest extends TestCase
 
         // Given: There is one project
         Config::set('portfolio.projects', [
-            ProjectA::class
+            ProjectA::class,
         ]);
 
         // When: We visit the feed page
@@ -135,7 +135,7 @@ class JsonFeedTest extends TestCase
         // Given: We add another project
         Config::set('portfolio.projects', [
             ProjectA::class,
-            ProjectB::class
+            ProjectB::class,
         ]);
 
         // When: We reload the project loader
@@ -147,6 +147,5 @@ class JsonFeedTest extends TestCase
 
         // Then: The response should contain two items
         $this->assertCount(2, $response->json()['items']);
-
     }
 }
